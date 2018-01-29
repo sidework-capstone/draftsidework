@@ -1,4 +1,4 @@
-package com.codeup.sequoiaspringbootblog;
+package com.codeup.sidework;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
