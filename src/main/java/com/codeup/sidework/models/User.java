@@ -2,6 +2,7 @@ package com.codeup.sidework.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -60,6 +61,10 @@ public class User {
     @Column
     private String instagram;
 
+    // this is connecting to the business table.
+    // creating a list of businesses associate with a user
+    @ManyToMany(mappedBy = "users")
+    private List<Business> businesses;
 
     public long getId() {
         return id;

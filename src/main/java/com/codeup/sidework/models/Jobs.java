@@ -47,6 +47,12 @@ public class Jobs {
     @Column(nullable = false)
     private String description;
 
+//    // this is connecting to the business table.
+//    // creates a
+//    @ManyToOne
+//    @JoinColumn (name = "business_id")
+//    private Business business;
+
     public long getId() {
         return id;
     }

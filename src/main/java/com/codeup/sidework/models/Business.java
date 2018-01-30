@@ -1,6 +1,7 @@
 package com.codeup.sidework.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -12,7 +13,7 @@ public class Business {
     private long id;
 
     //name
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String businessName;
 
     //email
@@ -23,13 +24,17 @@ public class Business {
     @Column(nullable = false)
     private String password;
 
-    //address
+    //phone number
     @Column(nullable = false)
-    private String address;
+    private int businessPhone;
 
     //website
     @Column(nullable = false)
     private String website;
+
+    //address
+    @Column(nullable = false)
+    private String address;
 
     //account_mgr
     @Column(nullable = false)
@@ -39,14 +44,38 @@ public class Business {
     @Column(nullable = false)
     private String businessInfo;
 
+    //facebook
+    @Column
+    private String facebook;
 
+    //twitter
+    @Column
+    private String twitter;
+
+    //linkedin
+    @Column
+    private String linkedIn;
+
+    //instagram
+    @Column
+    private String instagram;
+
+
+//    // this is connecting to the jobs table.
+//    // for any one business this returns a list of all it's job postings
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-//    @JsonBackReference
 //    private List<Jobs> jobs;
-//
-//    @ManytoMany(cascade = CascadeType.ALL, mappedBy = "employees")
-//    @JsonBackReference
-//    private List<User> users;
+
+
+    // this is connecting to the user table.
+    // creates a list of all employees associated with that business
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="business_users",
+            joinColumns = {@JoinColumn(name="business_id")},
+            inverseJoinColumns = {@JoinColumn(name="user_id")}
+    )
+    private List<User> users;
 
 
     public long getId() {
@@ -81,12 +110,12 @@ public class Business {
         this.password = password;
     }
 
-    public String getAddress() {
-        return address;
+    public int getBusinessPhone() {
+        return businessPhone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBusinessPhone(int businessPhone) {
+        this.businessPhone = businessPhone;
     }
 
     public String getWebsite() {
@@ -95,6 +124,14 @@ public class Business {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getAccountManager() {
@@ -113,17 +150,55 @@ public class Business {
         this.businessInfo = businessInfo;
     }
 
-    public Business(String businessName, String businessEmail, String password, String address, String website, String accountManager, String businessInfo) {
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    public String getLinkedIn() {
+        return linkedIn;
+    }
+
+    public void setLinkedIn(String linkedIn) {
+        this.linkedIn = linkedIn;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public Business(String businessName, String businessEmail, String password, int businessPhone, String website, String address, String accountManager, String businessInfo, String facebook, String twitter, String linkedIn, String instagram) {
         this.businessName = businessName;
         this.businessEmail = businessEmail;
         this.password = password;
-        this.address = address;
+        this.businessPhone = businessPhone;
         this.website = website;
+        this.address = address;
         this.accountManager = accountManager;
         this.businessInfo = businessInfo;
+        this.facebook = facebook;
+        this.twitter = twitter;
+        this.linkedIn = linkedIn;
+        this.instagram = instagram;
     }
 
-    public Business(){
+
+    public Business() {
 
     }
 
