@@ -17,6 +17,13 @@ public class Division {
     @Column(nullable = false)
     private String divisionName;
 
+
+    // this creates a department_division pivot table
+    // connected to Division class
+    @ManyToOne
+    @JoinColumn (name = "department_id")
+    private Department department;
+
     public long getId() {
         return id;
     }
@@ -34,6 +41,9 @@ public class Division {
     }
 
 
+    public Division(String divisionName) {
+        this.divisionName = divisionName;
+    }
 
     public Division() {
 

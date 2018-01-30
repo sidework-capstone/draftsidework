@@ -1,6 +1,7 @@
 package com.codeup.sidework.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -11,9 +12,17 @@ public class Department {
     @Id @GeneratedValue
     private long id;
 
-    //name
+    //department name
+    // FOH / BOH / OPERATORS
     @Column(nullable = false)
     private String departmentName;
+
+
+    // this creates a department_division pivot table
+    // connected to Division class
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
+    private List<Division> divisions;
+
 
     public long getId() {
         return id;
@@ -31,11 +40,13 @@ public class Department {
         this.departmentName = departmentName;
     }
 
+
+
     public Department(String departmentName) {
         this.departmentName = departmentName;
     }
 
-    public Department(){
+    public Department() {
 
     }
 }
