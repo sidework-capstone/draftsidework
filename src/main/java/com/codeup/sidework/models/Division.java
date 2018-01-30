@@ -2,6 +2,7 @@ package com.codeup.sidework.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -18,11 +19,18 @@ public class Division {
     private String divisionName;
 
 
-    // this creates a department_division pivot table
+    // creates a department_division pivot table
     // connected to Division class
     @ManyToOne
     @JoinColumn (name = "department_id")
     private Department department;
+
+
+    // creates a positions_division pivot table
+    // connecting Positions class creating join table
+    @ManyToMany(mappedBy = "divisions")
+    private List<Positions> positions;
+
 
     public long getId() {
         return id;

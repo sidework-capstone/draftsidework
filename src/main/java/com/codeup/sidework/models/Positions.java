@@ -10,7 +10,7 @@ import java.util.List;
 public class Positions {
 
 
-    // this creates a user_positions pivot table
+    // creates a user_positions pivot table
     // connected to UserPositions class
     @OneToMany(mappedBy = "position")
     private List<UserPositions> userPositions;
@@ -23,6 +23,15 @@ public class Positions {
     @Column(nullable = false)
     private String jobTitle;
 
+    // creates a positions_division pivot table
+    // connecting Division class creating join table
+    @ManyToMany
+    @JoinTable(
+            name="positions_division",
+            joinColumns = {@JoinColumn(name="positions_id")},
+            inverseJoinColumns = {@JoinColumn(name="division_id")}
+    )
+    private List<Division> divisions;
 
 
     public List<UserPositions> getUserPositions() {
