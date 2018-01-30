@@ -3,11 +3,13 @@ package com.codeup.sidework.models;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
 @Table(name = "users")
 public class User {
+    private Set<UserPositions> userPositions;
 
     //id
     @Id @GeneratedValue
@@ -65,6 +67,23 @@ public class User {
     // creating a list of businesses associate with a user
     @ManyToMany(mappedBy = "users")
     private List<Business> businesses;
+
+
+    // this creates a user_positions pivot table
+    // connected to UserPositions class
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users", orphanRemoval = true)
+    public Set<UserPositions> getUserPositions() {
+        return userPositions;
+    }
+
+    public void setUserPositions(Set<UserPositions> userPositions) {
+        this.userPositions = userPositions;
+    }
+
+
+
+
+
 
     public long getId() {
         return id;
