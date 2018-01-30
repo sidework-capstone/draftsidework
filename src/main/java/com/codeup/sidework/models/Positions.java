@@ -23,15 +23,23 @@ public class Positions {
     @Column(nullable = false)
     private String jobTitle;
 
+
     // creates a positions_division pivot table
     // connecting Division class creating join table
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name="positions_division",
             joinColumns = {@JoinColumn(name="positions_id")},
             inverseJoinColumns = {@JoinColumn(name="division_id")}
     )
     private List<Division> divisions;
+
+
+    // connected to the listings table
+    // many positions can be associated with many job listings
+    @ManyToMany(mappedBy = "positions")
+    private List<Listings> listings;
+
 
 
     public List<UserPositions> getUserPositions() {

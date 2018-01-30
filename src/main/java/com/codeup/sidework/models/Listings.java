@@ -8,6 +8,7 @@ import org.hibernate.type.TimeType;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -46,7 +47,19 @@ public class Listings {
     @Column(nullable = false)
     private String description;
 
-    // this is connecting to the business table.
+
+    // connected to the positions table
+    // many job listings can be associated with many positions
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="listing_positions",
+            joinColumns={@JoinColumn(name="listings_id")},
+            inverseJoinColumns={@JoinColumn(name="positions_id")}
+    )
+    private List<Positions> positions;
+
+
+    // connected to the business table.
     // many job postings can be associated with a business by the id
     @ManyToOne
     @JoinColumn (name = "business_id")
