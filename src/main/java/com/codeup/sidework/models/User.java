@@ -8,6 +8,9 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
+
+    // this creates a user_positions pivot table
+    // connected to UserPositions class
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
 
@@ -69,8 +72,6 @@ public class User {
     private List<Business> businesses;
 
 
-    // this creates a user_positions pivot table
-    // connected to UserPositions class
 
     public List<UserPositions> getUserPositions() {
         return userPositions;

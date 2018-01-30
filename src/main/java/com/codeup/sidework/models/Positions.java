@@ -8,6 +8,10 @@ import java.util.List;
 @Entity
 @Table(name = "positions")
 public class Positions {
+
+
+    // this creates a user_positions pivot table
+    // connected to UserPositions class
     @OneToMany(mappedBy = "position")
     private List<UserPositions> userPositions;
 
@@ -21,9 +25,6 @@ public class Positions {
 
 
 
-
-    // this creates a user_positions pivot table
-    // connected to UserPositions class
     public List<UserPositions> getUserPositions() {
         return userPositions;
     }

@@ -10,11 +10,16 @@ import java.io.Serializable;
 @Entity
 @Table(name = "user_positions")
 public class UserPositions implements Serializable {
+
+
+// CREATES A USERS_POSITIONS PIVOT TABLE//
+//===============connected to USER class//
     @Id
     @ManyToOne
     @JoinColumn (name = "user_id")
     private User user;
 
+//==========connected to POSITIONS class//
     @Id
     @ManyToOne
     @JoinColumn (name = "positions_id")
@@ -28,12 +33,10 @@ public class UserPositions implements Serializable {
     //duration for position held - final date of that job title
     @Column
     private DateType stopDate;
+//======================================//
 
 
 
-// CREATES A USERS_POSITIONS PIVOT TABLE
-//
-    // connected to USER class
 
     public User getUser() {
         return user;
@@ -43,8 +46,6 @@ public class UserPositions implements Serializable {
         this.user = user;
     }
 
-    // connected to POSITIONS class
-
     public Positions getPosition() {
         return position;
     }
@@ -52,8 +53,6 @@ public class UserPositions implements Serializable {
     public void setPosition(Positions position) {
         this.position = position;
     }
-//
-//
 
     public DateType getStartDate() {
         return startDate;
