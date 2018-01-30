@@ -3,6 +3,7 @@ package com.codeup.sidework.models;
 
 import org.apache.tomcat.jni.Time;
 import org.hibernate.type.DateType;
+import org.hibernate.type.TimeType;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,16 +11,12 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "jobs")
-public class Jobs {
+@Table(name = "listings")
+public class Listings {
 
     //id
     @Id @GeneratedValue
     private long id;
-
-    //listingTitle
-    @Column(nullable = false)
-    private String jobListingTitle;
 
     //pay
     @Column(nullable = false)
@@ -39,11 +36,11 @@ public class Jobs {
 
     //shift start time
     @Column(nullable = false)
-    private LocalDateTime startTime;
+    private TimeType startTime;
 
     //shift end time
     @Column(nullable = false)
-    private LocalDateTime endTime;
+    private TimeType endTime;
 
     //shift details
     @Column(nullable = false)
@@ -62,14 +59,6 @@ public class Jobs {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getJobListingTitle() {
-        return jobListingTitle;
-    }
-
-    public void setJobListingTitle(String jobListingTitle) {
-        this.jobListingTitle = jobListingTitle;
     }
 
     public int getPay() {
@@ -104,19 +93,19 @@ public class Jobs {
         this.shiftQuantity = shiftQuantity;
     }
 
-    public LocalDateTime getStartTime() {
+    public TimeType getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(TimeType startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public TimeType getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(TimeType endTime) {
         this.endTime = endTime;
     }
 
@@ -130,8 +119,17 @@ public class Jobs {
 
 
 
+    public Listings(int pay, int requiredLabor, DateType shiftDate, int shiftQuantity, TimeType startTime, TimeType endTime, String description) {
+        this.pay = pay;
+        this.requiredLabor = requiredLabor;
+        this.shiftDate = shiftDate;
+        this.shiftQuantity = shiftQuantity;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.description = description;
+    }
 
-    public Jobs() {
+    public Listings() {
 
     }
 
