@@ -61,10 +61,10 @@ public class Business {
     private String instagram;
 
 
-    // this is connecting to the jobs table.
-    // for any one business this returns a list of all it's job postings
+    // this is connecting to the listings table.
+    // for any one business this returns a list of all it's job listings
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Jobs> jobs;
+    private List<Listings> jobs;
 
 
     // this is connecting to the user table.
