@@ -49,11 +49,11 @@ public class Jobs {
     @Column(nullable = false)
     private String description;
 
-//    // this is connecting to the business table.
-//    // creates a
-//    @ManyToOne
-//    @JoinColumn (name = "business_id")
-//    private Business business;
+    // this is connecting to the business table.
+    // many job postings can be associated with a business by the id
+    @ManyToOne
+    @JoinColumn (name = "business_id")
+    private Business business;
 
 
     public long getId() {
@@ -129,16 +129,7 @@ public class Jobs {
     }
 
 
-    public Jobs(String jobListingTitle, int pay, int requiredLabor, DateType shiftDate, int shiftQuantity, LocalDateTime startTime, LocalDateTime endTime, String description) {
-        this.jobListingTitle = jobListingTitle;
-        this.pay = pay;
-        this.requiredLabor = requiredLabor;
-        this.shiftDate = shiftDate;
-        this.shiftQuantity = shiftQuantity;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.description = description;
-    }
+
 
     public Jobs() {
 
