@@ -1,4 +1,4 @@
-package com.codeup.sequoiaspringbootblog;
+package com.codeup.sidework;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
