@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/registerWorker.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand"><strong>sidework</strong></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">how it works</a></li>
+                <li><a href="#">español</a></li>
+                <li><a href="#">about us</a></li>
+            </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
+        </ul>
+    </div>
+</nav>
+<br>
+<div>
+    <div class="container">
+        <div class="pic"></div>
+        <h1>register</h1>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="username">username</label>
+                <input id="username" name="username" class="form-control" type="text">
+            </div>
+            <!--<div class="alert alert-danger" role="alert">-->
+            <!--<strong>That username already exists</strong>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input id="email" name="email" class="form-control" type="text">
+            </div>
+            <!--<div class="alert alert-danger" role="alert">-->
+            <!--<strong>Not a valid email address</strong>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label for="password">password</label>
+                <input id="password" name="password" class="form-control" type="password">
+            </div>
+
+            <!--<div class="alert alert-danger" role="alert">-->
+            <!--<strong>Password doesn't match. Please try again.</strong>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label for="confirm_password">confirm password</label>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">first name</label>
+                <input id="first_name" name="first_name" class="form-control" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">last name</label>
+                <input id="last_name" name="last_name" class="form-control" type="text">
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="phone_number">position</label>-->
+            <!--<input id="phone_number" name="last_name" class="form-control" type="text">-->
+            <!--</div>-->
+
+            <div>
+                <h3>Position</h3>
+                <p>please select all relevant job-title experience</p>
+                <h3>FOH</h3>
+                <h3>floor</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                server
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                host
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox3" value="option3">
+                                banquet server
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>bar</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                bartender
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                barback
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox3" value="option3">
+                                cocktail server
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>BOH</h3>
+                <h3>kitchen</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                line cook
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                prep cook
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox3" value="option3">
+                                food expeditor
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>support</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                dishwasher
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                busser
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox3" value="option3">
+                                handyman
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>MGMT</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                general manager
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                executive chef
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox3" value="option3">
+                                owner
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox1" value="option1">
+                                assistant manager
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <div class="radio">
+                            <label>
+                                <input type="checkbox" name="optionsRadios" id="optionsCheckbox2" value="option2">
+                                sous chef
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>availability</h2>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-heading">currently employed?</div>
+                    <!--<input type="submit" class="btn btn-danger btn-block">-->
+                    <button type="button" class="btn btn-primary" aria-label="Right Align"> yes</button>
+                    <button type="button" class="btn btn-primary" aria-label="Right Align"> no</button>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">are you free to pick up shifts?</div>
+                    <!--<input type="submit" class="btn btn-danger btn-block">-->
+                    <button type="button" class="btn btn-primary" aria-label="Right Align"> yes</button>
+                    <button type="button" class="btn btn-primary" aria-label="Right Align"> no</button>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-danger btn-block">
+        </form>
+    </div>
+</div>
+</body>
+</html>
