@@ -5,19 +5,21 @@ import org.hibernate.type.DateType;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
-import java.util.Set;
 
 
 @Entity
 @Table(name = "user_positions")
 public class UserPositions implements Serializable {
+    @Id
+    @ManyToOne
+    @JoinColumn (name = "user_id")
     private User user;
-    private Positions positions;
 
-    //id
-    @Id @GeneratedValue
-    private long id;
+    @Id
+    @ManyToOne
+    @JoinColumn (name = "positions_id")
+    private Positions position;
+
 
     //duration for position held - start date of that job title
     @Column
@@ -32,9 +34,7 @@ public class UserPositions implements Serializable {
 // CREATES A USERS_POSITIONS PIVOT TABLE
 //
     // connected to USER class
-    @Id
-    @ManyToOne
-    @JoinColumn (name = "user_id")
+
     public User getUser() {
         return user;
     }
@@ -44,28 +44,16 @@ public class UserPositions implements Serializable {
     }
 
     // connected to POSITIONS class
-    @Id
-    @ManyToOne
-    @JoinColumn (name = "positions_id")
-    public Positions getPositions() {
-        return positions;
+
+    public Positions getPosition() {
+        return position;
     }
 
-    public void setPositions(Positions positions) {
-        this.positions = positions;
+    public void setPosition(Positions position) {
+        this.position = position;
     }
 //
 //
-
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public DateType getStartDate() {
         return startDate;
