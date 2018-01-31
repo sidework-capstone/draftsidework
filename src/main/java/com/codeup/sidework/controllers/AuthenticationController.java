@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AuthenticationController {
-    @GetMapping("/login")
-    public String showLoginForm() {
+    @GetMapping("/users/login-mgmt")
+    public String showManagementLoginForm() {
+        return "users/login-mgmt";
+    }
+
+    @GetMapping("/users/login-worker")
+    public String showWorkerLoginForm() {
         return "users/login-worker";
     }
 }

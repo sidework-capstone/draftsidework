@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Register</title>
     <!--<link rel="stylesheet" href="../../static/css/register-worker.css">-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -26,7 +28,7 @@
         </ul>
     </div>
 </nav>
-<br>
+<br/>
 <div>
     <div class="container">
         <div class="pic"></div>
@@ -34,7 +36,7 @@
         <form th:action="@{/sign-up}" method="post" th:object="${user}">
             <div class="form-group">
                 <label for="username">username</label>
-                <input id="username" th:field="*{username}" class="form-control" type="text" />
+                <input id="username" th:field="*{username}" class="form-control" type="text"/>
             </div>
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>That username already exists</strong>-->
@@ -42,7 +44,7 @@
 
             <div class="form-group">
                 <label for="email">email</label>
-                <input id="email" th:field="*{email}" class="form-control" type="text" />
+                <input id="email" th:field="*{email}" class="form-control" type="text"/>
             </div>
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>Not a valid email address</strong>-->
@@ -50,7 +52,7 @@
 
             <div class="form-group">
                 <label for="password">password</label>
-                <input id="password" th:field="*{password}" class="form-control" type="password" />
+                <input id="password" th:field="*{password}" class="form-control" type="password"/>
             </div>
 
             <!--<div class="alert alert-danger" role="alert">-->
@@ -59,17 +61,17 @@
 
             <div class="form-group">
                 <label for="confirm_password">confirm password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password" />
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password"/>
             </div>
 
             <div class="form-group">
                 <label for="first_name">first name</label>
-                <input id="first_name" name="first_name" class="form-control" type="text" />
+                <input id="first_name" name="first_name" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="last_name">last name</label>
-                <input id="last_name" name="last_name" class="form-control" type="text" />
+                <input id="last_name" name="last_name" class="form-control" type="text"/>
             </div>
             <!--<div class="form-group">-->
             <!--<label for="phone_number">position</label>-->
@@ -85,7 +87,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 server
                             </label>
                         </div>
@@ -93,7 +95,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2"/>
                                 host
                             </label>
                         </div>
@@ -101,7 +103,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3"/>
                                 banquet server
                             </label>
                         </div>
@@ -113,7 +115,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 bartender
                             </label>
                         </div>
@@ -121,7 +123,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2"/>
                                 barback
                             </label>
                         </div>
@@ -129,7 +131,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3"/>
                                 cocktail server
                             </label>
                         </div>
@@ -144,7 +146,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 line cook
                             </label>
                         </div>
@@ -152,7 +154,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2"/>
                                 prep cook
                             </label>
                         </div>
@@ -160,7 +162,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3"/>
                                 food expeditor
                             </label>
                         </div>
@@ -172,7 +174,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 dishwasher
                             </label>
                         </div>
@@ -180,7 +182,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2"/>
                                 busser
                             </label>
                         </div>
@@ -188,7 +190,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3"/>
                                 handyman
                             </label>
                         </div>
@@ -202,7 +204,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 general manager
                             </label>
                         </div>
@@ -210,7 +212,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="option2"/>
                                 executive chef
                             </label>
                         </div>
@@ -218,7 +220,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="option3"/>
                                 owner
                             </label>
                         </div>
@@ -226,7 +228,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="option1"/>
                                 assistant manager
                             </label>
                         </div>
@@ -234,7 +236,7 @@
                     <li class="list-group-item list-group-item-info">
                         <div class="radio">
                             <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox4" value="option2" />
+                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox4" value="option2"/>
                                 sous chef
                             </label>
                         </div>
@@ -258,7 +260,7 @@
                     <button type="button" class="btn btn-primary" aria-label="Right Align"> no</button>
                 </div>
             </div>
-            <input type="submit" class="btn btn-danger btn-block" />
+            <input type="submit" class="btn btn-danger btn-block"/>
         </form>
     </div>
 </div>
