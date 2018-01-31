@@ -19,11 +19,11 @@ public class User {
     private long id;
 
     //username
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
     //email
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     //password
@@ -203,6 +203,21 @@ public class User {
         this.twitter = twitter;
         this.linkedIn = linkedIn;
         this.instagram = instagram;
+    }
+
+    public User(User copy) {
+        this.username = copy.username;
+        this.email = copy.email;
+        this.password = copy.password;
+        this.phone = copy.phone;
+        this.bio = copy.bio;
+        this.skills = copy.skills;
+        this.currentEmployment = copy.currentEmployment;
+        this.availability = copy.availability;
+        this.facebook = copy.facebook;
+        this.twitter = copy.twitter;
+        this.linkedIn = copy.linkedIn;
+        this.instagram = copy.instagram;
     }
 
     public User(){
