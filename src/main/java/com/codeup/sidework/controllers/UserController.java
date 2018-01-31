@@ -47,7 +47,12 @@ public class UserController {
     public String saveWorker(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
-        users.save(user);
-        return "redirect:/users/login-worker";
+
+        if (!user.getUsername().isEmpty() && !user.getEmail().isEmpty() && !user.getPassword().isEmpty()) {
+            users.save(user);
+            return "redirect:/users/login-worker";
+        }
+
+        return "users/register-worker";
     }
 }
