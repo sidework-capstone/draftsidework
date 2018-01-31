@@ -34,7 +34,7 @@ public class UserController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         users.save(user);
-        return "redirect:/users/login-mgmt";
+        return "redirect:/users/login-worker";
     }
 
     @GetMapping("/users/register-worker")
@@ -43,10 +43,11 @@ public class UserController {
         return "users/register-worker";
     }
 
-    @PostMapping("/users/sign-up")
+    @PostMapping("/sign-up")
     public String saveWorker(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
+        users.save(user);
         return "redirect:/users/login-worker";
     }
 }
