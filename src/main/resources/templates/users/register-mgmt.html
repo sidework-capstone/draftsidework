@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport"
@@ -33,10 +33,10 @@
     <div class="container">
         <div class="pic"></div>
         <h1>register</h1>
-        <form action="/register" method="post">
+        <form th:action="@{/register}" method="post" th:object="${user}">
             <div class="form-group">
                 <label for="business_name">business name</label>
-                <input id="business_name" name="business_name" class="form-control" type="text"/>
+                <input id="business_name" th:field="*{business_name}" class="form-control" type="text"/>
             </div>
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>That username already exists</strong>-->
@@ -44,7 +44,7 @@
 
             <div class="form-group">
                 <label for="business_email">business email</label>
-                <input id="business_email" name="business_email" class="form-control" type="text"/>
+                <input id="business_email" th:field="*{business_email}" class="form-control" type="text"/>
             </div>
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>Not a valid email address</strong>-->
@@ -52,7 +52,7 @@
 
             <div class="form-group">
                 <label for="password">password</label>
-                <input id="password" name="password" class="form-control" type="password"/>
+                <input id="password" th:field="*{password}" class="form-control" type="password"/>
             </div>
 
             <!--<div class="alert alert-danger" role="alert">-->
@@ -66,17 +66,17 @@
 
             <div class="form-group">
                 <label for="business_phone_number">business phone number</label>
-                <input id="business_phone_number" name="business_phone_number" class="form-control" type="text"/>
+                <input id="business_phone_number" th:field="*{business_phone}" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="business_website">business website</label>
-                <input id="business_website" name="business_website" class="form-control" type="text"/>
+                <input id="business_website" th:field="*{website}" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="business_address">business address</label>
-                <input id="business_address" name="business_address" class="form-control" type="text"/>
+                <input id="business_address" th:field="*{address}" class="form-control" type="text"/>
             </div>
             <div class="form-group">
                 <label for="info">info</label>

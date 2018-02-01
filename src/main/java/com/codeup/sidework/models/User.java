@@ -8,14 +8,14 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
-
     // this creates a user_positions pivot table
     // connected to UserPositions class
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
 
     //id
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
 
     //username
@@ -72,7 +72,6 @@ public class User {
     private List<Business> businesses;
 
 
-
     public List<UserPositions> getUserPositions() {
         return userPositions;
     }
@@ -80,10 +79,6 @@ public class User {
     public void setUserPositions(List<UserPositions> userPositions) {
         this.userPositions = userPositions;
     }
-
-
-
-
 
 
     public long getId() {
@@ -220,8 +215,7 @@ public class User {
         this.instagram = copy.instagram;
     }
 
-    public User(){
+    public User() {
 
     }
-
 }

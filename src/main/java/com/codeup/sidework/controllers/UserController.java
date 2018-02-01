@@ -6,9 +6,9 @@ import com.codeup.sidework.repositories.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 
 
 @Controller
@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String saveManagement(@ModelAttribute User user){
+    public String saveManagement(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         users.save(user);
@@ -43,16 +43,38 @@ public class UserController {
         return "users/register-worker";
     }
 
-    @PostMapping("/sign-up")
-    public String saveWorker(@ModelAttribute User user) {
+    @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
+    public String saveWorker(@ModelAttribute User user,
+                             @RequestParam(value = "optionsRadios") String[] checkboxValue,
+                             @RequestParam(value = "employed") boolean isEmployed,
+                             @RequestParam(value = "available") boolean isAvailable) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
-
-        if (!user.getUsername().isEmpty() && !user.getEmail().isEmpty() && !user.getPassword().isEmpty()) {
-            users.save(user);
-            return "redirect:/users/login-worker";
+        user.setSkills(Arrays.toString(checkboxValue));
+        if (isEmployed) {
+            user.setCurrentEmployment(true);
+        } else {
+            user.setCurrentEmployment(false);
         }
 
-        return "users/register-worker";
+        if (isAvailable) {
+            user.setAvailability(true);
+        } else {
+            user.setAvailability(false);
+        }
+
+        users.save(user);
+
+        return "redirect:/users/login-worker";
+    }
+
+    @GetMapping("/users/workspace-mgmt")
+    public String showManagementWorkspace() {
+        return "users/workspace-mgmt";
+    }
+
+    @GetMapping("users/workspace-worker")
+    public String showWorkerWorkspace() {
+        return "users/workspace-worker";
     }
 }
