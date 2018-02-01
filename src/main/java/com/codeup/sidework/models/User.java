@@ -40,7 +40,7 @@ public class User {
 
     //skills
     @Column
-    private String skills;
+    private String[] skills;
 
     //currentEmployment
     @Column
@@ -134,11 +134,11 @@ public class User {
         this.bio = bio;
     }
 
-    public String getSkills() {
+    public String[] getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(String[] skills) {
         this.skills = skills;
     }
 
@@ -190,7 +190,7 @@ public class User {
         this.instagram = instagram;
     }
 
-    public User(String username, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
+    public User(String username, String email, String password, int phone, String bio, String[] skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
         this.username = username;
         this.email = email;
         this.password = password;

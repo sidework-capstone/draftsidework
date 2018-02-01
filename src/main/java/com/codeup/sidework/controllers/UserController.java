@@ -6,9 +6,7 @@ import com.codeup.sidework.repositories.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -30,7 +28,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String saveManagement(@ModelAttribute User user){
+    public String saveManagement(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         users.save(user);
@@ -43,16 +41,16 @@ public class UserController {
         return "users/register-worker";
     }
 
-    @PostMapping("/sign-up")
-    public String saveWorker(@ModelAttribute User user) {
+    @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
+    public String saveWorker(@RequestParam(value = "optionsRadios") @ModelAttribute User user, String checkboxValue) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
 
-        if (!user.getUsername().isEmpty() && !user.getEmail().isEmpty() && !user.getPassword().isEmpty()) {
+//        if (checkboxValue != null) {
             users.save(user);
             return "redirect:/users/login-worker";
-        }
+//        }
 
-        return "users/register-worker";
+//        return "users/register-worker";
     }
 }
