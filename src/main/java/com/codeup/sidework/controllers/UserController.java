@@ -73,7 +73,7 @@ public class UserController {
         return "users/workspace-mgmt";
     }
 
-    @GetMapping("users/workspace-worker")
+    @GetMapping("/users/workspace-worker")
     public String showWorkerWorkspace() {
         return "users/workspace-worker";
     }
