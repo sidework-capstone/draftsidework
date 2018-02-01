@@ -1,0 +1,69 @@
+.navbar.navbar-default {
+    background-color: white;
+}
+.job {
+    border: 1px solid black;
+    height: 200px;
+    width: 10px;
+    text-align: center;
+    margin-bottom: auto;
+    /*vertical-align: bottom;*/
+}
+a.navbar-brand {
+    font-size: 40px;
+
+}
+a.navbar-brand {
+    font-size: 40px;
+
+}
+.cate {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+.cate2 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+}
+.cate3 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: green;
+}
+.cate4 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.info {
+    text-align: center;
+}
+label.work_locator {
+    text-align: center;
+}
+.mgmLogo {
+    /*background: url("/img/MGM-Logo.jpg");*/
+    text-align: center;
+}
+.footer {
+    text-align: center;
+}
+.footer2 {
+    text-align: center;
+}
+.footer3 {
+    text-align: center;
+}
+.links {
+    text-align: center;
+}
