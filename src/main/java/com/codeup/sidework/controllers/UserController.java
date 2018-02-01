@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+
 
 @Controller
 public class UserController {
@@ -42,15 +44,37 @@ public class UserController {
     }
 
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
-    public String saveWorker(@RequestParam(value = "optionsRadios") @ModelAttribute User user, String checkboxValue) {
+    public String saveWorker(@ModelAttribute User user,
+                             @RequestParam(value = "optionsRadios") String[] checkboxValue,
+                             @RequestParam(value = "employed") boolean isEmployed,
+                             @RequestParam(value = "available") boolean isAvailable) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
+        user.setSkills(Arrays.toString(checkboxValue));
+        if (isEmployed) {
+            user.setCurrentEmployment(true);
+        } else {
+            user.setCurrentEmployment(false);
+        }
 
-//        if (checkboxValue != null) {
-            users.save(user);
-            return "redirect:/users/login-worker";
-//        }
+        if (isAvailable) {
+            user.setAvailability(true);
+        } else {
+            user.setAvailability(false);
+        }
 
-//        return "users/register-worker";
+        users.save(user);
+
+        return "redirect:/users/login-worker";
+    }
+
+    @GetMapping("/users/workspace-mgmt")
+    public String showManagementWorkspace() {
+        return "users/workspace-mgmt";
+    }
+
+    @GetMapping("users/workspace-worker")
+    public String showWorkerWorkspace() {
+        return "users/workspace-worker";
     }
 }

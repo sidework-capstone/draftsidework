@@ -8,14 +8,14 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
-
     // this creates a user_positions pivot table
     // connected to UserPositions class
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
 
     //id
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
 
     //username
@@ -40,7 +40,7 @@ public class User {
 
     //skills
     @Column
-    private String[] skills;
+    private String skills;
 
     //currentEmployment
     @Column
@@ -72,7 +72,6 @@ public class User {
     private List<Business> businesses;
 
 
-
     public List<UserPositions> getUserPositions() {
         return userPositions;
     }
@@ -80,10 +79,6 @@ public class User {
     public void setUserPositions(List<UserPositions> userPositions) {
         this.userPositions = userPositions;
     }
-
-
-
-
 
 
     public long getId() {
@@ -134,11 +129,11 @@ public class User {
         this.bio = bio;
     }
 
-    public String[] getSkills() {
+    public String getSkills() {
         return skills;
     }
 
-    public void setSkills(String[] skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
     }
 
@@ -190,7 +185,7 @@ public class User {
         this.instagram = instagram;
     }
 
-    public User(String username, String email, String password, int phone, String bio, String[] skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
+    public User(String username, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -220,8 +215,7 @@ public class User {
         this.instagram = copy.instagram;
     }
 
-    public User(){
+    public User() {
 
     }
-
 }
