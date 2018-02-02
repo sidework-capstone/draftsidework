@@ -33,56 +33,65 @@
     <div class="container">
         <div class="pic"></div>
         <h1>register</h1>
-        <form th:action="@{/register}" method="post" th:object="${business}">
+        <form th:action="@{/register}" method="post" th:object="${user}">
             <div class="form-group">
-                <label for="business_name">business name</label>
-                <input id="business_name" th:field="*{business_name}" class="form-control" type="text"/>
+                <label for="username">username</label>
+                <input id="username" th:field="*{username}" class="form-control" type="text"/>
             </div>
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>That username already exists</strong>-->
-            <!--</div>-->
-
             <div class="form-group">
-                <label for="business_email">business email</label>
-                <input id="business_email" th:field="*{business_email}" class="form-control" type="text"/>
+                <label for="email">email</label>
+                <input id="email" th:field="*{email}" class="form-control" type="text"/>
             </div>
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>Not a valid email address</strong>-->
-            <!--</div>-->
-
             <div class="form-group">
                 <label for="password">password</label>
                 <input id="password" th:field="*{password}" class="form-control" type="password"/>
             </div>
+            <div class="form-group">
+                <label for="confirm_password">confirm password</label>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password"/>
+            </div>
+            <!--<form action="@{/registerbusiness}"></form>-->
+            <!--<div class="form-group">-->
+            <!--<label for="business_name">business name</label>-->
+            <!--<input id="business_name" th:field="*{username}" class="form-control" type="text"/>-->
+            <!--</div>-->
+            <!--<div class="alert alert-danger" role="alert">-->
+            <!--<strong>That username already exists</strong>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="business_email">business email</label>-->
+            <!--<input id="business_email" th:field="*{email}" class="form-control" type="text"/>-->
+            <!--</div>-->
+            <!--<div class="alert alert-danger" role="alert">-->
+            <!--<strong>Not a valid email address</strong>-->
+            <!--</div>-->
+
 
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>Password doesn't match. Please try again.</strong>-->
             <!--</div>-->
 
-            <div class="form-group">
-                <label for="confirm_password">confirm password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password"/>
-            </div>
 
-            <div class="form-group">
-                <label for="business_phone_number">business phone number</label>
-                <input id="business_phone_number" th:field="*{business_phone}" class="form-control" type="text"/>
-            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="business_phone_number">business phone number</label>-->
+            <!--<input id="business_phone_number" th:field="*{phone}" class="form-control" type="text"/>-->
+            <!--</div>-->
 
-            <div class="form-group">
-                <label for="business_website">business website</label>
-                <input id="business_website" th:field="*{website}" class="form-control" type="text"/>
-            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="business_website">business website</label>-->
+            <!--<input id="business_website" name="website" class="form-control" type="text"/>-->
+            <!--</div>-->
 
-            <div class="form-group">
-                <label for="business_address">business address</label>
-                <input id="business_address" th:field="*{address}" class="form-control" type="text"/>
-            </div>
-            <div class="form-group">
-                <label for="info">info</label>
-                <input id="info" name="info" class="form-control" type="text"/>
-            </div>
-            <br/>
+            <!--<div class="form-group">-->
+            <!--<label for="business_address">business address</label>-->
+            <!--<input id="business_address" name="address" class="form-control" type="text"/>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="info">info</label>-->
+            <!--<input id="info" name="info" class="form-control" type="text"/>-->
+            <!--</div>-->
+            <!--<br/>-->
             <div>
                 <h2>account manager</h2>
                 <div class="panel-body">
@@ -97,10 +106,6 @@
                         <div>
                             <label for="phone_number">phone number</label>
                             <input id="phone_number" name="phone_number" class="form-control" type="text"/>
-                        </div>
-                        <div>
-                            <label for="email">email</label>
-                            <input id="email" name="email" class="form-control" type="text"/>
                         </div>
                         <div>
                             <label for="position">position</label>
