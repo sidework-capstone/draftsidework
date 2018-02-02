@@ -1,8 +1,12 @@
 package com.codeup.sidework.controllers;
 
+import com.codeup.sidework.models.Business;
 import com.codeup.sidework.repositories.Businesses;
 import com.codeup.sidework.repositories.BusinessesRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BusinessController {
@@ -14,9 +18,8 @@ public class BusinessController {
         this.businessesRepository = businessesRepository;
     }
 
-//    @PostMapping("/register")
-//    public String saveNewBusiness(@ModelAttribute Business business) {
-//        businesses.save(business);
-//        return "redirect:/users/login-mgmt";
-//    }
+    @PostMapping("/registerbusiness")
+    public void saveNewBusiness(@ModelAttribute Business business) {
+        businesses.save(business);
+    }
 }

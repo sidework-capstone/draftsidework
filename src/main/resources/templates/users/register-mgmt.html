@@ -50,19 +50,20 @@
                 <label for="confirm_password">confirm password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password"/>
             </div>
-            <!--<form action="@{/registerbusiness}"></form>-->
-            <!--<div class="form-group">-->
-            <!--<label for="business_name">business name</label>-->
-            <!--<input id="business_name" th:field="*{username}" class="form-control" type="text"/>-->
-            <!--</div>-->
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>That username already exists</strong>-->
-            <!--</div>-->
+        </form>
+        <form th:action="@{/registerbusiness}" method="post" th:object="${business}">
+            <div class="form-group">
+                <label for="business_name">business name</label>
+                <input id="business_name" th:field="*{business_name}" class="form-control" type="text"/>
+                <!--<div class="alert alert-danger" role="alert">-->
+                <!--<strong>That username already exists</strong>-->
+                <!--</div>-->
+            </div>
 
-            <!--<div class="form-group">-->
-            <!--<label for="business_email">business email</label>-->
-            <!--<input id="business_email" th:field="*{email}" class="form-control" type="text"/>-->
-            <!--</div>-->
+            <div class="form-group">
+                <label for="business_email">business email</label>
+                <input id="business_email" th:field="*{business_email}" class="form-control" type="text"/>
+            </div>
             <!--<div class="alert alert-danger" role="alert">-->
             <!--<strong>Not a valid email address</strong>-->
             <!--</div>-->
@@ -73,54 +74,53 @@
             <!--</div>-->
 
 
-            <!--<div class="form-group">-->
-            <!--<label for="business_phone_number">business phone number</label>-->
-            <!--<input id="business_phone_number" th:field="*{phone}" class="form-control" type="text"/>-->
-            <!--</div>-->
-
-            <!--<div class="form-group">-->
-            <!--<label for="business_website">business website</label>-->
-            <!--<input id="business_website" name="website" class="form-control" type="text"/>-->
-            <!--</div>-->
-
-            <!--<div class="form-group">-->
-            <!--<label for="business_address">business address</label>-->
-            <!--<input id="business_address" name="address" class="form-control" type="text"/>-->
-            <!--</div>-->
-            <!--<div class="form-group">-->
-            <!--<label for="info">info</label>-->
-            <!--<input id="info" name="info" class="form-control" type="text"/>-->
-            <!--</div>-->
-            <!--<br/>-->
-            <div>
-                <h2>account manager</h2>
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <!--<div class="panel-heading">currently employed?</div>-->
-                        <div class="form-group">
-                            <label for="first_name">first name</label>
-                            <input id="first_name" name="first_name" class="form-control" type="text"/>
-                            <label for="last_name">last name</label>
-                            <input id="last_name" name="last_name" class="form-control" type="text"/>
-                        </div>
-                        <div>
-                            <label for="phone_number">phone number</label>
-                            <input id="phone_number" name="phone_number" class="form-control" type="text"/>
-                        </div>
-                        <div>
-                            <label for="position">position</label>
-                            <input id="position" name="position" class="form-control" type="text"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br/>
             <div class="form-group">
-                <label><a href="#">please upload business owner verification letter</a></label>
+                <label for="business_phone_number">business phone number</label>
+                <input id="business_phone_number" th:field="*{business_phone}" class="form-control" type="text"/>
             </div>
-            <br/>
-            <input type="submit" class="btn btn-danger btn-block"/>
+
+            <div class="form-group">
+                <label for="business_website">business website</label>
+                <input id="business_website" th:field="*{website}" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <label for="business_address">business address</label>
+                <input id="business_address" th:field="*{address}" class="form-control" type="text"/>
+            </div>
+            <div class="form-group">
+                <label for="info">info</label>
+                <input id="info" th:field="*{business_info}" class="form-control" type="text"/>
+            </div>
         </form>
+        <!--<div>-->
+        <!--<h2>account manager</h2>-->
+        <!--<div class="panel-body">-->
+        <!--<div class="panel panel-default">-->
+        <!--&lt;!&ndash;<div class="panel-heading">currently employed?</div>&ndash;&gt;-->
+        <!--<div class="form-group">-->
+        <!--<label for="first_name">first name</label>-->
+        <!--<input id="first_name" name="first_name" class="form-control" type="text"/>-->
+        <!--<label for="last_name">last name</label>-->
+        <!--<input id="last_name" name="last_name" class="form-control" type="text"/>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<label for="phone_number">phone number</label>-->
+        <!--<input id="phone_number" name="phone_number" class="form-control" type="text"/>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<label for="position">position</label>-->
+        <!--<input id="position" name="position" class="form-control" type="text"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <br/>
+        <div class="form-group">
+            <label><a href="#">please upload business owner verification letter</a></label>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-danger btn-block"/>
     </div>
 </div>
 </body>

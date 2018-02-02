@@ -2,8 +2,6 @@ package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.models.User;
-import com.codeup.sidework.repositories.Businesses;
-import com.codeup.sidework.repositories.BusinessesRepository;
 import com.codeup.sidework.repositories.Users;
 import com.codeup.sidework.repositories.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,17 +14,12 @@ import java.util.Arrays;
 
 @Controller
 public class UserController {
-    private Businesses businesses;
     private Users users;
     private PasswordEncoder passwordEncoder;
-    private final BusinessesRepository businessesRepository;
     private final UsersRepository usersRepository;
 
-    public UserController(Businesses businesses, Users users, BusinessesRepository businessesRepository,
-                          UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
-        this.businesses = businesses;
+    public UserController(Users users, UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
         this.users = users;
-        this.businessesRepository = businessesRepository;
         this.usersRepository = usersRepository;
         this.passwordEncoder = passwordEncoder;
     }
@@ -34,14 +27,14 @@ public class UserController {
     @GetMapping("/users/register-mgmt")
     public String showManagementRegisterForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("business", new Business());
         return "users/register-mgmt";
     }
 
     @PostMapping("/register")
-    public String saveManagement(@ModelAttribute Business business, @ModelAttribute User user) {
+    public String saveManagement(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
-//        businesses.save(business);
         users.save(user);
         return "redirect:/users/login-mgmt";
     }
