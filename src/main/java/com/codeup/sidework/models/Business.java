@@ -9,7 +9,8 @@ import java.util.List;
 public class Business {
 
     //id
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
 
     //name
@@ -71,9 +72,9 @@ public class Business {
     // creates a list of all employees associated with that business
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name="business_users",
-            joinColumns = {@JoinColumn(name="business_id")},
-            inverseJoinColumns = {@JoinColumn(name="user_id")}
+            name = "business_users",
+            joinColumns = {@JoinColumn(name = "business_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")}
     )
     private List<User> users;
 
