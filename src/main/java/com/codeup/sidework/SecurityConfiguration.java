@@ -33,34 +33,61 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            /* Login configuration */
                 .formLogin()
-                .loginPage("/users/login-worker")
-                .defaultSuccessUrl("/users/workspace-worker") // user's home page, it can be any URL
+                .loginPage("/users/login-mgmt")
+                .defaultSuccessUrl("/users/workspace-mgmt")
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login-worker?logout") // append a query string value
-            /* Pages that can be viewed without having to log in */
+                .logoutSuccessUrl("/login-mgmt?logout")
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-//                        "/listings", // anyone can see the job listing pages
-                        "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker")
-                // anyone can see the homepage, login & register pages,
-                // and view all users without being signed in
-                // -- check with Michael
+                        "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-mgmt",
+                        "/users/login-worker"
+                )
                 .permitAll()
-            /* Pages that require authentication */
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-//                        "/listings/create",  // only authenticated users can create ads
-//                        "/listings/edit", // only authenticated users can create ads
-                        "/users/workspace-mgmt", "/users/workspace-worker",
-                        "/users/{id}/edit" // only authenticated users can edit their profile
+                        "/users/workspace-mgmt"
                 )
                 .authenticated()
         ;
     }
+
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//            /* Login configuration */
+//                .formLogin()
+//                .loginPage("/users/login-worker")
+//                .defaultSuccessUrl("/users/workspace-worker") // user's home page, it can be any URL
+//                .permitAll()
+//                .and()
+//                .logout()
+//                .logoutSuccessUrl("/login-worker?logout") // append a query string value
+//            /* Pages that can be viewed without having to log in */
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers(
+////                        "/listings", // anyone can see the job listing pages
+//                        "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-mgmt",
+//                        "/users/login-worker")
+//                // anyone can see the homepage, login & register pages,
+//                // and view all users without being signed in
+//                // -- check with Michael
+//                .permitAll()
+//            /* Pages that require authentication */
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers(
+////                        "/listings/create",  // only authenticated users can create ads
+////                        "/listings/edit", // only authenticated users can create ads
+//                        "/users/workspace-worker",
+//                        "/users/{id}/edit" // only authenticated users can edit their profile
+//                )
+//                .authenticated()
+//        ;
+//    }
 }
