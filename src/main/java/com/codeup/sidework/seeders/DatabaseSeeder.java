@@ -57,10 +57,10 @@ public class DatabaseSeeder {
         String sql = "SELECT * FROM department c WHERE department_name IN (\"" + dc0 + "\", \"" + dc1 + "\", \"" + dc2 + "\")";
         List<Department> rs = jdbcTemplate.query(sql, (resultSet, rowNum) -> null);
         if(rs == null || rs.size() <= 0) {
-            Department c = new Department("Front of House");
-            Department c2 = new Department("Back of House");
-            Department c3 = new Department("Operators");
-            departmentRepository.save(Arrays.asList(c, c2, c3));
+            Department deptFOH = new Department("Front of House");
+            Department deptBOH = new Department("Back of House");
+            Department deptMGMT = new Department("Operators");
+            departmentRepository.save(Arrays.asList(deptFOH, deptBOH, deptMGMT));
             logger.info("department table seeded");
         } else {
             logger.trace("Department Seeding Not Required");
@@ -68,17 +68,17 @@ public class DatabaseSeeder {
     }
 
     private void seedDivisionsTable() {
-        String ds = "Floor", ds1 = "Bar", ds2 = "Kitchen", ds3 = "Support", ds4 = "Operators";
+        String ds = "floorJobs", ds1 = "barJobs", ds2 = "kitchenJobs", ds3 = "supportJobs", ds4 = "mgmtJobs";
         String sql = "SELECT * FROM positions_division s WHERE division_id IN (\"" + ds + "\", \"" + ds1 + "\", \"" + ds2 + "\", \"" + ds3 + "\"," +
                 " \"" + ds4 + "\")";
         List<Division> rs = jdbcTemplate.query(sql, (resultSet, rowNum) -> null);
         if(rs == null || rs.size() <= 0) {
-            Division s = new Division("Floor");
-            Division s2 = new Division("Bar");
-            Division s3 = new Division("Kitchen");
-            Division s4 = new Division("Support");
-            Division s5 = new Division("Operators");
-            divisionRepository.save(Arrays.asList(s, s2, s3, s4, s5));
+            Division floorJobs = new Division("floorJobs");
+            Division barJobs = new Division("barJobs");
+            Division kitchenJobs = new Division("kitchenJobs");
+            Division supportJobs = new Division("supportJobs");
+            Division mgmtJobs = new Division("mgmtJobs");
+            divisionRepository.save(Arrays.asList(floorJobs, barJobs, kitchenJobs, supportJobs, mgmtJobs));
             logger.info("division table seeded");
         } else {
             logger.trace("Division Seeding Not Required.");

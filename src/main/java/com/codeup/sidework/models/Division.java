@@ -49,7 +49,7 @@ public class Division {
     }
 
 
-    public Division(String divisionName) {
+        public Division(String divisionName) {
         this.divisionName = divisionName;
     }
 
