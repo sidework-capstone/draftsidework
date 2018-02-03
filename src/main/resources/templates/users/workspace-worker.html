@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: main-header('All posts')">
     <meta charset="UTF-8"/>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
@@ -22,6 +22,10 @@
     </div>
 </nav>
 <br/>
+
+<!--<div th:each="listing : ${listings}">-->
+    <!--<h1 th:text="${listing.position}"></h1>-->
+    <!--<p th:text="${listing.businessName}"></p>-->
 <div class="container">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-3 cate"></div>
