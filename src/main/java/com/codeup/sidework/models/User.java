@@ -22,6 +22,14 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
+    //first name
+    @Column(nullable = false)
+    private String firstName;
+
+    //last name
+    @Column(nullable = false)
+    private String lastName;
+
     //email
     @Column(nullable = false, unique = true)
     private String email;
@@ -31,7 +39,7 @@ public class User {
     private String password;
 
     //phone
-    @Column(nullable = false)
+    @Column
     private int phone;
 
     //bio
@@ -95,6 +103,22 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -185,8 +209,11 @@ public class User {
         this.instagram = instagram;
     }
 
-    public User(String username, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
+    public User(List<UserPositions> userPositions, String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
+        this.userPositions = userPositions;
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phone = phone;
@@ -202,6 +229,8 @@ public class User {
 
     public User(User copy) {
         this.username = copy.username;
+        this.firstName = copy.firstName;
+        this.lastName = copy.lastName;
         this.email = copy.email;
         this.password = copy.password;
         this.phone = copy.phone;
@@ -218,4 +247,12 @@ public class User {
     public User() {
 
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "User[username='%s', id=%d, firstName='%s', lastName='%s']",
+                username, id, firstName, lastName);
+    }
+
 }
