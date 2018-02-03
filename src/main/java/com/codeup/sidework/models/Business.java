@@ -17,11 +17,11 @@ public class Business {
     private long id;
 
     //name
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String businessName;
 
     //email
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String businessEmail;
 
     //password
@@ -213,7 +213,6 @@ public class Business {
         this.linkedIn = linkedIn;
         this.instagram = instagram;
     }
-
 
     public Business() {
 
