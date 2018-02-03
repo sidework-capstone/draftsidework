@@ -1,6 +1,7 @@
 package com.codeup.sidework.services;
 
 
+import com.codeup.sidework.daos.Roles;
 import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.models.UserWithRoles;
@@ -15,6 +16,7 @@ import java.util.Collections;
 @Service
 public class UserDetailsLoader implements UserDetailsService {
     private final UserRepository usersDao;
+    private Roles roles;
 
     @Autowired
     public UserDetailsLoader(UserRepository usersDao) {
@@ -28,6 +30,6 @@ public class UserDetailsLoader implements UserDetailsService {
             throw new UsernameNotFoundException("The username " + username + "could not be found.");
         }
 
-        return new UserWithRoles(user, Collections.emptyList());
+        return new UserWithRoles(user, roles.ofUserWith(username));
     }
 }
