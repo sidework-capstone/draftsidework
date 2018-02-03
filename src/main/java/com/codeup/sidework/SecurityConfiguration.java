@@ -36,8 +36,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
             /* Login configuration */
             .formLogin()
-                .loginPage("/users/login-worker")
-                .defaultSuccessUrl("/users/workspace-worker") // user's home page, it can be any URL
+                .loginPage("/users/login-worker") // && ("/users/login-mgmt")
+                .defaultSuccessUrl("/users/workspace-worker") // && ("/users/workspace-mgmt") // class notes - user's home page, it can be any URL
                 .permitAll()
             .and()
                 .logout()
@@ -47,8 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
 //                        "/listings",  // anyone can see the job listing pages
-                                       // anyone can see the homepage, login & register pages, and view all users without being signed in
-                        "/", "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker")
+                        "/", "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker") // anyone can see the homepage, login & register pages, and view all users without being signed in
                 .permitAll()
             /* Pages that require authentication */
             .and()
