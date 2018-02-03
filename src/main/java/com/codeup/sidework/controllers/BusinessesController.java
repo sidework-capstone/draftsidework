@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BusinessesController {
-    private final BusinessesRepository businessesDao;
+    private final BusinessesRepository businessesRepository;
     private PasswordEncoder passwordEncoder;
 
-    public BusinessesController(BusinessesRepository businessesDao, PasswordEncoder passwordEncoder) {
-        this.businessesDao = businessesDao;
+    public BusinessesController(BusinessesRepository businessesRepository, PasswordEncoder passwordEncoder) {
+        this.businessesRepository = businessesRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -29,7 +29,7 @@ public class BusinessesController {
     public String saveManagementBusiness(@ModelAttribute Business business) {
         String hash = passwordEncoder.encode(business.getPassword());
         business.setPassword(hash);
-        businessesDao.save(business);
+        businessesRepository.save(business);
         return "redirect:/users/login-mgmt";
     }
 
