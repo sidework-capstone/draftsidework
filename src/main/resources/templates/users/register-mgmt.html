@@ -35,12 +35,12 @@
         <h1>register</h1>
         <form th:action="@{/users/register-mgmt}" method="post" th:object="${business}">
             <div class="form-group">
-                <label for="username">business name</label>
-                <input id="username" th:field="*{businessName}" class="form-control" type="text"/>
+                <label for="username">username</label>
+                <input id="username" th:field="*{userName}" class="form-control" type="text"/>
             </div>
             <div class="form-group">
                 <label for="email">email</label>
-                <input id="email" th:field="*{businessEmail}" class="form-control" type="email"/>
+                <input id="email" th:field="*{email}" class="form-control" type="email"/>
             </div>
             <div class="form-group">
                 <label for="password">password</label>

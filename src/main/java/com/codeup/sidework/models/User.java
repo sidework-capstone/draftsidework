@@ -8,10 +8,12 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
+
     // this creates a user_positions pivot table
-    // connected to UserPositions class
+    // connected to USERPOSITIONS class
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
+
 
     //id
     @Id
@@ -80,13 +82,7 @@ public class User {
     private List<Business> businesses;
 
 
-    public List<UserPositions> getUserPositions() {
-        return userPositions;
-    }
 
-    public void setUserPositions(List<UserPositions> userPositions) {
-        this.userPositions = userPositions;
-    }
 
 
     public long getId() {
@@ -209,6 +205,36 @@ public class User {
         this.instagram = instagram;
     }
 
+
+
+
+
+    public void setUserPositions(List<UserPositions> userPositions) {
+        this.userPositions = userPositions;
+    }
+
+    public List<UserPositions> getUserPositions() {
+        return userPositions;
+    }
+
+//    public User(List<UserPositions> userPositions) {
+//        this.userPositions = userPositions;
+//    }
+
+    public void setBusinesses(List<Business> businesses) {
+        this.businesses = businesses;
+    }
+
+    public List<Business> getBusinesses() {
+        return businesses;
+    }
+
+    public User(List<Business> businesses) {
+        this.businesses = businesses;
+    }
+
+
+
     public User(List<UserPositions> userPositions, String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
         this.userPositions = userPositions;
         this.username = username;
@@ -257,3 +283,4 @@ public class User {
     }
 
 }
+

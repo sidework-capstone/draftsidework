@@ -66,6 +66,7 @@ public class Listings {
     private Business business;
 
 
+
     public long getId() {
         return id;
     }
@@ -131,6 +132,30 @@ public class Listings {
     }
 
 
+
+
+    public List<Positions> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<Positions> positions) {
+        this.positions = positions;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
+    }
+
+
+
+
+    public Listings(List<Positions> positions) {
+        this.positions = positions;
+    }
 
     public Listings(int pay, int requiredLabor, DateType shiftDate, int shiftQuantity, TimeType startTime, TimeType endTime, String description) {
         this.pay = pay;

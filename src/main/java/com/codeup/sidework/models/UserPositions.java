@@ -76,7 +76,7 @@ public class UserPositions implements Serializable {
         this.stopDate = stopDate;
     }
 
-    public UserPositions (){
+    public UserPositions() {
 
     }
 }

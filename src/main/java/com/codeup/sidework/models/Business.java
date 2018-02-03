@@ -10,19 +10,24 @@ public class Business {
     // this is connecting to the listings table.
     // for any one business this returns a list of all it's job listings
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Listings> jobs;
+    private List<Listings> listings;
+
+//    public Business(List<Listings> listings) {
+//        this.listings = listings;
+//    }
+
 
     //id
     @Id @GeneratedValue
     private long id;
 
-    //name
+    //username
     @Column(nullable = false, unique = true)
-    private String businessName;
+    private String userName;
 
     //email
     @Column(nullable = false, unique = true)
-    private String businessEmail;
+    private String email;
 
     //password
     @Column(nullable = false)
@@ -33,15 +38,15 @@ public class Business {
     private int businessPhone;
 
     //website
-    @Column(nullable = false)
+    @Column
     private String website;
 
     //address
-    @Column(nullable = false)
+    @Column
     private String address;
 
     //info
-    @Column(nullable = false)
+    @Column
     private String businessInfo;
 
     //account_mgr
@@ -75,6 +80,33 @@ public class Business {
     private List<User> users;
 
 
+
+
+    public List<Listings> getListings() {
+        return listings;
+    }
+
+    public void setListings(List<Listings> listings) {
+        this.listings = listings;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+
+    public Business(List<User> users) {
+        this.users = users;
+    }
+
+
+
+
+
     public long getId() {
         return id;
     }
@@ -83,20 +115,20 @@ public class Business {
         this.id = id;
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getBusinessEmail() {
-        return businessEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBusinessEmail(String businessEmail) {
-        this.businessEmail = businessEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -131,20 +163,20 @@ public class Business {
         this.address = address;
     }
 
-    public String getAccountManager() {
-        return accountManager;
-    }
-
-    public void setAccountManager(String accountManager) {
-        this.accountManager = accountManager;
-    }
-
     public String getBusinessInfo() {
         return businessInfo;
     }
 
     public void setBusinessInfo(String businessInfo) {
         this.businessInfo = businessInfo;
+    }
+
+    public String getAccountManager() {
+        return accountManager;
+    }
+
+    public void setAccountManager(String accountManager) {
+        this.accountManager = accountManager;
     }
 
     public String getFacebook() {
@@ -179,39 +211,38 @@ public class Business {
         this.instagram = instagram;
     }
 
-    public List<Listings> getJobs() {
-        return jobs;
-    }
 
-    public void setJobs(List<Listings> jobs) {
-        this.jobs = jobs;
-    }
 
-    public List<User> getUsers() {
-        return users;
-    }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
-    public Business(List<Listings> jobs) {
-        this.jobs = jobs;
-    }
-
-    public Business(String businessName, String businessEmail, String password, int businessPhone, String website, String address, String accountManager, String businessInfo, String facebook, String twitter, String linkedIn, String instagram) {
-        this.businessName = businessName;
-        this.businessEmail = businessEmail;
+    public Business(String userName, String email, String password, int businessPhone, String website, String address, String businessInfo, String accountManager, String facebook, String twitter, String linkedIn, String instagram) {
+        this.userName = userName;
+        this.email = email;
         this.password = password;
         this.businessPhone = businessPhone;
         this.website = website;
         this.address = address;
-        this.accountManager = accountManager;
         this.businessInfo = businessInfo;
+        this.accountManager = accountManager;
         this.facebook = facebook;
         this.twitter = twitter;
         this.linkedIn = linkedIn;
         this.instagram = instagram;
+    }
+
+    public Business(Business copy) {
+        this.id = copy.id;
+        this.userName = copy.userName;
+        this.email = copy.email;
+        this.password = copy.password;
+        this.businessPhone = copy.businessPhone;
+        this.website = copy.website;
+        this.address = copy.address;
+        this.businessInfo = copy.businessInfo;
+        this.accountManager = copy.accountManager;
+        this.facebook = copy.facebook;
+        this.twitter = copy.twitter;
+        this.linkedIn = copy.linkedIn;
+        this.instagram = copy.instagram;
     }
 
     public Business() {
@@ -221,8 +252,8 @@ public class Business {
     @Override
     public String toString() {
         return String.format(
-                "Business[businessName='%s', id=%d, businessEmail='%s', website='%s', address='%s', businessInfo='%s']",
-                businessName, id, businessEmail, website, address, businessInfo);
+                "Business[usernameName='%s', id=%d, businessEmail='%s']",
+                userName, id, email);
     }
 
 
