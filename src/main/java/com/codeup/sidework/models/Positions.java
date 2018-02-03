@@ -54,8 +54,6 @@ public class Positions implements PropertyEditor {
     }
 
 
-
-
     public long getId() {
         return id;
     }

@@ -7,6 +7,9 @@ import java.util.List;
 @Entity
 @Table(name = "department")
 public class Department {
+    String [] foh;
+    String [] boh;
+    String [] boss;
 
     //id
     @Id @GeneratedValue

@@ -7,6 +7,10 @@ import java.util.List;
 @Entity
 @Table(name = "business")
 public class Business {
+    // this is connecting to the listings table.
+    // for any one business this returns a list of all it's job listings
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
+    private List<Listings> jobs;
 
     //id
     @Id @GeneratedValue
@@ -17,7 +21,7 @@ public class Business {
     private String businessName;
 
     //email
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String businessEmail;
 
     //password
@@ -25,7 +29,7 @@ public class Business {
     private String password;
 
     //phone number
-    @Column(nullable = false)
+    @Column
     private int businessPhone;
 
     //website
@@ -36,13 +40,13 @@ public class Business {
     @Column(nullable = false)
     private String address;
 
-    //account_mgr
-    @Column(nullable = false)
-    private String accountManager;
-
     //info
     @Column(nullable = false)
     private String businessInfo;
+
+    //account_mgr
+    @Column
+    private String accountManager;
 
     //facebook
     @Column
@@ -59,13 +63,6 @@ public class Business {
     //instagram
     @Column
     private String instagram;
-
-
-    // this is connecting to the listings table.
-    // for any one business this returns a list of all it's job listings
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Listings> jobs;
-
 
     // this is connecting to the user table.
     // creates a list of all employees associated with that business
@@ -182,6 +179,26 @@ public class Business {
         this.instagram = instagram;
     }
 
+    public List<Listings> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Listings> jobs) {
+        this.jobs = jobs;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public Business(List<Listings> jobs) {
+        this.jobs = jobs;
+    }
+
     public Business(String businessName, String businessEmail, String password, int businessPhone, String website, String address, String accountManager, String businessInfo, String facebook, String twitter, String linkedIn, String instagram) {
         this.businessName = businessName;
         this.businessEmail = businessEmail;
@@ -197,9 +214,16 @@ public class Business {
         this.instagram = instagram;
     }
 
-
     public Business() {
 
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Business[businessName='%s', id=%d, businessEmail='%s', website='%s', address='%s', businessInfo='%s']",
+                businessName, id, businessEmail, website, address, businessInfo);
+    }
+
 
 }

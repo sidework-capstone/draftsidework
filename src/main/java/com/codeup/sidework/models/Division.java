@@ -27,7 +27,7 @@ public class Division {
 
 
     // creates a positions_division pivot table
-    // connecting Positions class creating join table
+    // connecting PositionsRepository class creating join table
     @ManyToMany(mappedBy = "divisions")
     private List<Positions> positions;
 
@@ -49,7 +49,7 @@ public class Division {
     }
 
 
-    public Division(String divisionName) {
+        public Division(String divisionName) {
         this.divisionName = divisionName;
     }
 

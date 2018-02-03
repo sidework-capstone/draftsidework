@@ -35,30 +35,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             /* Login configuration */
-                .formLogin()
+            .formLogin()
                 .loginPage("/users/login-worker")
                 .defaultSuccessUrl("/users/workspace-worker") // user's home page, it can be any URL
                 .permitAll()
-                .and()
+            .and()
                 .logout()
                 .logoutSuccessUrl("/login-worker?logout") // append a query string value
             /* Pages that can be viewed without having to log in */
-                .and()
+            .and()
                 .authorizeRequests()
                 .antMatchers(
-//                        "/listings", // anyone can see the job listing pages
-                        "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker")
-                // anyone can see the homepage, login & register pages,
-                // and view all users without being signed in
-                // -- check with Michael
+//                        "/listings",  // anyone can see the job listing pages
+                                       // anyone can see the homepage, login & register pages, and view all users without being signed in
+                        "/", "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker")
                 .permitAll()
             /* Pages that require authentication */
-                .and()
+            .and()
                 .authorizeRequests()
                 .antMatchers(
 //                        "/listings/create",  // only authenticated users can create ads
 //                        "/listings/edit", // only authenticated users can create ads
-                        "/users/workspace-mgmt", "/users/workspace-worker",
                         "/users/{id}/edit" // only authenticated users can edit their profile
                 )
                 .authenticated()

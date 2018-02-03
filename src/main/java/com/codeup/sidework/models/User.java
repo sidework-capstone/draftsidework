@@ -228,6 +228,7 @@ public class User {
     }
 
     public User(User copy) {
+        this.id = copy.id;
         this.username = copy.username;
         this.firstName = copy.firstName;
         this.lastName = copy.lastName;
