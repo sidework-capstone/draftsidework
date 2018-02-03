@@ -11,6 +11,10 @@ import java.util.List;
 @Entity
 @Table(name = "positions")
 public class Positions implements PropertyEditor {
+    String [] floorJobsPath;
+    String [] kitchenJobsPath;
+    String [] supportJobsPath;
+    String [] operatorJobsPath;
 
 
     // creates a user_positions pivot table
@@ -53,8 +57,37 @@ public class Positions implements PropertyEditor {
         this.userPositions = userPositions;
     }
 
+    public String[] getFloorJobsPath() {
+        return floorJobsPath;
+    }
 
+    public void setFloorJobsPath(String[] floorJobsPath) {
+        this.floorJobsPath = floorJobsPath;
+    }
 
+    public String[] getKitchenJobsPath() {
+        return kitchenJobsPath;
+    }
+
+    public void setKitchenJobsPath(String[] kitchenJobsPath) {
+        this.kitchenJobsPath = kitchenJobsPath;
+    }
+
+    public String[] getSupportJobsPath() {
+        return supportJobsPath;
+    }
+
+    public void setSupportJobsPath(String[] supportJobsPath) {
+        this.supportJobsPath = supportJobsPath;
+    }
+
+    public String[] getOperatorJobsPath() {
+        return operatorJobsPath;
+    }
+
+    public void setOperatorJobsPath(String[] operatorJobsPath) {
+        this.operatorJobsPath = operatorJobsPath;
+    }
 
     public long getId() {
         return id;
