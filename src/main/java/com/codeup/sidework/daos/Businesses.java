@@ -1,8 +1,8 @@
-package com.codeup.sidework.repositories;
+package com.codeup.sidework.daos;
 
 import com.codeup.sidework.models.Business;
 import org.springframework.data.repository.CrudRepository;
 
-public interface BusinessesRepository extends CrudRepository<Business, Long> {
+public interface Businesses extends CrudRepository<Business, Long> {
     Business findByBusinessName(String businessName);
 }

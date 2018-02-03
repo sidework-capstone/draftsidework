@@ -1,4 +1,4 @@
-package Controllers;
+package com.codeup.sidework.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloWorldController {
+public class HomeController {
 
     @GetMapping("/say/{greeting}/to/{name}")
     @ResponseBody
@@ -23,15 +23,15 @@ public class HelloWorldController {
         return "";
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/home")
     public String helloWorld() {
-        return "hello";
+        return "home";
     }
 
-    @GetMapping("/hello/{name}")
+    @GetMapping("/home/{name}")
     public String sayHelloTo(@PathVariable String name, Model viewModel) {
         viewModel.addAttribute("name", name);
-        return "hello";
+        return "home";
     }
 
 }
