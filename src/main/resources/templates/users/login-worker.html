@@ -20,8 +20,8 @@
     You have been logged out.
 </div>
 
-
-<form th:action="@{/users/workspace-worker}" method="post">
+<!--th:action must match GetMapping path-->
+<form th:action="@{/users/login-worker}" method="post">
     <label for="username">username</label>
     <input id="username" name="username" type="text"/>
     <label for="password">password</label>
