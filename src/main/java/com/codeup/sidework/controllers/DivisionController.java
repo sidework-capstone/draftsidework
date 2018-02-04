@@ -13,17 +13,41 @@ import java.util.List;
 public class DivisionController {
 
     @RequestMapping(value="/users/register-worker")
-    private ModelAndView viewDivisionList() {
-        ModelAndView mav = new ModelAndView("divisionsForm");
+    private ModelAndView viewFOHDivisionList() {
+        ModelAndView mav = new ModelAndView("fohDivisionsForm");
 
-        List<String> divisionsList = new ArrayList<String>();
-        divisionsList.add("Floor");
-        divisionsList.add("Bar");
-        divisionsList.add("Kitchen");
-        divisionsList.add("Support");
-        divisionsList.add("Operators");
+        List<String> fohDivisionsList = new ArrayList<String>();
+        fohDivisionsList.add("Floor");
+        fohDivisionsList.add("Bar");
 
-        mav.addObject("divisionsList", divisionsList);
+        mav.addObject("fohDivisionsList", fohDivisionsList);
+        mav.addObject("division", new Division());
+
+        return mav;
+    }
+
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewBOHDivisionList() {
+        ModelAndView mav = new ModelAndView("bohDivisionsForm");
+
+        List<String> bohDivisionsList = new ArrayList<String>();
+        bohDivisionsList.add("Kitchen");
+        bohDivisionsList.add("Support");
+
+        mav.addObject("bohDivisionsList", bohDivisionsList);
+        mav.addObject("division", new Division());
+
+        return mav;
+    }
+
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewOperatorDivisionList() {
+        ModelAndView mav = new ModelAndView("operatorDivisionsForm");
+
+        List<String> operatorDivisionsList = new ArrayList<String>();
+        operatorDivisionsList.add("Operators");
+
+        mav.addObject("operatorDivisionsList", operatorDivisionsList);
         mav.addObject("division", new Division());
 
         return mav;
@@ -31,11 +55,33 @@ public class DivisionController {
 
 
     @RequestMapping(value="/listings")
-    private ModelAndView processDivsion(@ModelAttribute Division division) {
-        ModelAndView mav = new ModelAndView("department-result");
+    private ModelAndView processFOHDivsion(@ModelAttribute Division division) {
+        ModelAndView mav = new ModelAndView("division-result");
         mav.addObject("division", division);
 
         return mav;
     }
 
+    @RequestMapping(value="/listings")
+    private ModelAndView processBOHDivsion(@ModelAttribute Division division) {
+        ModelAndView mav = new ModelAndView("division-result");
+        mav.addObject("division", division);
+
+        return mav;
+    }
+
+
+    @RequestMapping(value="/listings")
+    private ModelAndView operatorDivsion(@ModelAttribute Division division) {
+        ModelAndView mav = new ModelAndView("division-result");
+        mav.addObject("division", division);
+
+        return mav;
+    }
+
+
 }
+
+//        fohDivisionsList.add("Kitchen");
+//                divisionsList.add("Support");
+//                divisionsList.add("Operators");
