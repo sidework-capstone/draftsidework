@@ -1,13 +1,18 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.UserRepository;
-import com.codeup.sidework.models.Positions;
 import com.codeup.sidework.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 
 @Controller
@@ -28,88 +33,62 @@ public class UsersController {
 
     @PostMapping("/users/register-worker")
     public String registerNewWorker(@ModelAttribute User user) {
+
+        //// AUTHENTICATION OF USERNAME/PASSWORD
+//        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
+//        User existingUser = usersDao.findByUsername(user.getUsername());
+//        if (existingUser != null) {
+//            validation.rejectValue("username", "username", "this username is unavailable"); }
+//        if (user.getPassword().equals("")) {
+//            validation.rejectValue("password", "password", "password must be at least 5 characters"); }
+        //// do we need to add another column to confirm password for authentication?
+//        //        if (!user.getPassword().equals(user.getConfirmPassword())) {
+//        //            validation.rejectValue("confirmPassword", "confirmPassword", "passwords must match");
+//        //        }
+//        if (validation.hasErrors()) {
+//            model.addAttribute("errors", validation);
+//            model.addAttribute("user", user);
+//            return "users/register"; }
+
+
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
+//        authenticate(user);
         return "redirect:/users/login-worker";
     }
 
+    //// AUTHENTICATION OF USER WITH USERDETAILSLOADER
+//    private void authenticate(User authenticatedUser) {
+//        UserDetailsLoader userDetailsLoader = new UserWithRoles(authenticatedUser, Collections.emptyList());
+//        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsLoader; userDetailsLoader.getPassword(), userDetailsLoader.getAuthorities());
+//        SecurityContext context = SecurityContextHolder.getContext();
+//        context.setAuthentication(authentication);
+//    }
 
-    @InitBinder
-    public void initBind(final WebDataBinder binder) {
-        binder.registerCustomEditor(Positions.class, new Positions());
+    @GetMapping("/users/workspace-worker")
+    public String showWorkerWorkspace(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        if (user.getId() == 0) {
+////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//            return "redirect:/users/login-worker";
+//        }
+
+        user = usersDao.findOne(user.getId());
+        model.addAttribute("user", user);
+        return "/users/workspace-worker";
     }
+
+
 }
 
-
-//    private Businesses businesses;
-//    private Users users;
-//    private PasswordEncoder passwordEncoder;
-//    private final BusinessesRepository businessesRepository;
-//    private final UserRepository usersRepository;
+    ////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^
+//        Iterable<Listings> listings = listingsService.findAll();
+//        model.addAttribute("listings", listings);
 //
-//    public UserController(Businesses businesses, Users users, BusinessesRepository businessesRepository,
-//                          UserRepository usersRepository, PasswordEncoder passwordEncoder) {
-//        this.businesses = businesses;
-//        this.users = users;
-//        this.businessesRepository = businessesRepository;
-//        this.usersRepository = usersRepository;
-//        this.passwordEncoder = passwordEncoder;
+    ////  RESEARCH HOW TO BIND MULTIPLE CHECKBOXES TO ENTITIES
+//    ModelAndView class documentation
+//    @InitBinder
+//    public void initBind(final WebDataBinder binder) {
+//        binder.registerCustomEditor(Positions.class, new Positions());
 //    }
-//
-//    @GetMapping("/users/register-mgmt")
-//    public String showManagementRegisterForm(Model model) {
-//        model.addAttribute("user", new User());
-//        return "users/register-mgmt";
-//    }
-//
-//    @PostMapping("/register")
-//    public String saveManagement(@ModelAttribute Business business, @ModelAttribute User user) {
-//        String hash = passwordEncoder.encode(user.getPassword());
-//        user.setPassword(hash);
-////        businesses.save(business);
-//        users.save(user);
-//        return "redirect:/users/login-mgmt";
-//    }
-//
-//    @GetMapping("/users/register-worker")
-//    public String showWorkerRegisterForm(Model model) {
-//        model.addAttribute("user", new User());
-//        return "users/register-worker";
-//    }
-//
-//    @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
-//    public String saveWorker(@ModelAttribute User user,
-//                             @RequestParam(value = "optionsRadios") String[] checkboxValue,
-//                             @RequestParam(value = "employed") boolean isEmployed,
-//                             @RequestParam(value = "available") boolean isAvailable) {
-//        String hash = passwordEncoder.encode(user.getPassword());
-//        user.setPassword(hash);
-//        user.setSkills(Arrays.toString(checkboxValue));
-//        if (isEmployed) {
-//            user.setCurrentEmployment(true);
-//        } else {
-//            user.setCurrentEmployment(false);
-//        }
-//
-//        if (isAvailable) {
-//            user.setAvailability(true);
-//        } else {
-//            user.setAvailability(false);
-//        }
-//
-//        users.save(user);
-//
-//        return "redirect:/users/login-worker";
-//    }
-//
-//    @GetMapping("/users/workspace-mgmt")
-//    public String showManagementWorkspace() {
-//        return "users/workspace-mgmt";
-//    }
-//
-//    @GetMapping("/users/workspace-worker")
-//    public String showWorkerWorkspace() {
-//        return "users/workspace-worker";
-//    }
-//}

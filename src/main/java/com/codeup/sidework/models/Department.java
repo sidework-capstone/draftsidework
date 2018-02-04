@@ -7,9 +7,6 @@ import java.util.List;
 @Entity
 @Table(name = "department")
 public class Department {
-    String [] foh;
-    String [] boh;
-    String [] boss;
 
     //id
     @Id @GeneratedValue
@@ -25,6 +22,7 @@ public class Department {
     // connected to Division class
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     private List<Division> divisions;
+
 
 
     public long getId() {
@@ -43,6 +41,22 @@ public class Department {
         this.departmentName = departmentName;
     }
 
+
+
+    public void setDivisions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
+
+    public List<Division> getDivisions() {
+        return divisions;
+    }
+
+
+
+
+    public Department(List<Division> divisions) {
+        this.divisions = divisions;
+    }
 
 
     public Department(String departmentName) {

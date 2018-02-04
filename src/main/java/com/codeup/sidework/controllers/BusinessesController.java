@@ -34,9 +34,9 @@ public class BusinessesController {
     }
 
 
-//    @PostMapping("/register")
-//    public String saveNewBusiness(@ModelAttribute Business business) {
-//        businesses.save(business);
-//        return "redirect:/users/login-mgmt";
-//    }
+    @GetMapping("/users/workspace-mgmt")
+    public String showManagmentWorkspace() {
+
+        return "users/workspace-mgmt";
+    }
 }

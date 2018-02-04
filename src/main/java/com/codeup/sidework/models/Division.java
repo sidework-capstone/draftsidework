@@ -32,6 +32,8 @@ public class Division {
     private List<Positions> positions;
 
 
+
+
     public long getId() {
         return id;
     }
@@ -49,7 +51,36 @@ public class Division {
     }
 
 
-        public Division(String divisionName) {
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<Positions> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<Positions> positions) {
+        this.positions = positions;
+    }
+
+
+
+    public Division(Department department) {
+        this.department = department;
+    }
+
+    public Division(List<Positions> positions) {
+        this.positions = positions;
+    }
+
+
+
+    public Division(String divisionName) {
         this.divisionName = divisionName;
     }
 

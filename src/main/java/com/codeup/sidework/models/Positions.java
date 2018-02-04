@@ -14,8 +14,8 @@ public class Positions implements PropertyEditor {
 
 
     // creates a user_positions pivot table
-    // connected to UserPositions class
-    @OneToMany(mappedBy = "position")
+    // connected to USERPOSITIONS class
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "position")
     private List<UserPositions> userPositions;
 
     //id
@@ -45,32 +45,57 @@ public class Positions implements PropertyEditor {
 
 
 
-    public List<UserPositions> getUserPositions() {
-        return userPositions;
-    }
-
-    public void setUserPositions(List<UserPositions> userPositions) {
-        this.userPositions = userPositions;
-    }
-
-
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public long getId() {
+        return id;
     }
 
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
 
+    public void setDivisions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
+
+    public List<Division> getDivisions() {
+        return divisions;
+    }
+
+    public void setUserPositions(List<UserPositions> userPositions) {
+        this.userPositions = userPositions;
+    }
+
+    public List<UserPositions> getUserPositions() {
+        return userPositions;
+    }
+
+//    public Positions(List<UserPositions> userPositions) {
+//        this.userPositions = userPositions;
+//    }
+
+    public void setListings(List<Listings> listings) {
+        this.listings = listings;
+    }
+
+    public List<Listings> getListings() {
+        return listings;
+    }
+
+
+
+
+
+    public Positions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
 
     public Positions(String jobTitle) {
         this.jobTitle = jobTitle;
