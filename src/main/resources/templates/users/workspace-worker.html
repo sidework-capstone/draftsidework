@@ -20,10 +20,10 @@
     <!--<span th:text="${username}"></span>-->
 </h1>
 
-<!--<div th:each="listings : ${listings}">-->
-    <!--<h1 th:text="${listings.description}"></h1>-->
-    <!--<p th:text="${listings.pay}"></p>-->
-<!--</div>-->
+<div th:each="user : ${users}">
+    <h1 th:text="${username}">Your Username</h1>
+    <p th:text="${phone}">Your phone</p>
+</div>
 </div>
 </body>
 </html>
