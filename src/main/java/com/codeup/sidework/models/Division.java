@@ -1,6 +1,5 @@
 package com.codeup.sidework.models;
 
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,6 +7,8 @@ import java.util.List;
 @Entity
 @Table(name = "division")
 public class Division {
+
+    private List<String> divisionsList;
 
     //id
     @Id @GeneratedValue
@@ -52,6 +53,7 @@ public class Division {
 
 
 
+
     public Department getDepartment() {
         return department;
     }
@@ -70,13 +72,25 @@ public class Division {
 
 
 
+    public List<String> getDivisionsList() {
+        return divisionsList;
+    }
+
+    public void setDivisionsList(List<String> divisionsList) {
+        this.divisionsList = divisionsList;
+    }
+
+    public Division(List<String> divisionsList) {
+        this.divisionsList = divisionsList;
+    }
+
     public Division(Department department) {
         this.department = department;
     }
 
-    public Division(List<Positions> positions) {
-        this.positions = positions;
-    }
+//    public Division(List<Positions> positions) {
+//        this.positions = positions;
+//    }
 
 
 

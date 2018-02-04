@@ -80,7 +80,6 @@ public class UsersController {
     }
 
     @PostMapping("/users/workspace-worker")
-    @ResponseBody
     public String viewIndividualUsersWorkplace(@ModelAttribute User user) {
 
         return "/users/workspace-worker";

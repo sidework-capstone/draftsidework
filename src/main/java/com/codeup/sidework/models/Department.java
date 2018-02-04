@@ -8,6 +8,8 @@ import java.util.List;
 @Table(name = "department")
 public class Department {
 
+    List<String> departmentsList;
+
     //id
     @Id @GeneratedValue
     private long id;
@@ -43,20 +45,32 @@ public class Department {
 
 
 
-    public void setDivisions(List<Division> divisions) {
-        this.divisions = divisions;
-    }
-
     public List<Division> getDivisions() {
         return divisions;
     }
 
-
-
-
-    public Department(List<Division> divisions) {
+    public void setDivisions(List<Division> divisions) {
         this.divisions = divisions;
     }
+
+
+
+    public List<String> getDepartmentsList() {
+        return departmentsList;
+    }
+
+    public void setDepartmentsList(List<String> departmentsList) {
+        this.departmentsList = departmentsList;
+    }
+
+
+    public Department(List<String> departmentsList) {
+        this.departmentsList = departmentsList;
+    }
+
+//    public Department(List<Division> divisions) {
+//        this.divisions = divisions;
+//    }
 
 
     public Department(String departmentName) {
