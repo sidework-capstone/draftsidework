@@ -235,8 +235,7 @@ public class User {
 
 
 
-    public User(List<UserPositions> userPositions, String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
-        this.userPositions = userPositions;
+    public User(String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

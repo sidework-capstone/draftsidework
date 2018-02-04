@@ -1,7 +1,7 @@
 # sidework
 This repository contains the code for the Sidework capstone project built by Mary Kathryn Syms, Greg Schmitt, and Michael Cabeza.
 
-- [ ] Register a new manager/worker
+- [X] Register a new manager/worker
 - [ ] Login/logout
 - [ ] View worker profile (worker/manager)
 - [ ] View business profile (worker/manager)

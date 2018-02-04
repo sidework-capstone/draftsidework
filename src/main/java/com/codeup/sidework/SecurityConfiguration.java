@@ -53,6 +53,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
                 .authorizeRequests()
                 .antMatchers(
+//                        "/users/workspace-worker", // view worker(user) workspace/dashboard and all current job listings
+//                        "/users/workspace-mgmt", // view mgmt(business) workspace/dashboard and all current users' profiles
 //                        "/listings/create",  // only authenticated users can create ads
 //                        "/listings/edit", // only authenticated users can create ads
                         "/users/{id}/edit" // only authenticated users can edit their profile
