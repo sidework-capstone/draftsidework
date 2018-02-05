@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+}
+.floor {
+    text-decoration: underline;
+}
+.kitchen {
+    text-decoration: underline;
+}
+.bar {
+    text-decoration: underline;
+}
+.r {
+    text-align: center;
+}
+.footerr {
+    text-align: center;
+}
+.footerrr {
+    text-align: center;
+}
+a.navbar-brand {
+    font-size: 40px;
+
+}
