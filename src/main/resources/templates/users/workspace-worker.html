@@ -3,17 +3,17 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <!-- ... -->
 <head>
-<!--<head th:replace="fragments/header :: main-header('Sign up!')">-->
+    <!--<head th:replace="fragments/header :: main-header('Sign up!')">-->
 </head>
 <body>
 <!--<div th:replace="fragments/navbar :: mainNavbar"></div>-->
 
 <!--<div sec:authorize="isAuthenticated()">-->
-    <!--This content is only shown to authenticated users.-->
+<!--This content is only shown to authenticated users.-->
 
-    <!--User ID: <span th:text="${#authentication.principal.id}"/>-->
-    <!--Username: <span th:text="${#authentication.principal.username}"/>-->
-    <!--Email: <span th:text="${#authentication.principal.email}"/>-->
+<!--User ID: <span th:text="${#authentication.principal.id}"/>-->
+<!--Username: <span th:text="${#authentication.principal.username}"/>-->
+<!--Email: <span th:text="${#authentication.principal.email}"/>-->
 <!--</div>-->
 
 <h1>Hello
@@ -24,111 +24,108 @@
     <h1 th:text="${username}">Your Username</h1>
     <p th:text="${phone}">Your phone</p>
 </div>
-</div>
 </body>
 </html>
-
-
 
 
 <!--<!DOCTYPE html>-->
 <!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
 <!--&lt;!&ndash;<head th:replace="fragments/header :: main-header('All posts')">&ndash;&gt;-->
 <!--<head>-->
-    <!--<meta charset="UTF-8"/>-->
-    <!--<meta name="viewport"-->
-          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
-    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
-    <!--<title>Title</title>-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
-          <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
-    <!--<link rel="stylesheet" href="../../static/css/workspace-worker.css"/>-->
+<!--<meta charset="UTF-8"/>-->
+<!--<meta name="viewport"-->
+<!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
+<!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+<!--<title>Title</title>-->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
+<!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
+<!--<link rel="stylesheet" href="../../static/css/workspace-worker.css"/>-->
 <!--</head>-->
 <!--<body>-->
 <!--<nav class="navbar navbar-default">-->
-    <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-            <!--<a href="#" class="navbar-brand"><strong>sidework</strong></a>-->
-        <!--</div>-->
-        <!--<ul class="nav navbar-nav navbar-right">-->
-            <!--<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> logout</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+<!--<div class="container-fluid">-->
+<!--<div class="navbar-header">-->
+<!--<a href="#" class="navbar-brand"><strong>sidework</strong></a>-->
+<!--</div>-->
+<!--<ul class="nav navbar-nav navbar-right">-->
+<!--<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> logout</a></li>-->
+<!--</ul>-->
+<!--</div>-->
 <!--</nav>-->
 <!--<br/>-->
 <!--<div class="container">-->
-    <!--<div class="row">-->
-        <!--<div class="col-md-3 col-sm-3 col-xs-3 cate"></div>-->
-        <!--<div class="col-md-3 col-sm-3 col-xs-3 cate2"></div>-->
-        <!--<div class="col-md-3 col-sm-3 col-xs-3 cate3"></div>-->
-        <!--<div class="col-md-3 col-sm-3 col-xs-3 cate4"></div>-->
-    <!--</div>-->
-    <!--<br/>-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-        <!--</div>-->
-        <!--<br/>-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-        <!--</div>-->
-        <!--<br/>-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-        <!--</div>-->
-        <!--<br/>-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-            <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<br/>-->
-    <!--<div class="info">-->
-        <!--<h1>SLAM ANTONIO SERVICE</h1>-->
-        <!--<h3>looking to join a new crew?</h3>-->
-        <!--<h3>try searching for specific key terms</h3>-->
-        <!--<br/>-->
-        <!--<p>e.g. "sacc", "stage", "volunteer",</p>-->
-        <!--<p> "daily staff meal", etc.</p>-->
-    <!--</div>-->
-    <!--<br/>-->
-    <!--<div class="form-group">-->
-        <!--<label class="work_locator" for="work_locator"></label>-->
-        <!--<input id="work_locator" name="work_locator" class="form-control" type="text"/>-->
-    <!--</div>-->
-    <!--<input type="submit" class="btn btn-danger btn-block"/>-->
-    <!--<br/>-->
-    <!--<div class="row">-->
-        <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-        <!--<div class="col-md-4 col-sm-4 col-xs-4 job">boh</div>-->
-        <!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
-    <!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 cate"></div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 cate2"></div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 cate3"></div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 cate4"></div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="info">-->
+<!--<h1>SLAM ANTONIO SERVICE</h1>-->
+<!--<h3>looking to join a new crew?</h3>-->
+<!--<h3>try searching for specific key terms</h3>-->
+<!--<br/>-->
+<!--<p>e.g. "sacc", "stage", "volunteer",</p>-->
+<!--<p> "daily staff meal", etc.</p>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<div class="form-group">-->
+<!--<label class="work_locator" for="work_locator"></label>-->
+<!--<input id="work_locator" name="work_locator" class="form-control" type="text"/>-->
+<!--</div>-->
+<!--<input type="submit" class="btn btn-danger btn-block"/>-->
+<!--<br/>-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">boh</div>-->
+<!--<div class="col-md-4 col-sm-4 col-xs-4 job">foh</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--<br/>-->
 <!--<br/>-->
 <!--<div class="panel-footer">-->
-    <!--<div class="text-right">-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3 mgmLogo">MGM LOGO</div>-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3 footer">About us</div>-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3 footer2">contact us</div>-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3 footer3">2018 SATX sidework</div>-->
-        <!--</div>-->
-        <!--<br/>-->
-        <!--<br/>-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
-            <!--<div class="col-md-6 col-sm-6 col-xs-6 links">facebook twitter linkedIN ig</div>-->
-            <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="text-right">-->
+<!--<div class="row">-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 mgmLogo">MGM LOGO</div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 footer">About us</div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 footer2">contact us</div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3 footer3">2018 SATX sidework</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<br/>-->
+<!--<div class="row">-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
+<!--<div class="col-md-6 col-sm-6 col-xs-6 links">facebook twitter linkedIN ig</div>-->
+<!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--</body>-->
 <!--</html>-->
