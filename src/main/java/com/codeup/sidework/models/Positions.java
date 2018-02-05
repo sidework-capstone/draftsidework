@@ -130,9 +130,9 @@ public class Positions {
         return userPositions;
     }
 
-//    public Positions(List<UserPositions> userPositions) {
-//        this.userPositions = userPositions;
-//    }
+    public Positions(List<UserPositions> userPositions) {
+        this.userPositions = userPositions;
+    }
 
     public void setListings(List<Listings> listings) {
         this.listings = listings;

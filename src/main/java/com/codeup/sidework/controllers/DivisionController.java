@@ -82,6 +82,3 @@ public class DivisionController {
 
 }
 
-//        fohDivisionsList.add("Kitchen");
-//                divisionsList.add("Support");
-//                divisionsList.add("Operators");
