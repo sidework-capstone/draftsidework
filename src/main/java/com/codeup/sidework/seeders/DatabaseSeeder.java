@@ -1,11 +1,11 @@
 package com.codeup.sidework.seeders;
 
 
-import com.codeup.sidework.daos.*;
+import com.codeup.sidework.daos.DepartmentRepository;
+import com.codeup.sidework.daos.DivisionRepository;
+import com.codeup.sidework.daos.PositionsRepository;
 import com.codeup.sidework.models.Department;
 import com.codeup.sidework.models.Division;
-import com.codeup.sidework.models.Positions;
-import com.sun.tools.javac.tree.JCTree;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -13,12 +13,8 @@ import org.springframework.context.event.EventListener;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-
-import javax.swing.text.Position;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.codehaus.groovy.tools.shell.util.Logger.io;
 
 
 @Component
