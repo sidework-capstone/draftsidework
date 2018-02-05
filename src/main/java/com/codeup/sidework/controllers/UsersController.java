@@ -86,7 +86,10 @@ public class UsersController {
         return "/users/workspace-worker";
     }
 
-
+    @GetMapping("/users/profile-worker")
+    public String viewWorkerProfile() {
+        return "users/profile-worker";
+    }
 }
 
     ////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Title</title>
-    <link rel="stylesheet" href="css/profile-business.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profile-business.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 </head>
 <body>
 <div class="container">
@@ -14,14 +16,16 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="#" class="navbar-brand"><strong>sidework</strong></a>
-            </div><div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="covers"><a href="#"><strong>COVERS</strong></a></li>
-            </ul>
-        </div>
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="covers"><a href="#"><strong>COVERS</strong></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -31,7 +35,6 @@
         </div>
     </div>
 
-
     <!--BUSINESS INFO-->
     <div class="row">
         <div class="col-xs-12 col-md-6">
@@ -39,7 +42,7 @@
                 <div class="col-xs-12">
                     <label for="website">
                         website:
-                        <input type="text" id="website" name="website" placeholder="" required>
+                        <input type="text" id="website" name="website" placeholder="" required/>
                     </label>
                 </div>
             </div>
@@ -47,7 +50,7 @@
                 <div class="col-xs-12">
                     <label for="phone">
                         phone:
-                        <input type="text" id="phone" name="phone" placeholder="" required>
+                        <input type="text" id="phone" name="phone" placeholder="" required/>
                     </label>
                 </div>
             </div>
@@ -55,7 +58,7 @@
                 <div class="col-xs-12">
                     <label for="email">
                         email:
-                        <input type="text" id="email" name="email" placeholder="" required>
+                        <input type="text" id="email" name="email" placeholder="" required/>
                     </label>
                 </div>
             </div>
@@ -63,7 +66,7 @@
                 <div class="col-xs-12">
                     <label for="email">
                         info:
-                        <input type="text" id="info" name="info" placeholder="" required>
+                        <input type="text" id="info" name="info" placeholder="" required/>
                     </label>
                 </div>
             </div>
@@ -76,8 +79,6 @@
         </div>
     </div>
     <br>
-
-
 
 
     <!--Map Location-->
@@ -95,22 +96,18 @@
         <div class="col-xs-12 col-md-6" style="background-color: pink; border: 1px solid black; height: 350px;">
             <h4>location for google maps api</h4>
         </div>
-        <!--SECOND HALF-->
         <div class="row">
             <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 350px;">
                 <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
                     <h4 class="r">menus</h4>
                 </div>
+
                 <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
                     <h4 class="r">floor chart</h4>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 
 
     <!--MGMT INFO-->
@@ -122,8 +119,8 @@
                     <div class="panel-heading">Management Category</div>
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-info">
-                            <label>Position</label>
-                            <select class="form-control">
+                            <label for="position">Position</label>
+                            <select id="position" name="position" class="form-control">
                                 <option>General Manager</option>
                                 <option>Executive Manager</option>
                                 <option>Owner</option>
@@ -135,27 +132,29 @@
                 </div>
             </div>
 
-            <br>
+            <br/>
+
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12"></div>
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input id="name" name="name" class="form-control" type="text">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input id="name" name="name" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email2">Email:</label>
+                            <input id="email2" name="email" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone2">Phone:</label>
+                            <input id="phone2" name="phone" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="sidework_username">Sidework Username:</label>
+                            <input id="sidework_username" name="sidework_username" class="form-control" type="text"/>
+                        </div>
+                        <input type="submit" class="btn btn-danger btn-block" value="Log In"/>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input id="email2" name="email" class="form-control" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone:</label>
-                        <input id="phone2" name="phone" class="form-control" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="sidework_username">Sidework Username:</label>
-                        <input id="sidework_username" name="sidework_username" class="form-control" type="text">
-                    </div>
-                    <input type="submit" class="btn btn-danger btn-block" value="Log In">
                 </div>
             </div>
         </div>
@@ -164,86 +163,39 @@
 
         <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;"><!--main col-->
             <div class="panel-body">
-                <!--<div class="panel panel-default">-->
                 <h3>Update Notifications</h3>
-                <!--<div class="panel-heading">Management Category</div>-->
-                <!--<ul class="list-group">-->
-                <!--<li class="list-group-item list-group-item-info">-->
-                <!--<label>Position</label>-->
-                <!--<select class="form-control">-->
-                <!--<option>General Manager</option>-->
-                <!--<option>Executive Manager</option>-->
-                <!--<option>Owner</option>-->
-                <!--<option>Sous chef</option>-->
-                <!--<option>Assistant manager</option>-->
-                <!--</select>-->
-                <!--</li>-->
-                <!--</ul>-->
-                <!--</div>-->
             </div>
 
-            <br>
+            <br/>
+
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12"></div>
-                    <!--<div>-->
-                    <!--<h4>-->
-                    <!--Update Password-->
-                    <!--</h4>-->
-                    <!--</div>-->
-                    <div class="form-group">
-                        <label for="Update_Password">Update Password:</label>
-                        <input id="Update_Password" name="Update_Password" class="form-control" type="password">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="Update_Password">Update Password:</label>
+                            <input id="Update_Password" name="Update_Password" class="form-control" type="password"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Confirm_password">Confirm Password:</label>
+                            <input id="Confirm_password" name="Confirm_password" class="form-control" type="password"/>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">submit</button>
+
+                        <br/>
+
+                        <div>
+                            <h4>
+                                Deactivate account
+                            </h4>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">deactivate account
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="Confirm_password">Confirm Password:</label>
-                        <input id="Confirm_password" name="Confirm_password" class="form-control" type="password">
-                    </div>
-                    <!--<div class="form-group">-->
-                    <!--<label for="phone">Phone:</label>-->
-                    <!--<input id="phone3" name="phone" class="form-control" type="text">-->
-                    <!--</div>-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="sidework_username2">Sidework Username:</label>-->
-                    <!--<input id="sidework_username2" name="sidework_username2" class="form-control" type="text">-->
-                    <!--</div>-->
-                    <button type="submit" class="btn btn-danger btn-block" value="Log In">submit</button>
-                    <br>
-                    <div>
-                        <h4>
-                            Deactivate account
-                        </h4>
-                    </div>
-                    <button type="submit" class="btn btn-danger btn-block" value="Log In">deactivate account</button>
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
-
-
-
-    <!--SECOND HALF-->
-
-    <!--<div class="row">-->
-    <!--<div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 450px;">-->
-    <!--&lt;!&ndash;<div class="col-xs-12" style="border: 1px solid black; height: 400px;">&ndash;&gt;-->
-    <!--<h4>update notifications</h4>-->
-    <!--<h5>update password</h5>-->
-    <!--<div class="row">-->
-    <!--<div class="col-xs-12">-->
-    <!--<label for="phone">-->
-    <!--password:-->
-    <!--<input type="text" id="phone" name="phone" placeholder="" required>-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-</div>
 </div>
 </body>
 </html>
