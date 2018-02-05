@@ -6,7 +6,7 @@ https://github.com/orgs/sidework-capstone/projects/1
 
 
 - [X] Register a new manager/worker
-- [ ] Login/logout
+- [X] Login/logout
 - [ ] View worker profile (worker/manager)
 - [ ] View business profile (worker/manager)
 - [ ] Edit profile (worker/business)
