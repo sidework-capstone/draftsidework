@@ -5,22 +5,24 @@
 <head></head>
 <body>
 <nav id="my-nav" class="navbar navbar-default" th:fragment="mainNavbar">
-    <ul class="nav navbar-nav">
-        <li><a href="/">Index</a></li>
-        <li><a href="/">Español</a></li>
-        <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
-        <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
-        <li sec:authorize="isAuthenticated()" th:text="${#authentication.principal.username}"></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
-        <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
-        <li sec:authorize="isAuthenticated()">
-            <form th:action="@{/logout}" th:method="post">
-                <button class="btn-link btn" style="margin-top: 8px">Logout</button>
-            </form>
-        </li>
-    </ul>
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Index</a></li>
+            <li><a href="/">Español</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
+            <li sec:authorize="isAuthenticated()" th:text="${#authentication.principal.username}"></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" th:method="post">
+                    <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
 </nav>
 </body>
 </html>

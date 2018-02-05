@@ -67,15 +67,15 @@ public class UsersController {
 //    }
 
     @GetMapping("/users/workspace-worker")
-    public String showWorkerWorkspace(Model model) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    public String showWorkerWorkspace() {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        if (user.getId() == 0) {
 ////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 //            return "redirect:/users/login-worker";
 //        }
 
-        user = usersDao.findOne(user.getId());
-        model.addAttribute("user", user);
+//        user = usersDao.findOne(user.getId());
+//        model.addAttribute("user", user);
         return "/users/workspace-worker";
     }
 
