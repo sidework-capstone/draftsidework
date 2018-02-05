@@ -33,10 +33,14 @@ public class BusinessesController {
         return "redirect:/users/login-mgmt";
     }
 
-
     @GetMapping("/users/workspace-mgmt")
     public String showManagmentWorkspace() {
 
         return "users/workspace-mgmt";
+    }
+
+    @GetMapping("/users/profile-business")
+    public String viewBusinessProfile() {
+        return "users/profile-business";
     }
 }
