@@ -1,93 +1,146 @@
 package com.codeup.sidework.controllers;
 
-import com.codeup.sidework.daos.PositionsRepository;
+import com.codeup.sidework.models.Positions;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class PositionsController {
-    private final PositionsRepository positionsDao;
 
-    public PositionsController(PositionsRepository positionsDao) {
-        this.positionsDao = positionsDao;
+
+   @RequestMapping(value="/users/register-worker")
+   private ModelAndView viewFloorPositionsList() {
+   ModelAndView mav = new ModelAndView("floorPositionForm");
+
+        List<String> floorPositionsList = new ArrayList<String>();
+        floorPositionsList.add("Server");
+        floorPositionsList.add("Host");
+        floorPositionsList.add("Banquet Server");
+        floorPositionsList.add("Reservationist");
+
+
+        mav.addObject("floorPositionsList", floorPositionsList);
+        mav.addObject("positions", new Positions());
+
+        return mav;
     }
 
-    protected Map positionFloorData(HttpServletRequest request) throws Exception {
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewBarPositionsList() {
+    ModelAndView mav = new ModelAndView("barPositionForm");
 
-        Map positionFloorData = new HashMap();
-        List<String> jobListFloor = new ArrayList<String>();
-        jobListFloor.add("Server");
-        jobListFloor.add("Host");
-        jobListFloor.add("Banquet Server");
-        jobListFloor.add("Reservationist");
-        positionFloorData.put("jobListFloor", jobListFloor);
+        List<String> barPositionsList = new ArrayList<String>();
+        barPositionsList.add("Bartender");
+        barPositionsList.add("Barback");
+        barPositionsList.add("Cocktail Server");
+        barPositionsList.add("Sommelier");
 
-        return positionFloorData;
-    }
+        mav.addObject("barPositionsList", barPositionsList);
+        mav.addObject("positions", new Positions());
 
-    protected Map positionBarData(HttpServletRequest request) throws Exception {
-
-        Map positionBarData = new HashMap();
-        List<String> jobListBar = new ArrayList<String>();
-        jobListBar.add("Bartender");
-        jobListBar.add("Barback");
-        jobListBar.add("Cocktail Server");
-        jobListBar.add("Sommelier");
-        positionBarData.put("jobListBar", jobListBar);
-
-        return positionBarData;
-
-    }
-
-    protected Map positionKitchenData(HttpServletRequest request) throws Exception {
-
-        Map positionKitchenData = new HashMap();
-        List<String> jobListKitchen = new ArrayList<String>();
-        jobListKitchen.add("Line Cook");
-        jobListKitchen.add("Prep Cook");
-        jobListKitchen.add("Pastry Chef");
-        jobListKitchen.add("Food Expo");
-        positionKitchenData.put("jobListKitchen", jobListKitchen);
-
-        return positionKitchenData;
+        return mav;
 
     }
 
-    protected Map positionSupportData(HttpServletRequest request) throws Exception {
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewKitchenPositionsList() {
+    ModelAndView mav = new ModelAndView("kitchenPositionForm");
 
-        Map positionSupportData = new HashMap();
-        List<String> jobListSupport = new ArrayList<String>();
-        jobListSupport.add("Busser");
-        jobListSupport.add("Dishwasher");
-        jobListSupport.add("Utility Worker");
-        jobListSupport.add("Repairman");
-        positionSupportData.put("jobListSupport", jobListSupport);
+        List<String> kitchenPositionsList = new ArrayList<String>();
+        kitchenPositionsList.add("Line Cook");
+        kitchenPositionsList.add("Prep Cook");
+        kitchenPositionsList.add("Pastry Chef");
+        kitchenPositionsList.add("Food Expo");
 
-        return positionSupportData;
+        mav.addObject("kitchenPositionsList", kitchenPositionsList);
+        mav.addObject("positions", new Positions());
+
+        return mav;
 
     }
 
-    protected Map positionOperatorsData(HttpServletRequest request) throws Exception{
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewSupportPositionsList() {
+    ModelAndView mav = new ModelAndView("supportPositionForm");
 
-        Map positionOperatorsData = new HashMap();
-        List<String> jobListOperator = new ArrayList<String>();
-        jobListOperator.add("Owner");
-        jobListOperator.add("General Manager");
-        jobListOperator.add("Executive Chef");
-        jobListOperator.add("Beverage Director");
-        jobListOperator.add("Assistant General Manager");
-        jobListOperator.add("Sous Chef");
-        jobListOperator.add("Events Director");
-        positionOperatorsData.put("jobListOperator", jobListOperator);
+        List<String> supportPositionsList = new ArrayList<String>();
+        supportPositionsList.add("Busser");
+        supportPositionsList.add("Dishwasher");
+        supportPositionsList.add("Utility Worker");
+        supportPositionsList.add("Repairman");
 
-        return positionOperatorsData;
+        mav.addObject("supportPositionsList", supportPositionsList);
+        mav.addObject("positions", new Positions());
 
+        return mav;
+
+    }
+
+    @RequestMapping(value="/users/register-worker")
+    private ModelAndView viewOperatorPositionsList() {
+    ModelAndView mav = new ModelAndView("operatorPositionForm");
+
+        List<String> operatorPositionsList = new ArrayList<String>();
+        operatorPositionsList.add("Owner");
+        operatorPositionsList.add("General Manager");
+        operatorPositionsList.add("Executive Chef");
+        operatorPositionsList.add("Beverage Director");
+        operatorPositionsList.add("Assistant General Manager");
+        operatorPositionsList.add("Sous Chef");
+        operatorPositionsList.add("Events Director");
+
+        mav.addObject("operatorPositionsList", operatorPositionsList);
+        mav.addObject("positions", new Positions());
+
+        return mav;
+
+    }
+
+
+
+    @RequestMapping(value="/listings/floor-positions")
+    private ModelAndView processFloorPositions(@ModelAttribute Positions positions){
+       ModelAndView mav = new ModelAndView("positions-result");
+
+       mav.addObject("Positions", positions);
+       return mav;
+    }
+
+    @RequestMapping(value="/listings/bar-positions")
+    private ModelAndView processBarPositions(@ModelAttribute Positions positions){
+        ModelAndView mav = new ModelAndView("positions-result");
+
+        mav.addObject("Positions", positions);
+        return mav;
+    }
+
+    @RequestMapping(value="/listings/kitchen-positions")
+    private ModelAndView processKitchenPositions(@ModelAttribute Positions positions){
+        ModelAndView mav = new ModelAndView("positions-result");
+
+        mav.addObject("Positions", positions);
+        return mav;
+    }
+
+    @RequestMapping(value="/listings/support-positions")
+    private ModelAndView processSupportPositions(@ModelAttribute Positions positions){
+        ModelAndView mav = new ModelAndView("positions-result");
+
+        mav.addObject("Positions", positions);
+        return mav;
+    }
+
+    @RequestMapping(value="/listings/operator-positions")
+    private ModelAndView processOperatorPositions(@ModelAttribute Positions positions){
+        ModelAndView mav = new ModelAndView("positions-result");
+
+        mav.addObject("Positions", positions);
+        return mav;
     }
 
 }

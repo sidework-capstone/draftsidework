@@ -10,7 +10,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "positions")
-public class Positions implements PropertyEditor {
+public class Positions {
+    List<String> floor;
+    List<String> bar;
+    List<String> kitchen;
+    List<String> support;
+    List<String> operators;
 
 
     // creates a user_positions pivot table
@@ -44,6 +49,54 @@ public class Positions implements PropertyEditor {
     private List<Listings> listings;
 
 
+    public List<String> getFloor() {
+        return floor;
+    }
+
+    public void setFloor(List<String> floor) {
+        this.floor = floor;
+    }
+
+    public List<String> getBar() {
+        return bar;
+    }
+
+    public void setBar(List<String> bar) {
+        this.bar = bar;
+    }
+
+    public List<String> getKitchen() {
+        return kitchen;
+    }
+
+    public void setKitchen(List<String> kitchen) {
+        this.kitchen = kitchen;
+    }
+
+    public List<String> getSupport() {
+        return support;
+    }
+
+    public void setSupport(List<String> support) {
+        this.support = support;
+    }
+
+    public List<String> getOperators() {
+        return operators;
+    }
+
+    public void setOperators(List<String> operators) {
+        this.operators = operators;
+    }
+
+
+    public Positions(List<String> floor, List<String> bar, List<String> kitchen, List<String> support, List<String> operators) {
+        this.floor = floor;
+        this.bar = bar;
+        this.kitchen = kitchen;
+        this.support = support;
+        this.operators = operators;
+    }
 
     public void setId(long id) {
         this.id = id;
@@ -77,9 +130,9 @@ public class Positions implements PropertyEditor {
         return userPositions;
     }
 
-//    public Positions(List<UserPositions> userPositions) {
-//        this.userPositions = userPositions;
-//    }
+    public Positions(List<UserPositions> userPositions) {
+        this.userPositions = userPositions;
+    }
 
     public void setListings(List<Listings> listings) {
         this.listings = listings;
@@ -105,63 +158,63 @@ public class Positions implements PropertyEditor {
 
     }
 
-    @Override
-    public void setValue(Object value) {
-
-    }
-
-    @Override
-    public Object getValue() {
-        return null;
-    }
-
-    @Override
-    public boolean isPaintable() {
-        return false;
-    }
-
-    @Override
-    public void paintValue(Graphics gfx, Rectangle box) {
-
-    }
-
-    @Override
-    public String getJavaInitializationString() {
-        return null;
-    }
-
-    @Override
-    public String getAsText() {
-        return null;
-    }
-
-    @Override
-    public void setAsText(String text) throws IllegalArgumentException {
-
-    }
-
-    @Override
-    public String[] getTags() {
-        return new String[0];
-    }
-
-    @Override
-    public Component getCustomEditor() {
-        return null;
-    }
-
-    @Override
-    public boolean supportsCustomEditor() {
-        return false;
-    }
-
-    @Override
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-
-    }
-
-    @Override
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-
-    }
+//    @Override
+//    public void setValue(Object value) {
+//
+//    }
+//
+//    @Override
+//    public Object getValue() {
+//        return null;
+//    }
+//
+//    @Override
+//    public boolean isPaintable() {
+//        return false;
+//    }
+//
+//    @Override
+//    public void paintValue(Graphics gfx, Rectangle box) {
+//
+//    }
+//
+//    @Override
+//    public String getJavaInitializationString() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getAsText() {
+//        return null;
+//    }
+//
+//    @Override
+//    public void setAsText(String text) throws IllegalArgumentException {
+//
+//    }
+//
+//    @Override
+//    public String[] getTags() {
+//        return new String[0];
+//    }
+//
+//    @Override
+//    public Component getCustomEditor() {
+//        return null;
+//    }
+//
+//    @Override
+//    public boolean supportsCustomEditor() {
+//        return false;
+//    }
+//
+//    @Override
+//    public void addPropertyChangeListener(PropertyChangeListener listener) {
+//
+//    }
+//
+//    @Override
+//    public void removePropertyChangeListener(PropertyChangeListener listener) {
+//
+//    }
 }
