@@ -37,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             /* Login configuration */
             .formLogin()
                 .loginPage("/users/login-worker") // && ("/users/login-mgmt")
-                .defaultSuccessUrl("/users/workspace-worker") // && ("/users/workspace-mgmt") // class notes - user's home page, it can be any URL
+                .defaultSuccessUrl("/") //("/users/workspace-worker") // && ("/users/workspace-mgmt") // class notes - user's home page, it can be any URL
                 .permitAll()
             .and()
                 .logout()
