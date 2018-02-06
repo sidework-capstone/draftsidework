@@ -48,7 +48,6 @@ public class Business {
     private String businessInfo;
 
 
-
     public List<Listings> getListings() {
         return listings;
     }

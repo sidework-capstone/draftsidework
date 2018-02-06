@@ -18,12 +18,14 @@ public class BusinessesController {
     @GetMapping("/businesses/create")
     public String showCreateBusinessForm(Model model) {
         model.addAttribute("business", new Business());
+
         return "businesses/create";
     }
 
     @PostMapping("/businesses/create")
     public String saveNewBusiness(@ModelAttribute Business business) {
         businessesRepository.save(business);
+
         return "redirect:/users/login-mgmt";
     }
 
@@ -32,13 +34,13 @@ public class BusinessesController {
         return "users/workspace-mgmt";
     }
 
-    @GetMapping("/users/profile-business/{id}")
+    @GetMapping("/businesses/profile/{id}")
     public String viewBusinessProfile(@PathVariable long id, Model model) {
         // Pass a Business object to the template just for testing
         Business business = businessesRepository.findOne(id);
 
         model.addAttribute("business", business);
 
-        return "users/profile-business";
+        return "businesses/profile";
     }
 }
