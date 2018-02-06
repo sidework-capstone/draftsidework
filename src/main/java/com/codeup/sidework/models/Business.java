@@ -19,15 +19,14 @@ public class Business {
     @Column
     private int businessPhone;
     //website
-
     @Column
     private String website;
-    //address
 
+    //address
     @Column
     private String address;
-    //info
 
+    //info
     @Column
     private String businessInfo;
 
@@ -103,6 +102,5 @@ public class Business {
     public void setBusinessInfo(String businessInfo) {
         this.businessInfo = businessInfo;
     }
-
 
 }
