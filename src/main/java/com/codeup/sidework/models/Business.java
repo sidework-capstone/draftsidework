@@ -12,10 +12,12 @@ public class Business {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
     private List<Listings> listings;
 
-//    public Business(List<Listings> listings) {
-//        this.listings = listings;
-//    }
+    public Business(List<Listings> listings) {
+        this.listings = listings;
+    }
 
+    @OneToOne
+    private User business;
 
     //id
     @Id @GeneratedValue
@@ -50,16 +52,6 @@ public class Business {
     private String businessInfo;
 
 
-    // this is connecting to the user table.
-    // creates a list of all employees associated with that business
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name="business_users",
-            joinColumns = {@JoinColumn(name="business_id")},
-            inverseJoinColumns = {@JoinColumn(name="user_id")}
-    )
-    private List<User> users;
-
 
 
 
@@ -71,22 +63,14 @@ public class Business {
         this.listings = listings;
     }
 
-    public List<User> getUsers() {
-        return users;
+
+    public User getBusiness() {
+        return business;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setBusiness(User business) {
+        this.business = business;
     }
-
-
-    public Business(List<User> users) {
-        this.users = users;
-    }
-
-
-
-
 
     public long getId() {
         return id;
@@ -153,7 +137,9 @@ public class Business {
     }
 
 
-
+    public Business(User business) {
+        this.business = business;
+    }
 
     public Business(String userName, String email, String password, int businessPhone, String website, String address, String businessInfo) {
         this.userName = userName;
