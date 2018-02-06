@@ -36,26 +36,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
             /* Login configuration */
             .formLogin()
-                .loginPage("/users/login-worker") // && ("/users/login-mgmt")
-                .defaultSuccessUrl("/") //("/users/workspace-worker") // && ("/users/workspace-mgmt") // class notes - user's home page, it can be any URL
+                .loginPage("/login")
+                .defaultSuccessUrl("/dashboard") // class notes - user's home page, it can be any URL. Cannot configure 2 different URLs here
                 .permitAll()
             .and()
                 .logout()
-                .logoutSuccessUrl("/login-worker?logout") // append a query string value
+                .logoutSuccessUrl("/login?logout") // append a query string value
             /* Pages that can be viewed without having to log in */
             .and()
                 .authorizeRequests()
                 .antMatchers(
 //                        "/listings",  // anyone can see the job listing pages
-                        "/", "/users", "/users/register-worker", "/users/login-worker") // anyone can see the homepage, login & register pages, and view all users without being signed in
+                        "/", "/users", "/users/register-worker", "/login") // anyone can see the homepage, login & register pages, and view all users without being signed in
                 .permitAll()
             /* Pages that require authentication */
             .and()
                 .authorizeRequests()
                 .antMatchers(
-                        ///home") // view worker(user) workspace/dashboard and all current job listings
-//                         ^ this path will not work because the html template was originally named "/users/landing-page", we haven't had a home.html view
-//
 //                        "/listings/create",  // only authenticated users can create ads
 //                        "/listings/edit", // only authenticated users can create ads
                         "/users/{id}/edit" // only authenticated users can edit their profile
