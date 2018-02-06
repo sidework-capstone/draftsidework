@@ -5,42 +5,40 @@ import com.codeup.sidework.daos.BusinessesRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BusinessesController {
     private final BusinessesRepository businessesRepository;
-    private PasswordEncoder passwordEncoder;
 
-    public BusinessesController(BusinessesRepository businessesRepository, PasswordEncoder passwordEncoder) {
+    public BusinessesController(BusinessesRepository businessesRepository) {
         this.businessesRepository = businessesRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/users/register-mgmt")
-    public String showManagementRegisterForm(Model model) {
+    @GetMapping("/businesses/create")
+    public String showCreateBusinessForm(Model model) {
         model.addAttribute("business", new Business());
-        return "users/register-mgmt";
+        return "businesses/create";
     }
 
-    @PostMapping("/users/register-mgmt")
-    public String saveManagementBusiness(@ModelAttribute Business business) {
-        String hash = passwordEncoder.encode(business.getPassword());
-        business.setPassword(hash);
+    @PostMapping("/businesses/create")
+    public String saveNewBusiness(@ModelAttribute Business business) {
         businessesRepository.save(business);
         return "redirect:/users/login-mgmt";
     }
 
     @GetMapping("/users/workspace-mgmt")
     public String showManagmentWorkspace() {
-
         return "users/workspace-mgmt";
     }
 
-    @GetMapping("/users/profile-business")
-    public String viewBusinessProfile() {
+    @GetMapping("/users/profile-business/{id}")
+    public String viewBusinessProfile(@PathVariable long id, Model model) {
+        // Pass a Business object to the template just for testing
+        Business business = businessesRepository.findOne(id);
+
+        model.addAttribute("business", business);
+
         return "users/profile-business";
     }
 }
