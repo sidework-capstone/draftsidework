@@ -29,8 +29,7 @@ public class UsersController {
 //    public String showLandingPage() {
 //        return "users/landing-page";
 //    }
-
-    // ^ this mapping will not work for the landing page,
+                 // ^ this mapping will not work for the landing page, needs to go through the Home Controller
 
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {
