@@ -14,6 +14,9 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
 
+    @OneToOne
+    private Business business;
+
 
     //id
     @Id
@@ -75,11 +78,6 @@ public class User {
     //instagram
     @Column
     private String instagram;
-
-    // this is connecting to the business table.
-    // creating a list of businesses associate with a user
-    @ManyToMany(mappedBy = "users")
-    private List<Business> businesses;
 
 
 
@@ -205,6 +203,13 @@ public class User {
         this.instagram = instagram;
     }
 
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
+    }
 
 
 
@@ -217,23 +222,13 @@ public class User {
         return userPositions;
     }
 
-//    public User(List<UserPositions> userPositions) {
-//        this.userPositions = userPositions;
-//    }
-
-    public void setBusinesses(List<Business> businesses) {
-        this.businesses = businesses;
+    public User(List<UserPositions> userPositions) {
+        this.userPositions = userPositions;
     }
 
-    public List<Business> getBusinesses() {
-        return businesses;
+    public User(Business business) {
+        this.business = business;
     }
-
-    public User(List<Business> businesses) {
-        this.businesses = businesses;
-    }
-
-
 
     public User(String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
         this.username = username;
