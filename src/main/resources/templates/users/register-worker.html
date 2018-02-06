@@ -11,92 +11,52 @@
     <link rel="stylesheet" href="../../css/register-worker.css"/>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand"><strong>sidework</strong></a>
-        </div>
-        <div>
-            <ul class="nav navbar-nav">
-                <li><a href="#">how it works</a></li>
-                <li><a href="#">español</a></li>
-                <li><a href="#">about us</a></li>
-            </ul>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
-        </ul>
-    </div>
-</nav>
+<nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
 <br/>
 <div>
     <div class="container">
         <div class="pic"></div>
         <h1>register</h1>
-        <form th:action="@{/users/register-worker}" method="post" th:object="${user}">
+        <form th:action="@{/users/register-worker}" method="post">
             <div class="form-group">
                 <label for="username">username</label>
-                <input id="username" th:field="*{username}" class="form-control" type="text"/>
+                <input id="username" th:value="${user.username}" name="username" class="form-control" type="text"/>
             </div>
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>That username already exists</strong>-->
-            <!--</div>-->
 
             <div class="form-group">
                 <label for="first_name">first name</label>
-                <input id="first_name" th:field="*{firstName}" class="form-control" type="text"/>
+                <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control"
+                       type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="last_name">last name</label>
-                <input id="last_name" th:field="*{lastName}" class="form-control" type="text"/>
+                <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text"/>
             </div>
 
 
             <div class="form-group">
                 <label for="email">email</label>
-                <input id="email" th:field="*{email}" class="form-control" type="email"/>
+                <input id="email" th:value="${user.email}" name="email" class="form-control" type="email"/>
             </div>
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>Not a valid email address</strong>-->
-            <!--</div>-->
 
             <div class="form-group">
                 <label for="password">password</label>
-                <input id="password" th:field="*{password}" class="form-control" type="password"/>
+                <input id="password" name="password" class="form-control" type="password"/>
             </div>
 
-            <!--<div class="alert alert-danger" role="alert">-->
-            <!--<strong>Password doesn't match. Please try again.</strong>-->
-            <!--</div>-->
 
             <div class="form-group">
                 <label for="confirm_password">confirm password</label>
-                <input id="confirm_password" th:field="*{password}" class="form-control" type="password"/>
+                <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
             </div>
-            <!--<div class="form-group">-->
-            <!--<label for="phone_number">position</label>-->
-            <!--<input id="phone_number" name="last_name" class="form-control" type="text">-->
-            <!--</div>-->
 
             <div class="form-group">
                 <label for="phone">phone</label>
-                <input id="phone" th:field="*{phone}" class="form-control" type="tel"/>
+                <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
             </div>
 
-            <div>
-
-
-                <!--<ul>-->
-                    <!--http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html#the-controller-->
-                    <!--<li th:each="feat : ${allFeatures}">-->
-                        <!--<input type="checkbox" th:field="*{features}" th:value="${feat}" />-->
-                        <!--<label th:for="${#ids.prev('features')}"-->
-                               <!--th:text="#{${'seedstarter.feature.' + feat}}">Heating</label>-->
-                    <!--</li>-->
-                <!--</ul>-->
-
-
+            <!--<div>
 
 
                 <h3>Position</h3>
@@ -269,26 +229,20 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div>-->
 
             <h2>availability</h2>
             <div class="panel-body">
                 <div class="panel panel-default">
                     <div class="panel-heading">currently employed?</div>
-                    <!--<input type="submit" class="btn btn-danger btn-block">-->
-                    <input type="radio" name="employed" value="yes"/> yes
-                    <input type="radio" name="employed" value="no"/> no
-                    <!--<button type="button" name="button" class="btn btn-primary" aria-label="Right Align" value="yes"> yes</button>-->
-                    <!--<button type="button" name="button" class="btn btn-primary" aria-label="Right Align" value="no"> no</button>-->
+                    <input type="radio" name="currentEmployment" value="yes"/> yes
+                    <input type="radio" name="currentEmployment" value="no"/> no
                 </div>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">are you free to pick up shifts?</div>
-                    <!--<input type="submit" class="btn btn-danger btn-block">-->
-                    <input type="radio" name="available" value="yes"/> yes
-                    <input type="radio" name="available" value="no"/> no
-                    <!--<button type="button" name="button" class="btn btn-primary" aria-label="Right Align" value="yes"> yes</button>-->
-                    <!--<button type="button" name="button" class="btn btn-primary" aria-label="Right Align" value="no"> no</button>-->
+                    <input type="radio" name="availability" value="yes"/> yes
+                    <input type="radio" name="availability" value="no"/> no
                 </div>
             </div>
             <input type="submit" class="btn btn-danger btn-block"/>
