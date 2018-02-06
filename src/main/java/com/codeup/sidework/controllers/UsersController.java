@@ -71,15 +71,15 @@ public class UsersController {
     }
 
 
-    //View a user =/users/{id}= (worker profile page)
-    @GetMapping("/users/{id}")
-    public String viewUser(@PathVariable long id, Model viewAndModel) {
-        user = user.findOne(id);
-
-        viewAndModel.addAttribute("user", user);
-
-        return "users/profile-worker";
-    }
+//    //View a user =/users/{id}= (worker profile page)
+//    @GetMapping("/users/{id}")
+//    public String viewUser(@PathVariable long id, Model viewAndModel) {
+//        user = user.findOne(id);
+//
+//        viewAndModel.addAttribute("user", user);
+//
+//        return "users/profile-worker";
+//    }
 
 
 
