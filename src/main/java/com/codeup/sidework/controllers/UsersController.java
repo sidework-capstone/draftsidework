@@ -25,10 +25,12 @@ public class UsersController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/users/")
-    public String showLandingPage() {
-        return "users/landing-page";
-    }
+//    @GetMapping("/users/")
+//    public String showLandingPage() {
+//        return "users/landing-page";
+//    }
+
+    // ^ this mapping will not work for the landing page,
 
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {

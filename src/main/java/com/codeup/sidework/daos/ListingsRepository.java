@@ -1,6 +1,5 @@
 package com.codeup.sidework.daos;
 
-import com.codeup.sidework.models.Division;
 import com.codeup.sidework.models.Listings;
 import org.springframework.data.repository.CrudRepository;
 

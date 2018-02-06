@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<!-- ... -->
-<head>
-    <!--<head th:replace="fragments/header :: main-header('Sign up!')">-->
-</head>
-<body>
-<!--<div th:replace="fragments/navbar :: mainNavbar"></div>-->
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org"-->
+      <!--xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">-->
+<!--&lt;!&ndash; ... &ndash;&gt;-->
+<!--<head>-->
+    <!--&lt;!&ndash;<head th:replace="fragments/header :: main-header('Sign up!')">&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<div th:replace="fragments/navbar :: mainNavbar"></div>&ndash;&gt;-->
 
-<!--<div sec:authorize="isAuthenticated()">-->
-<!--This content is only shown to authenticated users.-->
+<!--&lt;!&ndash;<div sec:authorize="isAuthenticated()">&ndash;&gt;-->
+<!--&lt;!&ndash;This content is only shown to authenticated users.&ndash;&gt;-->
 
-<!--User ID: <span th:text="${#authentication.principal.id}"/>-->
-<!--Username: <span th:text="${#authentication.principal.username}"/>-->
-<!--Email: <span th:text="${#authentication.principal.email}"/>-->
+<!--&lt;!&ndash;User ID: <span th:text="${#authentication.principal.id}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;Username: <span th:text="${#authentication.principal.username}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;Email: <span th:text="${#authentication.principal.email}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--<h1>Hello-->
+    <!--&lt;!&ndash;<span th:text="${username}"></span>&ndash;&gt;-->
+<!--</h1>-->
+
+<!--<div th:each="user : ${users}">-->
+    <!--<h1 th:text="${username}">Your Username</h1>-->
+    <!--<p th:text="${phone}">Your phone</p>-->
 <!--</div>-->
-
-<h1>Hello
-    <!--<span th:text="${username}"></span>-->
-</h1>
-
-<div th:each="user : ${users}">
-    <h1 th:text="${username}">Your Username</h1>
-    <p th:text="${phone}">Your phone</p>
-</div>
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->
 
 
 <!--<!DOCTYPE html>-->
