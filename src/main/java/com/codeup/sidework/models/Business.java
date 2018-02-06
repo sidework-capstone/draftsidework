@@ -12,10 +12,12 @@ public class Business {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
     private List<Listings> listings;
 
-//    public Business(List<Listings> listings) {
-//        this.listings = listings;
-//    }
+    public Business(List<Listings> listings) {
+        this.listings = listings;
+    }
 
+    @OneToOne
+    private User business;
 
     //id
     @Id @GeneratedValue
@@ -49,35 +51,6 @@ public class Business {
     @Column
     private String businessInfo;
 
-    //account_mgr
-    @Column
-    private String accountManager;
-
-    //facebook
-    @Column
-    private String facebook;
-
-    //twitter
-    @Column
-    private String twitter;
-
-    //linkedin
-    @Column
-    private String linkedIn;
-
-    //instagram
-    @Column
-    private String instagram;
-
-    // this is connecting to the user table.
-    // creates a list of all employees associated with that business
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name="business_users",
-            joinColumns = {@JoinColumn(name="business_id")},
-            inverseJoinColumns = {@JoinColumn(name="user_id")}
-    )
-    private List<User> users;
 
 
 
@@ -90,22 +63,14 @@ public class Business {
         this.listings = listings;
     }
 
-    public List<User> getUsers() {
-        return users;
+
+    public User getBusiness() {
+        return business;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setBusiness(User business) {
+        this.business = business;
     }
-
-
-    public Business(List<User> users) {
-        this.users = users;
-    }
-
-
-
-
 
     public long getId() {
         return id;
@@ -171,50 +136,12 @@ public class Business {
         this.businessInfo = businessInfo;
     }
 
-    public String getAccountManager() {
-        return accountManager;
+
+    public Business(User business) {
+        this.business = business;
     }
 
-    public void setAccountManager(String accountManager) {
-        this.accountManager = accountManager;
-    }
-
-    public String getFacebook() {
-        return facebook;
-    }
-
-    public void setFacebook(String facebook) {
-        this.facebook = facebook;
-    }
-
-    public String getTwitter() {
-        return twitter;
-    }
-
-    public void setTwitter(String twitter) {
-        this.twitter = twitter;
-    }
-
-    public String getLinkedIn() {
-        return linkedIn;
-    }
-
-    public void setLinkedIn(String linkedIn) {
-        this.linkedIn = linkedIn;
-    }
-
-    public String getInstagram() {
-        return instagram;
-    }
-
-    public void setInstagram(String instagram) {
-        this.instagram = instagram;
-    }
-
-
-
-
-    public Business(String userName, String email, String password, int businessPhone, String website, String address, String businessInfo, String accountManager, String facebook, String twitter, String linkedIn, String instagram) {
+    public Business(String userName, String email, String password, int businessPhone, String website, String address, String businessInfo) {
         this.userName = userName;
         this.email = email;
         this.password = password;
@@ -222,11 +149,6 @@ public class Business {
         this.website = website;
         this.address = address;
         this.businessInfo = businessInfo;
-        this.accountManager = accountManager;
-        this.facebook = facebook;
-        this.twitter = twitter;
-        this.linkedIn = linkedIn;
-        this.instagram = instagram;
     }
 
     public Business(Business copy) {
@@ -238,11 +160,6 @@ public class Business {
         this.website = copy.website;
         this.address = copy.address;
         this.businessInfo = copy.businessInfo;
-        this.accountManager = copy.accountManager;
-        this.facebook = copy.facebook;
-        this.twitter = copy.twitter;
-        this.linkedIn = copy.linkedIn;
-        this.instagram = copy.instagram;
     }
 
     public Business() {
