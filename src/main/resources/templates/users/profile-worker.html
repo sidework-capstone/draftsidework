@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport"
@@ -30,7 +30,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2 class="title">username</h2>
+            <h2 class="title" th:value="${user.username}">username</h2>
         </div>
     </div>
 
@@ -38,13 +38,14 @@
         <div class="col-xs-12 col-sm-4 col-md-4">
             <label for="first_name">
                 first name:
-                <input type="text" id="first_name" name="first_name" placeholder=""/> required
+                <input type="text" id="first_name" name="first_name" placeholder="" th:value="${user.firstName}"/>
+                <!--<input type="text" id="first_name" name="first_name" placeholder="" th:field="*{first_name}"/>-->
             </label>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="password">
+            <label for="last_name">
                 last name:
-                <input type="text" id="last_name" name="last_name" placeholder=""/> required
+                <input type="text" id="last_name" name="last_name" placeholder="" th:value="${user.lastName}"/>
             </label>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4" style="background: pink; border: 1px solid black; height: 100px;">
@@ -56,22 +57,22 @@
         <div class="col-xs-12 col-sm-4 col-md-4">
             <label for="password">
                 phone:
-                <input type="text" id="phone" name="phone" placeholder=""/>
+                <input type="text" id="phone" name="phone" placeholder="" th:value="${user.phone}" />
             </label>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div>
-                <h4>availability</h4>
+                <h4 th:value="${user.availability}">availability</h4>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed1" value="option1"/>
+                    <input type="checkbox" name="optionsRadios" id="employed1" />
                     currently employed?
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1"/>
+                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1" />
                     free to pick up shifts?
                 </label>
             </div>
@@ -85,7 +86,7 @@
             <!--skills:-->
             <div class="form-group">
                 <label for="skills">Skills:</label>
-                <textarea class="form-control" rows="5" id="skills"></textarea>
+                <textarea class="form-control" rows="5" id="skills" th:value="${user.Skills}"></textarea>
             </div>
             <!--</label>-->
         </div>
@@ -97,7 +98,7 @@
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="form-group">
                 <label for="bio">Bio:</label>
-                <textarea class="form-control" rows="5" id="bio"></textarea>
+                <textarea class="form-control" rows="5" id="bio" th:value="${user.Bio}"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4"></div>

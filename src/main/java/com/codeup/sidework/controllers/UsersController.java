@@ -2,6 +2,7 @@ package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.User;
+import com.codeup.sidework.services.UserDetailsLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -59,33 +60,88 @@ public class UsersController {
 
 
     @PostMapping("/users/workspace-worker")
-    public String viewIndividualUsersWorkplace(@ModelAttribute User user) {
+    public String showIndividualUsersWorkplace(@ModelAttribute User user) {
         return "/users/workspace-worker";
     }
 
 
 
-    @GetMapping("/users/profile-worker")
-    public String viewWorkerProfile() {
+
+    //View a user =/users/{id}= (worker profile page)
+    @GetMapping("/users/profile-worker/{id}")
+    public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
+        // use the repository to find a user by its ID
+        // .findOne(id)
+        User user = usersDao.findOne(id);
+        // pass the user to the view, using a Model (viewmodel)
+        viewAndModel.addAttribute("user", user);
         return "users/profile-worker";
     }
 
-
-//    //View a user =/users/{id}= (worker profile page)
-//    @GetMapping("/users/{id}")
-//    public String viewUser(@PathVariable long id, Model viewAndModel) {
-//        user = user.findOne(id);
-//
-//        viewAndModel.addAttribute("user", user);
-//
-//        return "users/profile-worker";
-//    }
-
-
-
-
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//<--TASKS-->
+
+//        - [ ] [0/10] Users (greg)
+//        - [ ] Create a user =/users/create= (registration page)
+//        - Rows are inserted into the `users` table
+//        - uncommenting
+//        - [ ] View a user =/users/{id}= (worker profile page)
+//        - Currently there are syntax errors on this page
+//        - [ ] View a list of users, i.e. all users in the database, with links to individual users =/users= (business dashboard)//
+
+
+
+//        - [ ] Edit a user's information =/users/{id}/edit= (access control)
+//        - information in the database is changed
+//        - [ ] Attach a position_id to a user when they are created
+//        - currently this is non-functional?
+//        - [ ] Search users by position (blocked by this working on registration)
+
+
+
+//        - [ ] Search (filter) users by availability, employment status (blocked by these working on the register page)
+//        - [ ] Delete a user (access control)
+//        - [ ] Add positions and availability/schedule to user registration
+//        - [ ] Validation error messages
 
 
 
