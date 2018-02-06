@@ -22,7 +22,7 @@ public class BusinessesController {
     }
 
     @PostMapping("/businesses/create")
-    public String saveManagementBusiness(@ModelAttribute Business business) {
+    public String saveNewBusiness(@ModelAttribute Business business) {
         businessesRepository.save(business);
         return "redirect:/users/login-mgmt";
     }
