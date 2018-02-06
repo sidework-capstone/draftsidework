@@ -47,17 +47,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
 //                        "/listings",  // anyone can see the job listing pages
-                        "/", "/users", "/users/register-mgmt", "/users/register-worker", "/users/login-worker") // anyone can see the homepage, login & register pages, and view all users without being signed in
+                        "/", "/users", "/users/register-worker", "/users/login-worker") // anyone can see the homepage, login & register pages, and view all users without being signed in
                 .permitAll()
             /* Pages that require authentication */
             .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/home") // view worker(user) workspace/dashboard and all current job listings
-//                        "/users/workspace-mgmt", // view mgmt(business) workspace/dashboard and all current users' profiles
+                        ///home") // view worker(user) workspace/dashboard and all current job listings
+//                         ^ this path will not work because the html template was originally named "/users/landing-page", we haven't had a home.html view
+//
 //                        "/listings/create",  // only authenticated users can create ads
 //                        "/listings/edit", // only authenticated users can create ads
-//                )
+                        "/users/{id}/edit" // only authenticated users can edit their profile
+                )
                 .authenticated()
         ;
     }
