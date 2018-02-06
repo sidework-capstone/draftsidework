@@ -1,201 +1,201 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8"/>-->
-    <!--<meta name="viewport"-->
-          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
-    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
-    <!--<title>Title</title>-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
-          <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
-    <!--<link rel="stylesheet" href="../../css/profile-business.css"/>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="container">-->
-    <!--<nav th:replace="fragments/navbar :: mainNavbar">-->
-        <!--&lt;!&ndash;<div class="container-fluid">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="navbar-header">&ndash;&gt;-->
-                <!--&lt;!&ndash;<a href="#" class="navbar-brand"><strong>sidework</strong></a>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<ul class="nav navbar-nav navbar-right">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>&ndash;&gt;-->
-                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                <!--&lt;!&ndash;<ul class="nav navbar-nav navbar-right">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li class="covers"><a href="#"><strong>COVERS</strong></a></li>&ndash;&gt;-->
-                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--</nav>-->
-
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<h2 class="title">Business name</h2>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash;BUSINESS INFO&ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12 col-md-6">-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<label for="website">-->
-                        <!--website:-->
-                        <!--<input type="text" id="website" name="website" placeholder="website"/>-->
-                    <!--</label>-->
-                <!--</div>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../../css/profile-business.css"/>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="fragments/navbar :: mainNavbar">
+        <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header">-->
+                <!--<a href="#" class="navbar-brand"><strong>sidework</strong></a>-->
             <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<label for="phone">-->
-                        <!--phone:-->
-                        <!--<input type="text" id="phone" name="phone" placeholder="phone"/>-->
-                    <!--</label>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<label for="email">-->
-                        <!--email:-->
-                        <!--<input type="text" id="email" name="email" placeholder="email"/>-->
-                    <!--</label>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<label for="info">-->
-                        <!--info:-->
-                        <!--<input type="text" id="info" name="info" placeholder="info"/>-->
-                    <!--</label>-->
-                <!--</div>-->
+
+            <!--<div>-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>-->
+                <!--</ul>-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li class="covers"><a href="#"><strong>COVERS</strong></a></li>-->
+                <!--</ul>-->
             <!--</div>-->
         <!--</div>-->
-        <!--&lt;!&ndash;BUSINESS PROFILE PIC/social media&ndash;&gt;-->
-        <!--<div class="row">-->
-            <!--<div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 300px;">-->
-                <!--<h4 class="r">Profile Pic</h4>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<br/>-->
+    </nav>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="title">Business name</h2>
+        </div>
+    </div>
+
+    <!--BUSINESS INFO-->
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="website">
+                        website:
+                        <input type="text" id="website" name="website" placeholder="website"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="phone">
+                        phone:
+                        <input type="text" id="phone" name="phone" placeholder="phone"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="email">
+                        email:
+                        <input type="text" id="email" name="email" placeholder="email"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="info">
+                        info:
+                        <input type="text" id="info" name="info" placeholder="info"/>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--BUSINESS PROFILE PIC/social media-->
+        <div class="row">
+            <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 300px;">
+                <h4 class="r">Profile Pic</h4>
+            </div>
+        </div>
+    </div>
+    <br/>
 
 
-    <!--&lt;!&ndash;Map Location&ndash;&gt;-->
+    <!--Map Location-->
 
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="form-group">-->
-                <!--<label for="location">location:</label>-->
-                <!--<textarea class="form-control" rows="5" id="location"></textarea>-->
-                <!--<button type="submit">submit</button>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12 col-md-6" style="background-color: pink; border: 1px solid black; height: 350px;">-->
-            <!--<h4>location for google maps api</h4>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-            <!--<div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 350px;">-->
-                <!--<div class="col-xs-6" style="border: 1px solid black; height: 200px;">-->
-                    <!--<h4 class="r">menus</h4>-->
-                <!--</div>-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="location">location:</label>
+                <textarea class="form-control" rows="5" id="location"></textarea>
+                <button type="submit">submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6" style="background-color: pink; border: 1px solid black; height: 350px;">
+            <h4>location for google maps api</h4>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 350px;">
+                <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
+                    <h4 class="r">menus</h4>
+                </div>
 
-                <!--<div class="col-xs-6" style="border: 1px solid black; height: 200px;">-->
-                    <!--<h4 class="r">floor chart</h4>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+                <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
+                    <h4 class="r">floor chart</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <!--&lt;!&ndash;MGMT INFO&ndash;&gt;-->
-    <!--<h3>Account Manager:</h3>-->
-    <!--<div class="row">&lt;!&ndash;main row&ndash;&gt;-->
-        <!--<div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;">&lt;!&ndash;main col&ndash;&gt;-->
-            <!--<div class="panel-body">-->
-                <!--<div class="panel panel-default">-->
-                    <!--<div class="panel-heading">Management Category</div>-->
-                    <!--<ul class="list-group">-->
-                        <!--<li class="list-group-item list-group-item-info">-->
-                            <!--<label for="position">Position</label>-->
-                            <!--<select id="position" name="position" class="form-control">-->
-                                <!--<option>General Manager</option>-->
-                                <!--<option>Executive Manager</option>-->
-                                <!--<option>Owner</option>-->
-                                <!--<option>Sous chef</option>-->
-                                <!--<option>Assistant manager</option>-->
-                            <!--</select>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</div>-->
+    <!--MGMT INFO-->
+    <h3>Account Manager:</h3>
+    <div class="row"><!--main row-->
+        <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;"><!--main col-->
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Management Category</div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info">
+                            <label for="position">Position</label>
+                            <select id="position" name="position" class="form-control">
+                                <option>General Manager</option>
+                                <option>Executive Manager</option>
+                                <option>Owner</option>
+                                <option>Sous chef</option>
+                                <option>Assistant manager</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-            <!--<br/>-->
+            <br/>
 
-            <!--<div class="container-fluid">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-12">-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="name">Full Name:</label>-->
-                            <!--<input id="name" name="name" class="form-control" type="text"/>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="email2">Email:</label>-->
-                            <!--<input id="email2" name="email" class="form-control" type="text"/>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="phone2">Phone:</label>-->
-                            <!--<input id="phone2" name="phone" class="form-control" type="text"/>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="sidework_username">Sidework Username:</label>-->
-                            <!--<input id="sidework_username" name="sidework_username" class="form-control" type="text"/>-->
-                        <!--</div>-->
-                        <!--<input type="submit" class="btn btn-danger btn-block" value="Log In"/>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input id="name" name="name" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email2">Email:</label>
+                            <input id="email2" name="email" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone2">Phone:</label>
+                            <input id="phone2" name="phone" class="form-control" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="sidework_username">Sidework Username:</label>
+                            <input id="sidework_username" name="sidework_username" class="form-control" type="text"/>
+                        </div>
+                        <input type="submit" class="btn btn-danger btn-block" value="Log In"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!--&lt;!&ndash;SECOND HALF&ndash;&gt;-->
+        <!--SECOND HALF-->
 
-        <!--<div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;">&lt;!&ndash;main col&ndash;&gt;-->
-            <!--<div class="panel-body">-->
-                <!--<h3>Update Notifications</h3>-->
-            <!--</div>-->
+        <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;"><!--main col-->
+            <div class="panel-body">
+                <h3>Update Notifications</h3>
+            </div>
 
-            <!--<br/>-->
+            <br/>
 
-            <!--<div class="container-fluid">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-12">-->
-                        <!--<div class="form-group">-->
-                            <!--<label for="Update_Password">Update Password:</label>-->
-                            <!--<input id="Update_Password" name="Update_Password" class="form-control" type="password"/>-->
-                        <!--</div>-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="Update_Password">Update Password:</label>
+                            <input id="Update_Password" name="Update_Password" class="form-control" type="password"/>
+                        </div>
 
-                        <!--<div class="form-group">-->
-                            <!--<label for="Confirm_password">Confirm Password:</label>-->
-                            <!--<input id="Confirm_password" name="Confirm_password" class="form-control" type="password"/>-->
-                        <!--</div>-->
-                        <!--<button type="submit" class="btn btn-danger btn-block" value="Log In">submit</button>-->
+                        <div class="form-group">
+                            <label for="Confirm_password">Confirm Password:</label>
+                            <input id="Confirm_password" name="Confirm_password" class="form-control" type="password"/>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">submit</button>
 
-                        <!--<br/>-->
+                        <br/>
 
-                        <!--<div>-->
-                            <!--<h4>-->
-                                <!--Deactivate account-->
-                            <!--</h4>-->
-                        <!--</div>-->
-                        <!--<button type="submit" class="btn btn-danger btn-block" value="Log In">deactivate account-->
-                        <!--</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
+                        <div>
+                            <h4>
+                                Deactivate account
+                            </h4>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">deactivate account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
