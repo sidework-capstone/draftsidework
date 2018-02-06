@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<!--<div th:replace="fragments/navbar :: mainNavbar"></div>-->
+<nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
 <h1>Login</h1>
 
 
@@ -21,7 +21,7 @@
 </div>
 
 <!--th:action must match GetMapping path-->
-<form th:action="@{/users/login-worker}" method="post">
+<form th:action="@{/login}" method="post">
     <label for="username">username</label>
     <input id="username" name="username" type="text"/>
     <label for="password">password</label>

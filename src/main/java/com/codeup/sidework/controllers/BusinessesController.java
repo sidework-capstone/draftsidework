@@ -37,7 +37,7 @@ public class BusinessesController {
         userRepository.save(user);
         business.setUser(user);
         businessesRepository.save(business);
-        return "redirect:/users/login-mgmt";
+        return "redirect:/login";
     }
 
     @GetMapping("/users/workspace-mgmt")

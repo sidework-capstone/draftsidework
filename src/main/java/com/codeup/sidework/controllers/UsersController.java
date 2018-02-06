@@ -65,7 +65,7 @@ public class UsersController {
         usersDao.save(user);
         workerRepository.save(worker);
 //        authenticate(user);
-        return "redirect:/users/login-worker";
+        return "redirect:/login";
     }
 
 
