@@ -47,6 +47,10 @@ public class Business {
     @Column
     private String businessInfo;
 
+    //user
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User user;
+
 
     public List<Listings> getListings() {
         return listings;
@@ -110,6 +114,18 @@ public class Business {
 
     public void setBusinessInfo(String businessInfo) {
         this.businessInfo = businessInfo;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Business(User user) {
+        this.user = user;
     }
 
     public Business() {

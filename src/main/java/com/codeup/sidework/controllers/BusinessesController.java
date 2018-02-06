@@ -2,6 +2,8 @@ package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.daos.BusinessesRepository;
+import com.codeup.sidework.models.User;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,9 @@ public class BusinessesController {
 
     @PostMapping("/businesses/create")
     public String saveNewBusiness(@ModelAttribute Business business) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        business.setUser(businessesRepository.findOne(user.getId()));
         businessesRepository.save(business);
 
         return "redirect:/users/login-mgmt";
