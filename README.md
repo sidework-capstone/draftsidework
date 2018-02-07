@@ -29,7 +29,7 @@ This repository contains the code for the Sidework capstone project built by Mar
     - [ ] Delete a user (access control)
     - [ ] Add positions and availability/schedule to user registration
     - [ ] Validation error messages
-- [ ] [0/7] Business (michael)
+- [ ] [2/7] Business (michael)
     - [ ] Create a business =/businesses/create= (refactor business registration page)
         - The business should be related to the logged in user when creating
         - just logged in users should be able to visit this page
