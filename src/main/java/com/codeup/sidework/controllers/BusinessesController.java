@@ -50,7 +50,6 @@ public class BusinessesController {
         user.setPassword(hash);
         userRepository.save(user);
         business.setUser(user);
-        user.setBusiness(business);
         businessesRepository.save(business);
 
         return "redirect:/login";
