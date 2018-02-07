@@ -1,9 +1,6 @@
 package com.codeup.sidework.models;
 
-
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
 @Table(name = "users")
@@ -17,7 +14,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-
     //email
     @Column(nullable = false, unique = true)
     private String email;
@@ -26,9 +22,17 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+  
+    public User(User copy) {
+        this.id = copy.id;
+        this.username = copy.username;
+        this.email = copy.email;
+        this.password = copy.password;
+    }
 
-    @OneToOne
-    private Business business;
+    public User() {
+
+    }
 
 
     public long getId() {
@@ -47,14 +51,6 @@ public class User {
         this.username = username;
     }
 
-    public Business getBusiness() {
-        return business;
-    }
-
-    public void setBusiness(Business business) {
-        this.business = business;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -70,17 +66,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public User(User copy) {
-        this.id = copy.id;
-        this.username = copy.username;
-        this.email = copy.email;
-        this.password = copy.password;
-    }
-
-    public User() {
-
-    }
-
 }
-
