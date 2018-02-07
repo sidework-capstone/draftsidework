@@ -123,8 +123,6 @@ public class UsersController {
 //            model.addAttribute("user", user);
 //            return "users/register"; }
 
-
-
 //----------------------------------------------------------------------------------------------------
 //// AUTHENTICATION OF USER WITH USERDETAILSLOADER
 //    private void authenticate(User authenticatedUser) {

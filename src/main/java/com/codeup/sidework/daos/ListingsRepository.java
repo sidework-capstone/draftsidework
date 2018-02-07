@@ -5,5 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ListingsRepository extends CrudRepository<Listings, Long> {
     Listings findAllById(long id);
-
 }

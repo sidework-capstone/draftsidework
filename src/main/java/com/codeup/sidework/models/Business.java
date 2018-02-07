@@ -5,9 +5,8 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "business")
+@Table(name = "businesses")
 public class Business {
-
     //id
     @Id @GeneratedValue
     private long id;
@@ -38,21 +37,13 @@ public class Business {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
     private List<Listings> listings;
 
+
     public List<Listings> getListings() {
         return listings;
     }
 
     public void setListings(List<Listings> listings) {
         this.listings = listings;
-    }
-
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public long getId() {
@@ -103,4 +94,19 @@ public class Business {
         this.businessInfo = businessInfo;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Business(User user) {
+        this.user = user;
+    }
+
+    public Business() {
+
+    }
 }

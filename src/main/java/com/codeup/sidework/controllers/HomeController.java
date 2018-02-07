@@ -31,8 +31,6 @@ public class HomeController {
             return "redirect:/users/profile-worker/" + user.getId();
         }
 
-        return "redirect:/users/profile-business";
-
+        return "redirect:/businesses/profile/" + user.getId();
     }
-
 }

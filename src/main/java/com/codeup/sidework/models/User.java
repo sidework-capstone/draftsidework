@@ -1,12 +1,10 @@
 package com.codeup.sidework.models;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
-
     //id
     @Id
     @GeneratedValue
@@ -16,7 +14,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-
     //email
     @Column(nullable = false, unique = true)
     private String email;
@@ -25,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-
+  
     public User(User copy) {
         this.id = copy.id;
         this.username = copy.username;
@@ -36,6 +33,7 @@ public class User {
     public User() {
 
     }
+
 
     public long getId() {
         return id;
@@ -68,6 +66,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
-
