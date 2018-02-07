@@ -6,7 +6,6 @@ import java.util.List;
 @Entity
 @Table(name = "workers")
 public class Worker {
-
     @Id
     @GeneratedValue
     private long id;

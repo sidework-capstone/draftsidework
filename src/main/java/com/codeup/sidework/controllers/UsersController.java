@@ -21,12 +21,6 @@ public class UsersController {
         this.workerRepository = workerRepository;
     }
 
-//    @GetMapping("/users/")
-//    public String showLandingPage() {
-//        return "users/landing-page";
-//    }
-                 // ^ this mapping will not work for the landing page, needs to go through the Home Controller
-
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
@@ -52,8 +46,6 @@ public class UsersController {
 //            model.addAttribute("errors", validation);
 //            model.addAttribute("user", user);
 //            return "users/register"; }
-
-
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
