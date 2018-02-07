@@ -34,8 +34,8 @@ This repository contains the code for the Sidework capstone project built by Mar
         - The business should be related to the logged in user when creating
         - just logged in users should be able to visit this page
         - rows are inserted into the `businesses` table
-    - [ ] View an individual business =/businesses/{id}= (business profile page)
-    - [ ] View all businesses =/businesses=
+    - [x] View an individual business =/businesses/{id}= (business profile page)
+    - [x] View all businesses =/businesses=
     - [ ] Edit businesses page =/businesses/{id}/edit= (access control)
         - information in the database is changed
     - [ ] View the listings a business has created on the individual business page (blocked by creating listings)
