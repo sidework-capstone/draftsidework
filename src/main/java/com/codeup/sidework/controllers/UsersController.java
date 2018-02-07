@@ -21,12 +21,6 @@ public class UsersController {
         this.workerRepository = workerRepository;
     }
 
-//    @GetMapping("/users/")
-//    public String showLandingPage() {
-//        return "users/landing-page";
-//    }
-                 // ^ this mapping will not work for the landing page, needs to go through the Home Controller
-
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
@@ -37,23 +31,6 @@ public class UsersController {
     @PostMapping("/users/register-worker")
     public String registerNewWorker(@ModelAttribute User user, @ModelAttribute Worker worker) {
 
-        //// AUTHENTICATION OF USERNAME/PASSWORD
-//        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
-//        User existingUser = usersDao.findByUsername(user.getUsername());
-//        if (existingUser != null) {
-//            validation.rejectValue("username", "username", "this username is unavailable"); }
-//        if (user.getPassword().equals("")) {
-//            validation.rejectValue("password", "password", "password must be at least 5 characters"); }
-        //// do we need to add another column to confirm password for authentication?
-//        //        if (!user.getPassword().equals(user.getConfirmPassword())) {
-//        //            validation.rejectValue("confirmPassword", "confirmPassword", "passwords must match");
-//        //        }
-//        if (validation.hasErrors()) {
-//            model.addAttribute("errors", validation);
-//            model.addAttribute("user", user);
-//            return "users/register"; }
-
-
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
@@ -63,24 +40,9 @@ public class UsersController {
         return "redirect:/login";
     }
 
-    //// AUTHENTICATION OF USER WITH USERDETAILSLOADER
-//    private void authenticate(User authenticatedUser) {
-//        UserDetailsLoader userDetailsLoader = new UserWithRoles(authenticatedUser, Collections.emptyList());
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsLoader; userDetailsLoader.getPassword(), userDetailsLoader.getAuthorities());
-//        SecurityContext context = SecurityContextHolder.getContext();
-//        context.setAuthentication(authentication);
-//    }
 
     @GetMapping("/users/workspace-worker")
     public String showWorkerWorkspace() {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        if (user.getId() == 0) {
-////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//            return "redirect:/users/login-worker";
-//        }
-
-//        user = usersDao.findOne(user.getId());
-//        model.addAttribute("user", user);
         return "/users/workspace-worker";
     }
 
@@ -107,6 +69,85 @@ public class UsersController {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    @GetMapping("/users/")
+//    public String showLandingPage() {
+//        return "users/landing-page";
+//    }
+// ^ this mapping will not work for the landing page, needs to go through the Home Controller
+
+
+//// AUTHENTICATION OF USERNAME/PASSWORD
+//        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
+//        User existingUser = usersDao.findByUsername(user.getUsername());
+//        if (existingUser != null) {
+//            validation.rejectValue("username", "username", "this username is unavailable"); }
+//        if (user.getPassword().equals("")) {
+//            validation.rejectValue("password", "password", "password must be at least 5 characters"); }
+//// do we need to add another column to confirm password for authentication?
+//        //        if (!user.getPassword().equals(user.getConfirmPassword())) {
+//        //            validation.rejectValue("confirmPassword", "confirmPassword", "passwords must match");
+//        //        }
+//        if (validation.hasErrors()) {
+//            model.addAttribute("errors", validation);
+//            model.addAttribute("user", user);
+//            return "users/register"; }
+
+
+
+//----------------------------------------------------------------------------------------------------
+//// AUTHENTICATION OF USER WITH USERDETAILSLOADER
+//    private void authenticate(User authenticatedUser) {
+//        UserDetailsLoader userDetailsLoader = new UserWithRoles(authenticatedUser, Collections.emptyList());
+//        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsLoader; userDetailsLoader.getPassword(), userDetailsLoader.getAuthorities());
+//        SecurityContext context = SecurityContextHolder.getContext();
+//        context.setAuthentication(authentication);
+//    }
+
+
+//----------------------------------------------------------------------------------------------------
+//below showWorkerWorkSpace method
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        if (user.getId() == 0) {
+////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//            return "redirect:/users/login-worker";
+//        }
+
+//        user = usersDao.findOne(user.getId());
+//        model.addAttribute("user", user);
+
+
+//----------------------------------------------------------------------------------------------------
 ////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^
 //        Iterable<Listings> listings = listingsService.findAll();
 //        model.addAttribute("listings", listings);
