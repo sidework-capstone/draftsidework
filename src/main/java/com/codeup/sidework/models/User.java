@@ -29,6 +29,11 @@ public class User {
     private String password;
 
 
+    @OneToOne
+    private Business business;
+
+
+
     public long getId() {
         return id;
     }
@@ -43,6 +48,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 
     public String getEmail() {
