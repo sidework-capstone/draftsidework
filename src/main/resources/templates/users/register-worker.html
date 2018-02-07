@@ -56,6 +56,16 @@
                 <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
             </div>
 
+            <div class="form-group">
+                <label for="skills">skills</label>
+                <textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control" type="tel"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">bio</label>
+                <textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control" type="tel"></textarea>
+            </div>
+
             <!--<div>
 
 
