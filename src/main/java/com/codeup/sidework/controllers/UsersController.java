@@ -1,7 +1,9 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.UserRepository;
+import com.codeup.sidework.daos.WorkerRepository;
 import com.codeup.sidework.models.User;
+import com.codeup.sidework.models.Worker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,28 +19,26 @@ import javax.validation.Valid;
 
 @Controller
 public class UsersController {
+    private final WorkerRepository workerRepository;
+    // This is an object that cannot be replaced by another
     private final UserRepository usersDao;
     private PasswordEncoder passwordEncoder;
 
-    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder) {
+    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder, WorkerRepository workerRepository) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.workerRepository = workerRepository;
     }
-
-//    @GetMapping("/users/")
-//    public String showLandingPage() {
-//        return "users/landing-page";
-//    }
-                 // ^ this mapping will not work for the landing page, needs to go through the Home Controller
 
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("worker", new Worker());
         return "users/register-worker";
     }
 
     @PostMapping("/users/register-worker")
-    public String registerNewWorker(@ModelAttribute User user) {
+    public String registerNewWorker(@ModelAttribute User user, @ModelAttribute Worker worker) {
 
         //// AUTHENTICATION OF USERNAME/PASSWORD
 //        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
@@ -55,33 +55,17 @@ public class UsersController {
 //            model.addAttribute("errors", validation);
 //            model.addAttribute("user", user);
 //            return "users/register"; }
-
-
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
+        worker.setUser(user);
         usersDao.save(user);
+        workerRepository.save(worker);
 //        authenticate(user);
-        return "redirect:/users/login-worker";
+        return "redirect:/login";
     }
-
-    //// AUTHENTICATION OF USER WITH USERDETAILSLOADER
-//    private void authenticate(User authenticatedUser) {
-//        UserDetailsLoader userDetailsLoader = new UserWithRoles(authenticatedUser, Collections.emptyList());
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsLoader; userDetailsLoader.getPassword(), userDetailsLoader.getAuthorities());
-//        SecurityContext context = SecurityContextHolder.getContext();
-//        context.setAuthentication(authentication);
-//    }
 
     @GetMapping("/users/workspace-worker")
     public String showWorkerWorkspace() {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        if (user.getId() == 0) {
-////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//            return "redirect:/users/login-worker";
-//        }
-
-//        user = usersDao.findOne(user.getId());
-//        model.addAttribute("user", user);
         return "/users/workspace-worker";
     }
 
@@ -95,14 +79,3 @@ public class UsersController {
         return "users/profile-worker";
     }
 }
-
-////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^
-//        Iterable<Listings> listings = listingsService.findAll();
-//        model.addAttribute("listings", listings);
-//
-////  RESEARCH HOW TO BIND MULTIPLE CHECKBOXES TO ENTITIES
-//    ModelAndView class documentation
-//    @InitBinder
-//    public void initBind(final WebDataBinder binder) {
-//        binder.registerCustomEditor(Positions.class, new Positions());
-//    }

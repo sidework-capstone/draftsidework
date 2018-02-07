@@ -7,34 +7,16 @@ import java.util.List;
 @Entity
 @Table(name = "business")
 public class Business {
-    // this is connecting to the listings table.
-    // for any one business this returns a list of all its job listings
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Listings> listings;
-
-    public Business(List<Listings> listings) {
-        this.listings = listings;
-    }
-
-    @OneToOne
-    private User business;
-
     //id
     @Id @GeneratedValue
     private long id;
 
-    //business name
-    @Column(nullable = false, unique = true)
+    @Column
     private String businessName;
-
-    //email
-    @Column(nullable = false, unique = true)
-    private String email;
 
     //phone number
     @Column
     private int businessPhone;
-
     //website
     @Column
     private String website;
@@ -47,9 +29,13 @@ public class Business {
     @Column
     private String businessInfo;
 
-    //user
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private User user;
+
+    // this is connecting to the listings table.
+    // for any one business this returns a list of all it's job listings
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
+    private List<Listings> listings;
 
 
     public List<Listings> getListings() {
@@ -74,14 +60,6 @@ public class Business {
 
     public void setBusinessName(String businessName) {
         this.businessName = businessName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public int getBusinessPhone() {
