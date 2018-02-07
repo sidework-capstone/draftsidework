@@ -5,7 +5,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "business")
+@Table(name = "businesses")
 public class Business {
     //id
     @Id @GeneratedValue
