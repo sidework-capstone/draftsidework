@@ -1,28 +1,24 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.UserRepository;
+import com.codeup.sidework.daos.WorkerRepository;
 import com.codeup.sidework.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.codeup.sidework.models.Worker;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-
 
 @Controller
 public class UsersController {
+    private final WorkerRepository workerRepository;
     private final UserRepository usersDao;
     private PasswordEncoder passwordEncoder;
 
-    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder) {
+    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder, WorkerRepository workerRepository) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.workerRepository = workerRepository;
     }
 
 //    @GetMapping("/users/")
@@ -34,11 +30,12 @@ public class UsersController {
     @GetMapping("/users/register-worker")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("worker", new Worker());
         return "users/register-worker";
     }
 
     @PostMapping("/users/register-worker")
-    public String registerNewWorker(@ModelAttribute User user) {
+    public String registerNewWorker(@ModelAttribute User user, @ModelAttribute Worker worker) {
 
         //// AUTHENTICATION OF USERNAME/PASSWORD
 //        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
@@ -60,8 +57,10 @@ public class UsersController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
+        worker.setUser(user);
+        workerRepository.save(worker);
 //        authenticate(user);
-        return "redirect:/users/login-worker";
+        return "redirect:/login";
     }
 
     //// AUTHENTICATION OF USER WITH USERDETAILSLOADER
@@ -92,6 +91,18 @@ public class UsersController {
 
     @GetMapping("/users/profile-worker")
     public String viewWorkerProfile() {
+        return "users/profile-worker";
+    }
+
+    @GetMapping("/users/profile-worker/{id}")
+    public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
+        // use the repository to find a user by its ID
+        // .findOne(id)
+        User user = usersDao.findOne(id);
+        Worker worker = workerRepository.findByUser(user);
+        // pass the user to the view, using a Model (viewmodel)
+        viewAndModel.addAttribute("user", user);
+        viewAndModel.addAttribute("worker", worker);
         return "users/profile-worker";
     }
 }
