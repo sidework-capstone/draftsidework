@@ -9,14 +9,6 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    // this creates a user_positions pivot table
-    // connected to USERPOSITIONS class
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<UserPositions> userPositions;
-
-    @OneToOne
-    private Business business;
-
 
     //id
     @Id
@@ -27,13 +19,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-    //first name
-    @Column(nullable = false)
-    private String firstName;
-
-    //last name
-    @Column(nullable = false)
-    private String lastName;
 
     //email
     @Column(nullable = false, unique = true)
@@ -43,43 +28,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    //phone
-    @Column
-    private int phone;
 
-    //bio
-    @Column
-    private String bio;
-
-    //skills
-    @Column
-    private String skills;
-
-    //currentEmployment
-    @Column
-    private boolean currentEmployment;
-
-    //availability
-    @Column
-    private boolean availability;
-
-    //facebook
-    @Column
-    private String facebook;
-
-    //twitter
-    @Column
-    private String twitter;
-
-    //linkedin
-    @Column
-    private String linkedIn;
-
-    //instagram
-    @Column
-    private String instagram;
-
-
+    @OneToOne
+    private Business business;
 
 
 
@@ -100,20 +51,12 @@ public class User {
         this.username = username;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Business getBusiness() {
+        return business;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 
     public String getEmail() {
@@ -132,149 +75,15 @@ public class User {
         this.password = password;
     }
 
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public String getSkills() {
-        return skills;
-    }
-
-    public void setSkills(String skills) {
-        this.skills = skills;
-    }
-
-    public boolean isCurrentEmployment() {
-        return currentEmployment;
-    }
-
-    public void setCurrentEmployment(boolean currentEmployment) {
-        this.currentEmployment = currentEmployment;
-    }
-
-    public boolean isAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(boolean availability) {
-        this.availability = availability;
-    }
-
-    public String getFacebook() {
-        return facebook;
-    }
-
-    public void setFacebook(String facebook) {
-        this.facebook = facebook;
-    }
-
-    public String getTwitter() {
-        return twitter;
-    }
-
-    public void setTwitter(String twitter) {
-        this.twitter = twitter;
-    }
-
-    public String getLinkedIn() {
-        return linkedIn;
-    }
-
-    public void setLinkedIn(String linkedIn) {
-        this.linkedIn = linkedIn;
-    }
-
-    public String getInstagram() {
-        return instagram;
-    }
-
-    public void setInstagram(String instagram) {
-        this.instagram = instagram;
-    }
-
-    public Business getBusiness() {
-        return business;
-    }
-
-    public void setBusiness(Business business) {
-        this.business = business;
-    }
-
-
-
-
-    public void setUserPositions(List<UserPositions> userPositions) {
-        this.userPositions = userPositions;
-    }
-
-    public List<UserPositions> getUserPositions() {
-        return userPositions;
-    }
-
-    public User(List<UserPositions> userPositions) {
-        this.userPositions = userPositions;
-    }
-
-    public User(Business business) {
-        this.business = business;
-    }
-
-    public User(String username, String firstName, String lastName, String email, String password, int phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.bio = bio;
-        this.skills = skills;
-        this.currentEmployment = currentEmployment;
-        this.availability = availability;
-        this.facebook = facebook;
-        this.twitter = twitter;
-        this.linkedIn = linkedIn;
-        this.instagram = instagram;
-    }
-
     public User(User copy) {
         this.id = copy.id;
         this.username = copy.username;
-        this.firstName = copy.firstName;
-        this.lastName = copy.lastName;
         this.email = copy.email;
         this.password = copy.password;
-        this.phone = copy.phone;
-        this.bio = copy.bio;
-        this.skills = copy.skills;
-        this.currentEmployment = copy.currentEmployment;
-        this.availability = copy.availability;
-        this.facebook = copy.facebook;
-        this.twitter = copy.twitter;
-        this.linkedIn = copy.linkedIn;
-        this.instagram = copy.instagram;
     }
 
     public User() {
 
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "User[username='%s', id=%d, firstName='%s', lastName='%s']",
-                username, id, firstName, lastName);
     }
 
 }
