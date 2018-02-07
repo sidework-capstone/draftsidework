@@ -65,7 +65,7 @@ public class BusinessesController {
     }
 
     @GetMapping("/users/workspace-mgmt")
-    public String showManagmentWorkspace() {
+    public String showManagementWorkspace() {
         return "users/workspace-mgmt";
     }
 
@@ -79,4 +79,16 @@ public class BusinessesController {
 
         return "businesses/profile";
     }
+
+    @GetMapping("/businesses/edit")
+    public String showEditBusinessForm(@PathVariable long id, Model model) {
+        User user = userRepository.findOne(id);
+        Business business = businessesRepository.findByUser(user);
+
+        model.addAttribute("user", user);
+        model.addAttribute("business", business);
+
+        return "business/edit";
+    }
+
 }

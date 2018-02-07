@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/head :: mainHead('Register Your Business')"></head>
+<head th:replace="fragments/head :: mainHead('Register Your Business')"></head>
 <body>
 <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
 <div class="container">
-    <div class="pic"></div>
-    <h1>register your business</h1>
-
-    <br/>
-
-    <!--Display the form for creating a new business-->
-    <form th:action="@{/businesses/create}" method="post">
-        <div class="form-group">
-            <label for="username">username</label>
-            <input id="username" name="username" th:value="${user.username}" class="form-control" type="text"/>
-        </div>
+    <form th:action="@{/businesses/edit}" method="post">
         <div class="form-group">
             <label for="email">email</label>
             <input id="email" name="email" th:value="${user.email}" class="form-control" type="email"/>
         </div>
+
         <div class="form-group">
             <label for="password">password</label>
             <input id="password" name="password" class="form-control" type="password"/>
         </div>
+
         <div class="form-group">
             <label for="business_name">business name</label>
             <input id="business_name" name="businessName" th:value="${business.businessName}" class="form-control"
@@ -53,13 +45,6 @@
             <input id="info" name="businessInfo" th:value="${business.businessInfo}" class="form-control" type="text"/>
         </div>
 
-        <div class="form-group">
-            <label><a href="#">please upload business owner verification letter</a></label>
-        </div>
-
-        <br/>
-
-        <input type="submit" class="btn btn-success btn-block"/>
     </form>
 </div>
 </body>
