@@ -4,6 +4,8 @@ import com.codeup.sidework.daos.BusinessesRepository;
 import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.models.User;
+import com.codeup.sidework.services.BusinessesService;
+import com.codeup.sidework.services.ListingsService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -18,16 +20,20 @@ public class BusinessesController {
     private final BusinessesRepository businessesRepository;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private BusinessesService businessesService;
 
     public BusinessesController(
             BusinessesRepository businessesRepository,
             UserRepository userRepository,
-            PasswordEncoder passwordEncoder
+            PasswordEncoder passwordEncoder,
+            BusinessesService businessesService
     ) {
         this.businessesRepository = businessesRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.businessesService = businessesService;
     }
+
 
     @GetMapping("/businesses/create")
     public String showCreateBusinessForm(Model model) {
@@ -40,14 +46,23 @@ public class BusinessesController {
     @PostMapping("/businesses/create")
     public String saveNewBusiness(@ModelAttribute User user, @ModelAttribute Business business) {
         String hash = passwordEncoder.encode(user.getPassword());
+
         user.setPassword(hash);
         userRepository.save(user);
-
         business.setUser(user);
-
+        user.setBusiness(business);
         businessesRepository.save(business);
 
         return "redirect:/login";
+    }
+
+    @GetMapping("/businesses")
+    public String showAllBusinesses(Model model) {
+        Iterable<Business> businesses = businessesService.findAll();
+
+        model.addAttribute("businesses", businesses);
+
+        return "businesses/index";
     }
 
     @GetMapping("/users/workspace-mgmt")
