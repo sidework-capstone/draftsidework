@@ -5,8 +5,6 @@ import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.BusinessesService;
-import com.codeup.sidework.services.ListingsService;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +48,6 @@ public class BusinessesController {
         user.setPassword(hash);
         userRepository.save(user);
         business.setUser(user);
-        user.setBusiness(business);
         businessesRepository.save(business);
 
         return "redirect:/login";
@@ -66,7 +63,7 @@ public class BusinessesController {
     }
 
     @GetMapping("/users/workspace-mgmt")
-    public String showManagmentWorkspace() {
+    public String showManagementWorkspace() {
         return "users/workspace-mgmt";
     }
 
