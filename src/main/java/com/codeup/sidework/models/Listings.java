@@ -1,28 +1,21 @@
 package com.codeup.sidework.models;
 
-
-import org.apache.tomcat.jni.Time;
-import org.hibernate.type.DateType;
-import org.hibernate.type.TimeType;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
-
 
 @Entity
 @Table(name = "listings")
 public class Listings {
-
     //id
     @Id @GeneratedValue
     private long id;
 
+    @Column(nullable = false)
+    private String title;
+
     //shift details
     @Column(nullable = false)
     private String description;
-
 
     // connected to the positions table
     // many job listings can be associated with many positions
@@ -34,13 +27,11 @@ public class Listings {
     )
     private List<Positions> positions;
 
-
     // connected to the business table.
     // many job postings can be associated with a business by the id
     @ManyToOne
     @JoinColumn (name = "business_id")
     private Business business;
-
 
 
     public long getId() {
@@ -51,6 +42,14 @@ public class Listings {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -58,9 +57,6 @@ public class Listings {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
 
     public List<Positions> getPositions() {
         return positions;
@@ -79,12 +75,9 @@ public class Listings {
     }
 
 
-
-
     public Listings(List<Positions> positions) {
         this.positions = positions;
     }
-
 
     public Listings(String description) {
         this.description = description;
@@ -93,5 +86,4 @@ public class Listings {
     public Listings() {
 
     }
-
 }

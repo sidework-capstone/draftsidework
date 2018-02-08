@@ -3,7 +3,6 @@ package com.codeup.sidework.models;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Table(name = "businesses")
 public class Business {
@@ -101,6 +100,7 @@ public class Business {
     public void setUser(User user) {
         this.user = user;
     }
+
 
     public Business(User user) {
         this.user = user;

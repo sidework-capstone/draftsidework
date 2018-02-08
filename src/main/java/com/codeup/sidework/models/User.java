@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-  
+
     public User(User copy) {
         this.id = copy.id;
         this.username = copy.username;
