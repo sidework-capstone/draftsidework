@@ -47,7 +47,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
 //                        "/listings",  // anyone can see the job listing pages
-                        "/", "/users", "/users/register-worker", "/login", "/businesses") // anyone can see the homepage, login & register pages, and view all users without being signed in
+                        "/",
+                        "/users",
+                        "/users/register-worker",
+                        "/login",
+                        "/businesses",
+                        "/index") // anyone can see the homepage, login & register pages, and view all users without being signed in
                 .permitAll()
             /* Pages that require authentication */
             .and()

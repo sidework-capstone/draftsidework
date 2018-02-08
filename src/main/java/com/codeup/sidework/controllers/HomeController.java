@@ -17,10 +17,17 @@ public class HomeController {
         this.workerRepository = workerRepository;
     }
 
+
     @GetMapping("/")
-    public String index() {
+    public String landingPage() {
         return "index";
     }
+
+    @GetMapping("/howitworks")
+    public String showHowItWorksPage() {
+        return "howitworks";
+    }
+
 
     @GetMapping("/dashboard")
     public String dashboard() {
