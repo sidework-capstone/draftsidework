@@ -42,7 +42,7 @@ This repository contains the code for the Sidework capstone project built by Mar
     - [ ] Delete a business (access control)
     - [ ] Validation error messages
 - [ ] [0/10] Listings (mary)
-    - [ ] Create a listing with just details =/listings/create=
+    - [x] Create a listing with just details =/listings/create=
         - When a listing is created, the business_id of the logged in user
           should be attached to the listing
         - only users that have created a business should be able to access
