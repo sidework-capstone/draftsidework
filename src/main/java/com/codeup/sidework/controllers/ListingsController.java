@@ -2,10 +2,12 @@ package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
 import com.codeup.sidework.daos.UserRepository;
+import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.ListingsService;
 import com.codeup.sidework.daos.ListingsRepository;
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.models.Listing;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +50,10 @@ public class ListingsController {
     }
 
     @PostMapping("/listings/create")
-    public String createNewListing(@ModelAttribute Business business, @ModelAttribute Listing listing) {
+
+    public String createNewListing(@ModelAttribute Listing listing) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Business business = businessDao.findByUser(user);
         listing.setBusiness(business);
         listingsRepository.save(listing);
         return "redirect:/businesses/profile/" + business.getId();
