@@ -17,7 +17,7 @@ public class HomeController {
         this.workerRepository = workerRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
         return "index";
     }

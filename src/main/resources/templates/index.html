@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html xmlns:th="http://www.thymeleaf.org">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<meta charset="UTF-8" />
+<title>sidework</title>
+<body>
+<nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
 
-<body class="text-center">
-
-
-<div class="container landing-cover-container">
-    <div role="main" class="inner cover">
-
-    <h1> Hello World</h1>
-
+<div id="slider">
+    <figure>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-active">
+                    <img class="img-responsive center-block" width="75%" src="/img/womanReallyEnjoyingFruitForBreakfast.jpg" alt="Sixth slide" />
+                </div>
+                <div class="carousel-item active">
+                    <img class="img-responsive center-block" width="75%" src="/img/mojitoMintRedLightsMetalBartop.jpg" alt="First slide" />
+                </div>
+                <div class="carousel-active">
+                    <img class="img-responsive center-block" width="75%" src="/img/chefCuttingMeat.jpg"  alt="Fifth slide" />
+                </div>
+                <div class="carousel-active">
+                    <img class="img-responsive center-block" width="75%" src="/img/dishesWoodTableAerial.jpg" alt="Second slide" />
+                </div>
+                <div class="carousel-active">
+                    <img class="img-responsive center-block" width="75%" src="/img/lineCookBackTurnedBOYHat.jpg" alt="Third slide" />
+                </div>
+                <div class="carousel-item active">
+                    <img class="img-responsive center-block" width="75%" src="/img/chefSmokingPortrait.jpg" alt="Forth slide" />
+                </div>
+            </div>
+        </div>
+    </figure>
+    <div class="bg">
     </div>
 </div>
+<div class="main-button">
 
+</div>
 </body>
-
 </html>
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8"/>-->
-    <!--<meta name="viewport"-->
-          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
-    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
-    <!--<title>Title</title>-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
-          <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
-    <!--<link rel="stylesheet" href="../../css/index.css"/>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="container">-->
-    <!--<div class="jumbotron">-->
-        <!--<h1>SIDEWORK</h1>-->
-        <!--<div class="row">-->
-            <!--<div class="col-xs-6">-->
-                <!--<a class="btn btn-primary btn-lg" href="#" role="button">management</a>-->
-            <!--</div>-->
-
-            <!--<div class="col-xs-6">-->
-                <!--<a class="btn btn-primary btn-lg" href="#" role="button">workers</a>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
