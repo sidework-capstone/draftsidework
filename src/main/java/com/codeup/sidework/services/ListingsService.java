@@ -2,7 +2,7 @@ package com.codeup.sidework.services;
 
 
 import com.codeup.sidework.daos.ListingsRepository;
-import com.codeup.sidework.models.Listings;
+import com.codeup.sidework.models.Listing;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,15 +13,15 @@ public class ListingsService {
         this.listingsDao = listingsDao;
     }
 
-    public Iterable<Listings> findAll() {
+    public Iterable<Listing> findAll() {
         return listingsDao.findAll();
     }
 
-    public void save(Listings listing) {
+    public void save(Listing listing) {
         listingsDao.save(listing);
     }
 
-    public Listings findOne(long id) {
+    public Listing findOne(long id) {
         return listingsDao.findOne(id);
     }
 }

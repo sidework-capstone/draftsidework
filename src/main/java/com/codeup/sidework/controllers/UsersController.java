@@ -95,3 +95,15 @@ public class UsersController {
 
 
 
+
+//----------------------------------------------------------------------------------------------------
+////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^
+//        Iterable<Listing> listings = listingsService.findAll();
+//        model.addAttribute("listings", listings);
+//
+////  RESEARCH HOW TO BIND MULTIPLE CHECKBOXES TO ENTITIES
+//    ModelAndView class documentation
+//    @InitBinder
+//    public void initBind(final WebDataBinder binder) {
+//        binder.registerCustomEditor(Positions.class, new Positions());
+//    }

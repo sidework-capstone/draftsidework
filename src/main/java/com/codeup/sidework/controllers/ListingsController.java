@@ -2,11 +2,10 @@ package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
 import com.codeup.sidework.daos.UserRepository;
-import com.codeup.sidework.models.Listings;
-import com.codeup.sidework.models.User;
-import com.codeup.sidework.services.BusinessesService;
 import com.codeup.sidework.services.ListingsService;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.codeup.sidework.daos.ListingsRepository;
+import com.codeup.sidework.models.Business;
+import com.codeup.sidework.models.Listing;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +18,16 @@ public class ListingsController {
     private ListingsService listingsService;
     private UserRepository usersDao;
     private BusinessesRepository businessDao;
+    private final ListingsRepository listingsRepository;
+
 
     //2. Constructor-->
-    public ListingsController(ListingsService listingsService, UserRepository usersDao, BusinessesRepository businessDao) {
+    public ListingsController(ListingsService listingsService, UserRepository usersDao, BusinessesRepository businessDao, ListingsRepository listingsRepository) {
         this.listingsService = listingsService;
         this.usersDao = usersDao;
         this.businessDao = businessDao;
+        this.listingsRepository = listingsRepository;
     }
-
 
 
     //3. Logic to get a List of businesses by {id}
@@ -39,28 +40,27 @@ public class ListingsController {
 //        return "listings/index";
 //    }
 
+    @GetMapping("/listings/create")
+    public String showCreateListingForm(Model model) {
+        model.addAttribute("listing", new Listing());
+
+        return "listings/create";
+    }
+
+    @PostMapping("/listings/create")
+    public String createNewListing(@ModelAttribute Business business, @ModelAttribute Listing listing) {
+        listingsRepository.save(listing);
+        return "redirect:/businesses/profile/" + business.getId();
+    }
 
     //4. Logic to get a List of businesses-------------------->
     @GetMapping("/listings/index")
     public String showAllListings(Model model) {
-        Iterable<Listings> listings = listingsService.findAll();
+        Iterable<Listing> listings = listingsService.findAll();
         model.addAttribute("listings", listings);
 
         return "listings/index";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //    //5. Create Listings------------------->
 //    @GetMapping("/listings/new")
@@ -87,13 +87,4 @@ public class ListingsController {
 //        listingsService.save(listings);
 //        return "redirect:/listings/index";
 //    }
-
-
-
-
-
-
-
-
-
 }

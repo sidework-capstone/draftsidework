@@ -2,9 +2,6 @@ package com.codeup.sidework.models;
 
 
 import javax.persistence.*;
-import java.awt.*;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyEditor;
 import java.util.List;
 
 
@@ -42,7 +39,7 @@ public class Positions {
     // connected to the listings table
     // many positions can be associated with many job listings
     @ManyToMany(mappedBy = "positions")
-    private List<Listings> listings;
+    private List<Listing> listings;
 
 
     public void setId(long id) {
@@ -81,11 +78,11 @@ public class Positions {
         this.userPositions = userPositions;
     }
 
-    public void setListings(List<Listings> listings) {
+    public void setListings(List<Listing> listings) {
         this.listings = listings;
     }
 
-    public List<Listings> getListings() {
+    public List<Listing> getListings() {
         return listings;
     }
 

@@ -3,7 +3,6 @@ package com.codeup.sidework.models;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Table(name = "businesses")
 public class Business {
@@ -35,7 +34,7 @@ public class Business {
     // this is connecting to the listings table.
     // for any one business this returns a list of all it's job listings
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Listings> listings;
+    private List<Listing> listings;
 
 
     public Business(long id, String businessName, int businessPhone, String website, String address, String businessInfo, User user) {
@@ -52,11 +51,11 @@ public class Business {
 
     }
 
-    public List<Listings> getListings() {
+    public List<Listing> getListings() {
         return listings;
     }
 
-    public void setListings(List<Listings> listings) {
+    public void setListings(List<Listing> listings) {
         this.listings = listings;
     }
 
@@ -116,5 +115,7 @@ public class Business {
         this.user = user;
     }
 
-
+    public Business(User user) {
+        this.user = user;
+    }
 }

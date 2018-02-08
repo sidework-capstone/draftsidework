@@ -24,10 +24,11 @@ public class User {
     private String password;
 
     @OneToMany
-    private List<Listings> listings;
+    private List<Listing> listings;
 
     @OneToOne
     private Business business;
+
 
     public User(User copy) {
         this.id = copy.id;
@@ -72,11 +73,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Listings> getListings() {
+    public List<Listing> getListings() {
         return listings;
     }
 
-    public void setListings(List<Listings> listings) {
+    public void setListings(List<Listing> listings) {
         this.listings = listings;
     }
 
