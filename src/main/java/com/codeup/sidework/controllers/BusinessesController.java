@@ -5,8 +5,6 @@ import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.Business;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.BusinessesService;
-import com.codeup.sidework.services.ListingsService;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,7 +78,7 @@ public class BusinessesController {
         return "businesses/profile";
     }
 
-    @GetMapping("/businesses/edit")
+    @GetMapping("/businesses/edit/{id}")
     public String showEditBusinessForm(@PathVariable long id, Model model) {
         User user = userRepository.findOne(id);
         Business business = businessesRepository.findByUser(user);
@@ -88,7 +86,16 @@ public class BusinessesController {
         model.addAttribute("user", user);
         model.addAttribute("business", business);
 
-        return "business/edit";
+        return "businesses/edit";
     }
 
+    @PostMapping("/businesses/edit")
+    public String editBusiness(@ModelAttribute User user, @ModelAttribute Business business) {
+        String hash = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hash);
+
+        businessesRepository.save(business);
+
+        return "redirect:/businesses/profile";
+    }
 }

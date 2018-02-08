@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: mainHead('Register Your Business')"></head>
+<head th:replace="fragments/head :: mainHead('Edit Business Info')"></head>
 <body>
 <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
@@ -8,7 +8,7 @@
     <form th:action="@{/businesses/edit}" method="post">
         <div class="form-group">
             <label for="email">email</label>
-            <input id="email" name="email" th:value="${user.email}" class="form-control" type="email"/>
+            <input id="email" name="email" th:field="*{user.email}" class="form-control" type="email"/>
         </div>
 
         <div class="form-group">
@@ -18,33 +18,33 @@
 
         <div class="form-group">
             <label for="business_name">business name</label>
-            <input id="business_name" name="businessName" th:value="${business.businessName}" class="form-control"
+            <input id="business_name" name="businessName" th:field="*{business.businessName}" class="form-control"
                    type="text"/>
         </div>
 
         <div class="form-group">
             <label for="business_address">address</label>
-            <input id="business_address" name="address" th:value="${business.address}" class="form-control"
+            <input id="business_address" name="address" th:field="*{business.address}" class="form-control"
                    type="text"/>
         </div>
 
         <div class="form-group">
             <label for="business_phone_number">business phone number</label>
-            <input id="business_phone_number" name="businessPhone" th:value="${business.businessPhone}"
+            <input id="business_phone_number" name="businessPhone" th:field="*{business.businessPhone}"
                    class="form-control" type="tel"/>
         </div>
 
         <div class="form-group">
             <label for="business_website">business website</label>
-            <input id="business_website" name="website" th:value="${business.website}" class="form-control"
+            <input id="business_website" name="website" th:field="*{business.website}" class="form-control"
                    type="text"/>
         </div>
 
         <div class="form-group">
             <label for="info">info</label>
-            <input id="info" name="businessInfo" th:value="${business.businessInfo}" class="form-control" type="text"/>
+            <input id="info" name="businessInfo" th:field="*{business.businessInfo}" class="form-control" type="text"/>
         </div>
-
+        <input type="submit" class="btn btn-success btn-block"/>
     </form>
 </div>
 </body>
