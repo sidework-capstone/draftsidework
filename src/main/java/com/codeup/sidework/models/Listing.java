@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "listings")
-public class Listings {
+public class Listing {
     //id
     @Id @GeneratedValue
     private long id;
@@ -75,15 +75,15 @@ public class Listings {
     }
 
 
-    public Listings(List<Positions> positions) {
+    public Listing(List<Positions> positions) {
         this.positions = positions;
     }
 
-    public Listings(String description) {
+    public Listing(String description) {
         this.description = description;
     }
 
-    public Listings() {
+    public Listing() {
 
     }
 }
