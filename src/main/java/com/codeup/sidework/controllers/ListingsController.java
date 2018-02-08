@@ -50,7 +50,6 @@ public class ListingsController {
     }
 
     @PostMapping("/listings/create")
-
     public String createNewListing(@ModelAttribute Listing listing) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Business business = businessDao.findByUser(user);
