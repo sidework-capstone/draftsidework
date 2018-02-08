@@ -1,12 +1,23 @@
-h1 {
-    text-align: center;
+body {
+    background: url('/img/guacamole.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index:-100;
 }
-/*a.btn.btn-primary.btn-lg {*/
-/*text-align: center;*/
-/*}*/
-/*p {*/
-/*text-align: center;*/
-/*}*/
-div.row {
 
+.container {
+    z-index:2;
 }
+
+.header {
+    margin-top:12%;
+    color:#fff;
+}
+
+.header h1 {
+    color:#fff;
+}
+
+
