@@ -26,6 +26,7 @@ public class ListingsController {
 
     @PostMapping("/listings/create")
     public String createNewListing(@ModelAttribute Business business, @ModelAttribute Listing listing) {
+        listing.setBusiness(business);
         listingsRepository.save(listing);
         return "redirect:/businesses/profile/" + business.getId();
     }
