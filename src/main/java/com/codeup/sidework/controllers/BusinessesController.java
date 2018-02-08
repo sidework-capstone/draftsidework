@@ -1,8 +1,10 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
+import com.codeup.sidework.daos.ListingsRepository;
 import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.Business;
+import com.codeup.sidework.models.Listings;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.BusinessesService;
 import com.codeup.sidework.services.ListingsService;
@@ -21,17 +23,20 @@ public class BusinessesController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private BusinessesService businessesService;
+    private ListingsService listingsService;
 
     public BusinessesController(
             BusinessesRepository businessesRepository,
             UserRepository userRepository,
             PasswordEncoder passwordEncoder,
-            BusinessesService businessesService
+            BusinessesService businessesService,
+            ListingsService listingsService
     ) {
         this.businessesRepository = businessesRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.businessesService = businessesService;
+        this.listingsService = listingsService;
     }
 
 
@@ -79,4 +84,15 @@ public class BusinessesController {
 
         return "businesses/profile";
     }
+
 }
+
+
+
+
+
+
+
+
+
+

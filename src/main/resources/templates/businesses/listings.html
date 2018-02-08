@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>All Listing</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../../css/workers-index.css"/>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: mainNavbar"></nav>
+<div class="container">
+    <h2>All Job Listings</h2>
+    <th:block th:each="listing, i : ${listings}">
+        <th:block th:if="${i.index % 3 == 0}" />
+        <div class="col-xs-4">
+            <h2 th:text="${business.}"></h2>
+            <h2 th:text="${business.}"></h2>
+        </div>
+        <th:block th:if="${i.index % 3 == 2 || i.count == i.size}" />
+    </th:block>
+</div>
+</body>
+</html>
