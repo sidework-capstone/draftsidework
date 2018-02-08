@@ -62,31 +62,31 @@ public class ListingsController {
 
 
 
-    //5. Create Listings------------------->
-    @GetMapping("/listings/new")
-    public String showCreateNewListing(Model viewModel) {
-        viewModel.addAttribute("listing", new Listings());
-        return "listings/new";
-    }
-
-
-
-    //6. Display New Created Listings--------------->
-    @PostMapping("/listings/new")
-    public String saveAd(@ModelAttribute Listings listings) {
-
-        // In order for this line to always return a User you need to add this URL path
-        // to the SecurityConfiguration class
-        User owner = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-        // If you ever find the "Detached entity error" the solution is to go for the user to
-        // the database using the repository -> usersRepository.findOne(owner.getId())
-        // instead of using the object directly
-        listings.setUser(usersDao.findOne(owner.getId()));
-        listings.setBusiness(businessDao.findOne(1L));
-        listingsService.save(listings);
-        return "redirect:/listings/index";
-    }
+//    //5. Create Listings------------------->
+//    @GetMapping("/listings/new")
+//    public String showCreateNewListing(Model viewModel) {
+//        viewModel.addAttribute("listing", new Listings());
+//        return "listings/new";
+//    }
+//
+//
+//
+//    //6. Display New Created Listings--------------->
+//    @PostMapping("/listings/new")
+//    public String saveListing(@ModelAttribute Listings listings) {
+//
+//        // In order for this line to always return a User you need to add this URL path
+//        // to the SecurityConfiguration class
+//        User owner = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//
+//        // If you ever find the "Detached entity error" the solution is to go for the user to
+//        // the database using the repository -> usersRepository.findOne(owner.getId())
+//        // instead of using the object directly
+//        listings.setUser(usersDao.findOne(owner.getId()));
+//        listings.setBusiness(businessDao.findOne(1L));
+//        listingsService.save(listings);
+//        return "redirect:/listings/index";
+//    }
 
 
 
