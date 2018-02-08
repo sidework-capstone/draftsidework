@@ -147,7 +147,7 @@ public class UsersController {
 
 //----------------------------------------------------------------------------------------------------
 ////  ADD VIEW ALL JOB LISTINGS TO WORKER WORKSPACE ^
-//        Iterable<Listings> listings = listingsService.findAll();
+//        Iterable<Listing> listings = listingsService.findAll();
 //        model.addAttribute("listings", listings);
 //
 ////  RESEARCH HOW TO BIND MULTIPLE CHECKBOXES TO ENTITIES

@@ -34,14 +34,14 @@ public class Business {
     // this is connecting to the listings table.
     // for any one business this returns a list of all it's job listings
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "business")
-    private List<Listings> listings;
+    private List<Listing> listings;
 
 
-    public List<Listings> getListings() {
+    public List<Listing> getListings() {
         return listings;
     }
 
-    public void setListings(List<Listings> listings) {
+    public void setListings(List<Listing> listings) {
         this.listings = listings;
     }
 
