@@ -55,7 +55,9 @@ public class UsersController {
     public String viewWorkerProfile() {
         return "users/profile-worker";
     }
-    //FINDING A USER BY ID
+
+
+    //FINDING A USER BY ID-------------------->
     @GetMapping("/users/profile-worker/{id}")
     public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
         // use the repository to find a user by its ID
@@ -69,10 +71,7 @@ public class UsersController {
     }
 
 
-
-
-
-    //FINDING A LIST OF USERS
+    //FINDING A LIST OF USERS-------------------->
     @GetMapping("/workers/index")
     public String showAllWorkers(Model viewAndModel) {
         Iterable<Worker> workers = workerRepository.findAll();

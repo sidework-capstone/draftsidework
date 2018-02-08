@@ -41,7 +41,21 @@ public class Listings {
     @JoinColumn (name = "business_id")
     private Business business;
 
+    //For post mapping
+    @ManyToOne
+    private User user;
 
+    public Listings(long id, List<Positions> positions, String description, Business business, User user) {
+        this.id = id;
+        this.positions = positions;
+        this.description = description;
+        this.business = business;
+        this.user = user;
+    }
+
+    public Listings() {
+
+    }
 
     public long getId() {
         return id;
@@ -59,9 +73,6 @@ public class Listings {
         this.description = description;
     }
 
-
-
-
     public List<Positions> getPositions() {
         return positions;
     }
@@ -78,20 +89,11 @@ public class Listings {
         this.business = business;
     }
 
-
-
-
-    public Listings(List<Positions> positions) {
-        this.positions = positions;
+    public User getUser() {
+        return user;
     }
 
-
-    public Listings(String description) {
-        this.description = description;
+    public void setUser(User user) {
+        this.user = user;
     }
-
-    public Listings() {
-
-    }
-
 }
