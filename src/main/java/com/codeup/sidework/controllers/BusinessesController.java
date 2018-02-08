@@ -50,7 +50,6 @@ public class BusinessesController {
         user.setPassword(hash);
         userRepository.save(user);
         business.setUser(user);
-        user.setBusiness(business);
         businessesRepository.save(business);
 
         return "redirect:/login";
@@ -66,7 +65,7 @@ public class BusinessesController {
     }
 
     @GetMapping("/users/workspace-mgmt")
-    public String showManagmentWorkspace() {
+    public String showManagementWorkspace() {
         return "users/workspace-mgmt";
     }
 
