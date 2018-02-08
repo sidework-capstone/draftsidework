@@ -37,6 +37,20 @@ public class Business {
     private List<Listing> listings;
 
 
+    public Business(long id, String businessName, int businessPhone, String website, String address, String businessInfo, User user) {
+        this.id = id;
+        this.businessName = businessName;
+        this.businessPhone = businessPhone;
+        this.website = website;
+        this.address = address;
+        this.businessInfo = businessInfo;
+        this.user = user;
+    }
+
+    public Business() {
+
+    }
+
     public List<Listing> getListings() {
         return listings;
     }
@@ -101,12 +115,7 @@ public class Business {
         this.user = user;
     }
 
-
     public Business(User user) {
         this.user = user;
-    }
-
-    public Business() {
-
     }
 }

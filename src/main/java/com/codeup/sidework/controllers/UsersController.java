@@ -56,6 +56,8 @@ public class UsersController {
         return "users/profile-worker";
     }
 
+
+    //FINDING A USER BY ID-------------------->
     @GetMapping("/users/profile-worker/{id}")
     public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
         // use the repository to find a user by its ID
@@ -66,6 +68,17 @@ public class UsersController {
         viewAndModel.addAttribute("user", user);
         viewAndModel.addAttribute("worker", worker);
         return "users/profile-worker";
+    }
+
+
+    //FINDING A LIST OF USERS-------------------->
+    @GetMapping("/workers/index")
+    public String showAllWorkers(Model viewAndModel) {
+        Iterable<Worker> workers = workerRepository.findAll();
+
+        viewAndModel.addAttribute("workers", workers);
+
+        return "workers/index";
     }
 }
 
@@ -81,68 +94,6 @@ public class UsersController {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @GetMapping("/users/")
-//    public String showLandingPage() {
-//        return "users/landing-page";
-//    }
-// ^ this mapping will not work for the landing page, needs to go through the Home Controller
-
-
-//// AUTHENTICATION OF USERNAME/PASSWORD
-//        public String registerNewWorker(@Valid User user, Errors validation, Model model) {
-//        User existingUser = usersDao.findByUsername(user.getUsername());
-//        if (existingUser != null) {
-//            validation.rejectValue("username", "username", "this username is unavailable"); }
-//        if (user.getPassword().equals("")) {
-//            validation.rejectValue("password", "password", "password must be at least 5 characters"); }
-//// do we need to add another column to confirm password for authentication?
-//        //        if (!user.getPassword().equals(user.getConfirmPassword())) {
-//        //            validation.rejectValue("confirmPassword", "confirmPassword", "passwords must match");
-//        //        }
-//        if (validation.hasErrors()) {
-//            model.addAttribute("errors", validation);
-//            model.addAttribute("user", user);
-//            return "users/register"; }
-
-//----------------------------------------------------------------------------------------------------
-//// AUTHENTICATION OF USER WITH USERDETAILSLOADER
-//    private void authenticate(User authenticatedUser) {
-//        UserDetailsLoader userDetailsLoader = new UserWithRoles(authenticatedUser, Collections.emptyList());
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsLoader; userDetailsLoader.getPassword(), userDetailsLoader.getAuthorities());
-//        SecurityContext context = SecurityContextHolder.getContext();
-//        context.setAuthentication(authentication);
-//    }
-
-
-//----------------------------------------------------------------------------------------------------
-//below showWorkerWorkSpace method
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        if (user.getId() == 0) {
-////            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//            return "redirect:/users/login-worker";
-//        }
-
-//        user = usersDao.findOne(user.getId());
-//        model.addAttribute("user", user);
 
 
 //----------------------------------------------------------------------------------------------------

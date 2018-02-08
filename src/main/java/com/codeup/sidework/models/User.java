@@ -1,6 +1,7 @@
 package com.codeup.sidework.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -22,18 +23,23 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @OneToMany
+    private List<Listing> listings;
+
+    @OneToOne
+    private Business business;
+
 
     public User(User copy) {
         this.id = copy.id;
         this.username = copy.username;
         this.email = copy.email;
         this.password = copy.password;
+        this.listings = copy.listings;
+        this.business = copy.business;
     }
 
-    public User() {
-
-    }
-
+    public User() {}
 
     public long getId() {
         return id;
@@ -65,5 +71,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Listing> getListings() {
+        return listings;
+    }
+
+    public void setListings(List<Listing> listings) {
+        this.listings = listings;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public Business setBusiness() {
+        return this.business = business;
     }
 }
