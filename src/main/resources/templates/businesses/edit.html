@@ -5,7 +5,7 @@
 <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
 <div class="container">
-    <form th:action="@{/businesses/edit}" method="post">
+    <form th:action="@{/businesses/edit/{id}(id=${business.id})}" method="post">
         <div class="form-group">
             <label for="email">email</label>
             <input id="email" name="email" th:field="*{user.email}" class="form-control" type="email"/>
