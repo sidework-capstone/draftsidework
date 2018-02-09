@@ -14,7 +14,6 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
             <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
             <li sec:authorize="isAuthenticated()"><a href="/">Profile</a></li>
             <li sec:authorize="isAuthenticated()">

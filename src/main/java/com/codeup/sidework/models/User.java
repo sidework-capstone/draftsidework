@@ -23,9 +23,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany
-    private List<Listing> listings;
-
     @OneToOne
     private Business business;
 
@@ -35,7 +32,6 @@ public class User {
         this.username = copy.username;
         this.email = copy.email;
         this.password = copy.password;
-        this.listings = copy.listings;
         this.business = copy.business;
     }
 
@@ -73,19 +69,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Listing> getListings() {
-        return listings;
-    }
-
-    public void setListings(List<Listing> listings) {
-        this.listings = listings;
-    }
-
     public Business getBusiness() {
         return business;
     }
 
-    public Business setBusiness() {
-        return this.business = business;
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 }

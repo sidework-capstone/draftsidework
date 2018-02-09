@@ -9,19 +9,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../../css/register-worker.css"/>
-</head><body>
+</head>
+<body>
 <header id="showcase">
     <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
-    <div class="container-fluid">
+
+    <form class="container-fluid" th:action="@{/users/register-worker}" method="post" th:object="${user}">
         <h1 class="register">Register</h1>
+
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
-                <form th:action="@{/users/register-worker}" method="post">
-                    <div class="form-group">
-                        <label class="username" for="username">username</label>
-                        <input id="username" th:value="${user.username}" name="username" class="form-control" type="text"/>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <label class="username" for="username">username</label>
+                    <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
+                </div>
             </div>
         </div>
 
@@ -43,27 +44,32 @@
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group">
                     <label for="email">email</label>
-                    <input id="email" th:value="${user.email}" name="email" class="form-control" type="email"/>
+                    <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
                 </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group">
                     <label for="password">password</label>
-                    <input id="password" name="password" class="form-control" type="password"/>
+                    <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
                 </div>
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="form-group">
+                    <label for="confirm_password">confirm password</label>
+                    <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
+                </div>
+            </div>
+        </div>
 
 
         <div class="row">
@@ -95,6 +101,27 @@
             </div>
         </div>
 
+            <div class="form-group">
+                <label for="phone">phone</label>
+                <input id="phone" th:value="${worker.phone}" name="phone" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">skills</label>
+                <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
+                <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">bio</label>
+                <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+                <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
+            </div>
+
+            <input type="hidden" th:value="${worker.facebook}"/>
+            <input type="hidden" th:value="${worker.twitter}"/>
+            <input type="hidden" th:value="${worker.linkedIn}"/>
+            <input type="hidden" th:value="${worker.instagram}"/>
 
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
@@ -125,7 +152,7 @@
                 <input type="submit" class="btn btn-danger btn-block"/>
             </div>
         </div>
-    </div>
+    </form>
 </header>
 </body>
 

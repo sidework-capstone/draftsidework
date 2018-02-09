@@ -33,21 +33,18 @@ public class Listing {
     @JoinColumn (name = "business_id")
     private Business business;
 
-    //For post mapping
-    @ManyToOne
-    private User user;
 
-    public Listing(long id, List<Positions> positions, String description, Business business, User user) {
+    public Listing(long id, List<Positions> positions, String description, Business business) {
         this.id = id;
         this.positions = positions;
         this.description = description;
         this.business = business;
-        this.user = user;
     }
 
     public Listing() {
 
     }
+
 
     public long getId() {
         return id;
@@ -89,13 +86,6 @@ public class Listing {
         this.business = business;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Listing(List<Positions> positions) {
         this.positions = positions;
