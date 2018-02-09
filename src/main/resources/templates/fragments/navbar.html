@@ -9,11 +9,14 @@
             <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
             <li><a href="/">Español</a></li>
             <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
-            <li sec:authorize="isAuthenticated()" th:text="${#authentication.principal.username}"></li>
+            <li sec:authorize="isAuthenticated()"><a href="/listings/index">Listings</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/businesses/index">Businesses</a></li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
             <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
             <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/">Profile</a></li>
             <li sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" th:method="post">
                     <button class="btn-link btn" style="margin-top: 8px">Logout</button>
