@@ -16,7 +16,7 @@
 
     <form class="container-fluid" th:action="@{/users/register-worker}" method="post" th:object="${user}">
         <h1 class="register">Register</h1>
-
+        <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group">
@@ -75,16 +75,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group">
-                    <label for="confirm_password">confirm password</label>
-                    <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
                     <label for="phone">phone</label>
                     <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
                 </div>
@@ -96,41 +86,37 @@
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group">
                     <label for="skills">skills</label>
-                    <textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>
+                    <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
+                    <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
                 </div>
             </div>
         </div>
 
-            <div class="form-group">
-                <label for="phone">phone</label>
-                <input id="phone" th:value="${worker.phone}" name="phone" class="form-control" type="text"/>
-            </div>
 
-            <div class="form-group">
-                <label for="skills">skills</label>
-                <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
-                <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="form-group">
+                    <label for="bio">bio</label>
+                    <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+                    <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
+                </div>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="bio">bio</label>
-                <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
-                <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
-            </div>
 
             <input type="hidden" th:value="${worker.facebook}"/>
             <input type="hidden" th:value="${worker.twitter}"/>
             <input type="hidden" th:value="${worker.linkedIn}"/>
             <input type="hidden" th:value="${worker.instagram}"/>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="bio">bio</label>
-                    <textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>
-                </div>
-            </div>
-        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+                <!--<div class="form-group">-->
+                    <!--<label for="bio">bio</label>-->
+                    <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <h2 class="availability">Availability</h2>
         <div class="row">
@@ -152,10 +138,10 @@
                 <input type="submit" class="btn btn-danger btn-block"/>
             </div>
         </div>
+        </div>
     </form>
 </header>
 </body>
-
 </html>
 
 
