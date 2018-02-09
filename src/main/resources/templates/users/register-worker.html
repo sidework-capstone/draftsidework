@@ -12,15 +12,17 @@
 </head>
 <body>
 <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
+
 <br/>
+
 <div>
     <div class="container">
         <div class="pic"></div>
         <h1>register</h1>
-        <form th:action="@{/users/register-worker}" method="post">
+        <form th:action="@{/users/register-worker}" method="post" th:object="${user}">
             <div class="form-group">
                 <label for="username">username</label>
-                <input id="username" th:value="${user.username}" name="username" class="form-control" type="text"/>
+                <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
@@ -37,14 +39,13 @@
 
             <div class="form-group">
                 <label for="email">email</label>
-                <input id="email" th:value="${user.email}" name="email" class="form-control" type="email"/>
+                <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
             </div>
 
             <div class="form-group">
                 <label for="password">password</label>
-                <input id="password" name="password" class="form-control" type="password"/>
+                <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
             </div>
-
 
             <div class="form-group">
                 <label for="confirm_password">confirm password</label>
@@ -53,193 +54,25 @@
 
             <div class="form-group">
                 <label for="phone">phone</label>
-                <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
+                <input id="phone" th:value="${worker.phone}" name="phone" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="skills">skills</label>
-                <textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control" type="tel"></textarea>
+                <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
+                <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="bio">bio</label>
-                <textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control" type="tel"></textarea>
+                <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+                <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
             </div>
 
-            <!--<div>
-
-
-                <h3>Position</h3>
-                <p>please select all relevant job-title experience</p>
-                <h3>FOH</h3>
-                <h3>floor</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="server"/>
-                                server
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="host"/>
-                                host
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="banquet server"/>
-                                banquet server
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-
-                <h3>bar</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="bartender"/>
-                                bartender
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="barback"/>
-                                barback
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="cocktail server"/>
-                                cocktail server
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>BOH</h3>
-                <h3>kitchen</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="line cook"/>
-                                line cook
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="prep cook"/>
-                                prep cook
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="food expediter"/>
-                                food expediter
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-
-                <h3>support</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="dishwasher"/>
-                                dishwasher
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="busser"/>
-                                busser
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="handyman"/>
-                                handyman
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>MGMT</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="general manager"/>
-                                general manager
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2"
-                                       value="executive chef"/>
-                                executive chef
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="owner"/>
-                                owner
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="assistant manager"/>
-                                assistant manager
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox4" value="sous chef"/>
-                                sous chef
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>-->
+            <input type="hidden" th:value="${worker.facebook}"/>
+            <input type="hidden" th:value="${worker.twitter}"/>
+            <input type="hidden" th:value="${worker.linkedIn}"/>
+            <input type="hidden" th:value="${worker.instagram}"/>
 
             <h2>availability</h2>
             <div class="panel-body">
