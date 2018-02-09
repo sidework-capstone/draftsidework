@@ -1,7 +1,6 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
-import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.ListingsService;
 import com.codeup.sidework.daos.ListingsRepository;
@@ -18,15 +17,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ListingsController {
     private ListingsService listingsService;
-    private UserRepository usersDao;
     private BusinessesRepository businessDao;
     private final ListingsRepository listingsRepository;
 
 
     //2. Constructor-->
-    public ListingsController(ListingsService listingsService, UserRepository usersDao, BusinessesRepository businessDao, ListingsRepository listingsRepository) {
+    public ListingsController(ListingsService listingsService,
+                              BusinessesRepository businessDao,
+                              ListingsRepository listingsRepository) {
         this.listingsService = listingsService;
-        this.usersDao = usersDao;
         this.businessDao = businessDao;
         this.listingsRepository = listingsRepository;
     }
@@ -55,7 +54,7 @@ public class ListingsController {
         Business business = businessDao.findByUser(user);
         listing.setBusiness(business);
         listingsRepository.save(listing);
-        return "redirect:/businesses/profile/" + business.getId();
+        return "redirect:/businesses/profile/" + user.getId();
     }
 
     //4. Logic to get a List of businesses-------------------->
