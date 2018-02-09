@@ -2,16 +2,16 @@
     margin: 0;
     padding: 0;
 }
-#showcase {
-    background-image: url('../img/coffeeCup.jpg');
-    height: 200vh;
-    background-size: cover;
-    background-position: center;
-}
-.container {
-    padding-left: 100px;
-    padding-right: 100px;
-}
+/*#showcase {*/
+    /*background-image: url('../img/coffeeCup.jpg');*/
+    /*height: 200vh;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+/*}*/
+/*.container {*/
+    /*padding-left: 100px;*/
+    /*padding-right: 100px;*/
+/*}*/
 .register {
     color: white;
     text-align: center;
