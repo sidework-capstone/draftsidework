@@ -11,22 +11,21 @@
     <link rel="stylesheet" href="../../css/register-worker.css"/>
 </head>
 <body>
+<header id="showcase">
 <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
-<br/>
-<div>
     <div class="container">
-        <div class="pic"></div>
-        <h1>register</h1>
+        <div class="row">
+             <div class="col-xs-12 col-md-6">
+        <h1 class="register">Register</h1>
         <form th:action="@{/users/register-worker}" method="post">
             <div class="form-group">
-                <label for="username">username</label>
+                <label class="username" for="username">username</label>
                 <input id="username" th:value="${user.username}" name="username" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
                 <label for="first_name">first name</label>
-                <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control"
-                       type="text"/>
+                <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text"/>
             </div>
 
             <div class="form-group">
@@ -58,206 +57,57 @@
 
             <div class="form-group">
                 <label for="skills">skills</label>
-                <textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control" type="tel"></textarea>
+                <textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="bio">bio</label>
-                <textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control" type="tel"></textarea>
+                <textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>
             </div>
-
-            <!--<div>
-
-
-                <h3>Position</h3>
-                <p>please select all relevant job-title experience</p>
-                <h3>FOH</h3>
-                <h3>floor</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="server"/>
-                                server
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="host"/>
-                                host
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="banquet server"/>
-                                banquet server
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-
-                <h3>bar</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="bartender"/>
-                                bartender
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="barback"/>
-                                barback
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="cocktail server"/>
-                                cocktail server
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>BOH</h3>
-                <h3>kitchen</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1" value="line cook"/>
-                                line cook
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="prep cook"/>
-                                prep cook
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3"
-                                       value="food expediter"/>
-                                food expediter
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-
-                <h3>support</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="dishwasher"/>
-                                dishwasher
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2" value="busser"/>
-                                busser
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="handyman"/>
-                                handyman
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>MGMT</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="general manager"/>
-                                general manager
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox2"
-                                       value="executive chef"/>
-                                executive chef
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox3" value="owner"/>
-                                owner
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox1"
-                                       value="assistant manager"/>
-                                assistant manager
-                            </label>
-                        </div>
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                        <div class="radio">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" class="optionsCheckbox4" value="sous chef"/>
-                                sous chef
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>-->
-
-            <h2>availability</h2>
-            <div class="panel-body">
-                <div class="panel panel-default">
-                    <div class="panel-heading">currently employed?</div>
-                    <input type="radio" name="currentEmployment" value="yes"/> yes
-                    <input type="radio" name="currentEmployment" value="no"/> no
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">are you free to pick up shifts?</div>
-                    <input type="radio" name="availability" value="yes"/> yes
-                    <input type="radio" name="availability" value="no"/> no
-                </div>
-            </div>
-            <input type="submit" class="btn btn-danger btn-block"/>
         </form>
-    </div>
-</div>
+            <h2 class="availability">Availability</h2>
+                 <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">currently employed?</div>
+                            <input type="radio" name="currentEmployment" value="yes"/> yes
+                            <input type="radio" name="currentEmployment" value="no"/> no\
+                    </div>
+                </div>
+                 <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">are you free to pick up shifts?</div>
+                            <input type="radio" name="availability" value="yes"/> yes
+                            <input type="radio" name="availability" value="no"/> no
+                        </div>
+                    </div>
+                 <input type="submit" class="btn btn-danger btn-block"/>
+                 </div>
+                 <!--<input type="submit" class="btn btn-danger btn-block"/>-->
+             </div>
+             </div>
+</header>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!--<h2 class="availability">availability</h2>-->
+<!--<div class="panel-body">-->
+    <!--<div class="row"></div>-->
+    <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">currently employed?</div>-->
+        <!--<input type="radio" name="currentEmployment" value="yes"/> yes-->
+        <!--<input type="radio" name="currentEmployment" value="no"/> no-->
+
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">are you free to pick up shifts?</div>-->
+            <!--<input type="radio" name="availability" value="yes"/> yes-->
+            <!--<input type="radio" name="availability" value="no"/> no-->
+        <!--</div>-->
+    <!--</div>-->
