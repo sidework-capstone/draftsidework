@@ -1,8 +1,10 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
+import com.codeup.sidework.daos.ListingsRepository;
 import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.Business;
+import com.codeup.sidework.models.Listing;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.BusinessesService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,21 +12,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class BusinessesController {
     private final BusinessesRepository businessesRepository;
     private final UserRepository userRepository;
+    private final ListingsRepository listingsRepository;
     private final PasswordEncoder passwordEncoder;
     private BusinessesService businessesService;
 
     public BusinessesController(
             BusinessesRepository businessesRepository,
             UserRepository userRepository,
-            PasswordEncoder passwordEncoder,
+            ListingsRepository listingsRepository, PasswordEncoder passwordEncoder,
             BusinessesService businessesService
     ) {
         this.businessesRepository = businessesRepository;
         this.userRepository = userRepository;
+        this.listingsRepository = listingsRepository;
         this.passwordEncoder = passwordEncoder;
         this.businessesService = businessesService;
     }
@@ -69,9 +75,11 @@ public class BusinessesController {
     public String viewBusinessProfile(@PathVariable long id, Model model) {
         User user = userRepository.findOne(id);
         Business business = businessesRepository.findByUser(user);
+        List<Listing> listings = listingsRepository.findAllByBusiness(business);
 
         model.addAttribute("user", user);
         model.addAttribute("business", business);
+        model.addAttribute("listings", listings);
 
         return "businesses/profile";
     }

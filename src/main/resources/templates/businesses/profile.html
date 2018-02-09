@@ -64,12 +64,12 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <th:block th:each="listing : ${listings}">
+                    <th:block th:each="listing : ${listings}">
+                        <div class="col-xs-12">
                             <h4 th:text="${listing.title}"></h4>
                             <p th:text="${listing.description}"></p>
-                        </th:block>
-                    </div>
+                        </div>
+                    </th:block>
                 </div>
             </div>
         </div>
