@@ -75,6 +75,15 @@ public class BusinessesController {
         return "businesses/profile";
     }
 
+    @GetMapping("/businesses/index")
+    public String viewAllBusinesses(Model model) {
+        Iterable<Business> businesses = businessesRepository.findAll();
+
+        model.addAttribute("businesses", businesses);
+
+        return "businesses/index";
+    }
+
     @GetMapping("/businesses/edit/{id}")
     public String showEditBusinessForm(@PathVariable long id, Model model) {
         User user = userRepository.findOne(id);
