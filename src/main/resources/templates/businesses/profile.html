@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <!--BUSINESS PROFILE PIC/social media-->
+        <!--BUSINESS PROFILE PIC-->
         <div class="row">
             <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 300px;">
                 <h4 class="r">Profile Pic</h4>
@@ -53,55 +53,11 @@
 
     <br/>
 
-    <!--Map Location-->
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <label for="location">location:</label>
-                <textarea class="form-control" rows="5" id="location"></textarea>
-                <button type="submit">submit</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-md-6" style="background-color: pink; border: 1px solid black; height: 350px;">
-            <h4>location for google maps api</h4>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 350px;">
-                <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
-                    <h4 class="r">menus</h4>
-                </div>
-
-                <div class="col-xs-6" style="border: 1px solid black; height: 200px;">
-                    <h4 class="r">floor chart</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--MGMT INFO-->
-    <h3>Account Manager:</h3>
     <div class="row"><!--main row-->
         <div class="col-xs-12 col-md-6" style="border: 1px solid black; height: 550px;"><!--main col-->
             <div class="panel-body">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Management Category</div>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-info">
-                            <label for="position">Position</label>
-                            <select id="position" name="position" class="form-control">
-                                <option>General Manager</option>
-                                <option>Executive Manager</option>
-                                <option>Owner</option>
-                                <option>Sous chef</option>
-                                <option>Assistant manager</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
+                <h3>Your Listings</h3>
             </div>
 
             <br/>
@@ -109,26 +65,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="name">Full Name:</label>
-                            <input id="name" name="name" class="form-control" type="text"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email2">Email:</label>
-                            <input id="email2" name="email" class="form-control" type="text"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone2">Phone:</label>
-                            <input id="phone2" name="phone" class="form-control" type="text"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="sidework_username">Sidework Username:</label>
-                            <input id="sidework_username" name="sidework_username" class="form-control" type="text"/>
-                        </div>
-                        <input type="submit" class="btn btn-danger btn-block" value="Log In"/>
+                        <th:block th:each="listing : ${listings}">
+                            <h4 th:text="${listing.title}"></h4>
+                            <p th:text="${listing.description}"></p>
+                        </th:block>
                     </div>
                 </div>
             </div>
