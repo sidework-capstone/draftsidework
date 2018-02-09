@@ -15,15 +15,18 @@
 }
 .register {
     color: white;
-    text-align: center;
-    font-size: 50px;
+    text-align: left;
+    font-size: 55px;
 }
 label {
     color: white;
 }
 .availability {
     color: white;
-    text-align: center;
+    text-align: left;
 }
 div.panel-heading {
+}
+div.panel.panel-default {
+    text-align: center;
 }

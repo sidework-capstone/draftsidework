@@ -6,9 +6,9 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="/"><strong>sidework</strong></a>
         <ul class="nav navbar-nav">
-            <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/howitworks">How It Works</a></li>
             <li><a href="/">Español</a></li>
-            <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
+            <!--<li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>-->
             <li sec:authorize="isAuthenticated()"><a href="/listings/index">Listings</a></li>
             <li sec:authorize="isAuthenticated()"><a href="/businesses/index">Businesses</a></li>
         </ul>
