@@ -73,7 +73,7 @@ public class User {
         return business;
     }
 
-    public Business setBusiness() {
-        return this.business = business;
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 }
