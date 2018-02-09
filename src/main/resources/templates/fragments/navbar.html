@@ -6,10 +6,9 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="/"><strong>sidework</strong></a>
         <ul class="nav navbar-nav">
-            <li><a href="/">Index</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
             <li><a href="/">Español</a></li>
             <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
-            <li sec:authorize="isAnonymous()"><a href="/">How It Works</a></li>
             <li sec:authorize="isAuthenticated()" th:text="${#authentication.principal.username}"></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
