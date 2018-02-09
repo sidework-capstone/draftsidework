@@ -13,109 +13,139 @@
 <body>
 <header id="showcase">
 <div class="container">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand"><strong>sidework</strong></a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="covers"><a href="#"><strong>COVERS</strong></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
     <div class="row">
-        <div class="col-xs-12">
-            <label for="username">
-                Username:
-                <span id="username" th:text="${user.username}"></span>
-            </label>
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>username</h4>
+                    <p th:text="${user.username}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>first name</h4>
+                    <p th:text="${worker.firstName}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>last name</h4>
+                    <p th:text="${worker.lastName}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>phone</h4>
+                    <span th:text="${worker.phone}"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-2">
+                <img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg"/>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="first_name">
-                first name:
-                <span id="first_name" name="first_name" placeholder="" th:text="${worker.firstName}"></span>
-                <!--<input type="text" id="first_name" name="first_name" placeholder="" th:field="*{first_name}"/>-->
-            </label>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="last_name">
-                last name:
-                <span id="last_name" name="last_name" placeholder="" th:text="${worker.lastName}"></span>
-            </label>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" />
-        </div>
-    </div>
+    <!--<div class="col-xs-12">-->
+    <!--<label for="username">-->
+    <!--Username:-->
+    <!--<span id="username" th:text="${user.username}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
 
+    <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="first_name">-->
+    <!--first name:-->
+    <!--<span id="first_name" name="first_name" placeholder="" th:text="${worker.firstName}"></span>-->
+    <!--&lt;!&ndash;<input type="text" id="first_name" name="first_name" placeholder="" th:field="*{first_name}"/>&ndash;&gt;-->
+    <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="last_name">-->
+    <!--last name:-->
+    <!--<span id="last_name" name="last_name" placeholder="" th:text="${worker.lastName}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg"/>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="phone">-->
+    <!--phone:-->
+    <!--<span id="phone" name="phone" placeholder="" th:text="${worker.phone}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="phone">
-                phone:
-                <span id="phone" name="phone" placeholder="" th:text="${worker.phone}"></span>
-            </label>
-        </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div>
                 <h4>availability</h4>
             </div>
+
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed1" th:attrappend="checked=${worker.currentEmployment}?checked" />
+                    <input type="checkbox" name="optionsRadios" id="employed1"
+                           th:attrappend="checked=${worker.currentEmployment}?checked"/>
                     currently employed?
                 </label>
             </div>
+
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1" th:attrappend="checked=${worker.availability}?checked" />
+                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1"
+                           th:attrappend="checked=${worker.availability}?checked"/>
                     free to pick up shifts?
                 </label>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4 hidden"></div>
     </div>
+
+    <br/>
 
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4">
             <!--<label for="">-->
             <!--skills:-->
             <div class="form-group">
-                <label for="skills">Skills:</label>
+                <label for="skills">skills:</label>
                 <p id="skills" th:text="${worker.skills}"></p>
             </div>
             <!--</label>-->
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="form-group">
-                <label for="bio">Bio:</label>
+                <label for="bio">bio:</label>
                 <p id="bio" th:text="${worker.bio}"></p>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
     </div>
 </div>
 </header>
 </body>
 </html>
-
-
-
-
-
-
-<!--style="background: pink; border: 1px solid black; height: 450px;-->
