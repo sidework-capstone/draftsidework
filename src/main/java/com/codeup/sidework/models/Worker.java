@@ -20,7 +20,7 @@ public class Worker {
 
     //phone
     @Column
-    private int phone;
+    private String phone;
 
     //bio
     @Column
@@ -84,11 +84,11 @@ public class Worker {
         this.lastName = lastName;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
