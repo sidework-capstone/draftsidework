@@ -12,344 +12,160 @@
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand"><strong>sidework</strong></a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> login</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="covers"><a href="#"><strong>COVERS</strong></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
     <div class="row">
-        <div class="col-xs-12">
-            <label for="username">
-                Username:
-                <span id="username" th:text="${user.username}"></span>
-            </label>
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>username</h4>
+                    <p th:text="${user.username}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>first name</h4>
+                    <p th:text="${worker.firstName}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>last name</h4>
+                    <p th:text="${worker.lastName}"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>phone</h4>
+                    <span th:text="${worker.phone}"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-2">
+                <img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg"/>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="first_name">
-                first name:
-                <span id="first_name" name="first_name" placeholder="" th:text="${worker.firstName}"></span>
-                <!--<input type="text" id="first_name" name="first_name" placeholder="" th:field="*{first_name}"/>-->
-            </label>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="last_name">
-                last name:
-                <span id="last_name" name="last_name" placeholder="" th:text="${worker.lastName}"></span>
-            </label>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" />
-        </div>
-    </div>
+    <!--<div class="col-xs-12">-->
+    <!--<label for="username">-->
+    <!--Username:-->
+    <!--<span id="username" th:text="${user.username}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
 
+    <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="first_name">-->
+    <!--first name:-->
+    <!--<span id="first_name" name="first_name" placeholder="" th:text="${worker.firstName}"></span>-->
+    <!--&lt;!&ndash;<input type="text" id="first_name" name="first_name" placeholder="" th:field="*{first_name}"/>&ndash;&gt;-->
+    <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="last_name">-->
+    <!--last name:-->
+    <!--<span id="last_name" name="last_name" placeholder="" th:text="${worker.lastName}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<img src="http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg"/>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+    <!--<label for="phone">-->
+    <!--phone:-->
+    <!--<span id="phone" name="phone" placeholder="" th:text="${worker.phone}"></span>-->
+    <!--</label>-->
+    <!--</div>-->
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <label for="phone">
-                phone:
-                <span id="phone" name="phone" placeholder="" th:text="${worker.phone}"></span>
-            </label>
-        </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div>
                 <h4>availability</h4>
             </div>
+
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed1" th:attrappend="checked=${worker.currentEmployment}?checked" />
+                    <input type="checkbox" name="optionsRadios" id="employed1"
+                           th:attrappend="checked=${worker.currentEmployment}?checked"/>
                     currently employed?
                 </label>
             </div>
+
             <div>
                 <label>
-                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1" th:attrappend="checked=${worker.availability}?checked" />
+                    <input type="checkbox" name="optionsRadios" id="employed2" value="option1"
+                           th:attrappend="checked=${worker.availability}?checked"/>
                     free to pick up shifts?
                 </label>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4 hidden"></div>
     </div>
+
+    <br/>
 
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4">
             <!--<label for="">-->
             <!--skills:-->
             <div class="form-group">
-                <label for="skills">Skills:</label>
+                <label for="skills">skills:</label>
                 <p id="skills" th:text="${worker.skills}"></p>
             </div>
             <!--</label>-->
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="form-group">
-                <label for="bio">Bio:</label>
+                <label for="bio">bio:</label>
                 <p id="bio" th:text="${worker.bio}"></p>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
+
         <div class="col-xs-12 col-sm-4 col-md-4"></div>
     </div>
-
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
-            <!--<h3>experience</h3>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<p>select all current/past relevant job titles</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;FOH&ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12 col-md-12" style="background-color: #a5cbd3; border: 1px solid black; height: 450px;">-->
-            <!--<h4>FOH</h4>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-3 floor">floor</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="server" value="server"/>-->
-                            <!--server-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="host" value="host"/>-->
-                            <!--host-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="banquet_server" value="banquet server"/>-->
-                            <!--banquet server-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;FOH&ndash;&gt;-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-3 bar">bar</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="bartender" value="bartender"/>-->
-                            <!--bartender-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="barback" value="barback"/>-->
-                            <!--barback-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="cocktail_server" value="cocktail server"/>-->
-                            <!--cocktail server-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;BOH&ndash;&gt;-->
-            <!--<h4>BOH</h4>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-3 kitchen">kitchen</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="line_cook" value="line cook"/>-->
-                            <!--line cook-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="prep_cook" value="prep cook"/>-->
-                            <!--prep cook-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="food_expediter" value="food expediter"/>-->
-                            <!--food expediter-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;BOH&ndash;&gt;-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-3 bar">support</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="dishwasher" value="dishwasher"/>-->
-                            <!--dishwasher-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="busser" value="busser"/>-->
-                            <!--busser-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="handyman" value="handyman"/>-->
-                            <!--handyman-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;MGMT&ndash;&gt;-->
-            <!--<h4>MGMT</h4>-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="general_manager" value="general manager"/>-->
-                            <!--general manager-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="executive_chef" value="executive chef"/>-->
-                            <!--executive chef-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="owner" value="owner"/>-->
-                            <!--owner-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="assistant_manager"-->
-                                   <!--value="assistant manager"/>-->
-                            <!--assistant manager-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-4">-->
-                    <!--<div class="radio text-left">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox" name="optionsRadios" id="sous_chef" value="sous chef"/>-->
-                            <!--sous chef-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--SECOND HALF-->
-
-
-        <!--<div class="row">-->
-            <!--<div class="col-xs-12 col-md-6" style="background: pink; border: 1px solid black; height: 450px;">-->
-                <!--<div class="col-xs-6" style="border: 1px solid black; height: 400px;">-->
-                    <!--<h4 class="r">resume</h4>-->
-                <!--</div>-->
-                <!--<div class="col-xs-6" style="border: 1px solid black; height: 400px;">-->
-                    <!--<h4 class="r">reference</h4>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--PASSWORD INPUTS--><!--PASSWORD INPUTS--><!--PASSWORD INPUTS--><!--PASSWORD INPUTS--><!--PASSWORD INPUTS-->
-    <!--&lt;!&ndash;PASSWORD INPUTS&ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--<div class="col-12-xs">-->
-            <!--<h3>update password</h3>-->
-            <!--&lt;!&ndash;<input id="update_password" name="update_password" class="form-control" type="password">&ndash;&gt;-->
-            <!--<label for="password">new password:</label>-->
-            <!--<input id="password" name="password" class="form-control" type="password"/>-->
-
-            <!--<label for="confirm_password">confirm password:</label>-->
-            <!--<input id="confirm_password" name="confirm_password" class="form-control" type="text"/>-->
-            <!--&lt;!&ndash;<button type="submit">submit</button>&ndash;&gt;-->
-
-            <!--<br/>-->
-
-            <!--<input type="submit" class="btn btn-danger btn-block"/>-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
-    <!--FOOTER-->
+<!--FOOTER-->
 
-    <div>
-        <div class="panel-footer">
-            <div class="row footerr">
-                <div class="col-md-3 col-xs-6 mgmLogo">MGM LOGO</div>
-                <div class="col-md-3 col-xs-6 footer"><a>About us</a></div>
-                <div class="col-md-3 col-xs-6 footer2"><a>contact us</a></div>
-                <div class="col-md-3 col-xs-6 footer3"><a>2018 SATX sidework</a></div>
-            </div>
-
-            <br/>
-            <br/>
-
-            <!--<div class="row footerrr">-->
-                <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
-                <!--<div class="col-md-6 col-sm-6 col-xs-6 links"><a>facebook twitter linkedIN ig</a></div>-->
-                <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
-            <!--</div>-->
+<div>
+    <div class="panel-footer">
+        <div class="row footerr">
+            <div class="col-md-3 col-xs-6 mgmLogo">MGM LOGO</div>
+            <div class="col-md-3 col-xs-6 footer"><a>About us</a></div>
+            <div class="col-md-3 col-xs-6 footer2"><a>contact us</a></div>
+            <div class="col-md-3 col-xs-6 footer3"><a>2018 SATX sidework</a></div>
         </div>
+
+        <br/>
+
+        <br/>
+
+        <!--<div class="row footerrr">-->
+        <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
+        <!--<div class="col-md-6 col-sm-6 col-xs-6 links"><a>facebook twitter linkedIN ig</a></div>-->
+        <!--<div class="col-md-3 col-sm-3 col-xs-3"></div>-->
+        <!--</div>-->
     </div>
+</div>
 </body>
 </html>
-
-
-
-
-
-
-<!--style="background: pink; border: 1px solid black; height: 450px;-->
