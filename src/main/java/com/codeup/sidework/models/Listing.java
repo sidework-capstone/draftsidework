@@ -34,9 +34,10 @@ public class Listing {
     private Business business;
 
 
-    public Listing(long id, List<Positions> positions, String description, Business business) {
+    public Listing(long id, List<Positions> positions, String title, String description, Business business) {
         this.id = id;
         this.positions = positions;
+        this.title = title;
         this.description = description;
         this.business = business;
     }
