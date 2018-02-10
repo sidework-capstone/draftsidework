@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: mainHead('View a Listing')"></head>
+<body>
+<nav th:replace="fragments/navbar :: mainNavbar"></nav>
+
+<div class="container">
+    <h1 th:text="${listing.title}"></h1>
+    <p th:text="${listing.description}"></p>
+</div>
+</body>
+</html>
