@@ -63,9 +63,9 @@ public class ListingsController {
 
 //  Display a single listing
     @GetMapping("/listings/single/{id}")
-    public String viewSingleListing(@PathVariable long id, Model model) {
+    public String viewSingleListing(@PathVariable long id, Model model, User user) {
         Listing listing = listingsRepository.findOne(id);
-        User user = userRepository.findOne(id);
+        user = userRepository.findOne(user.getId());
         Business business = businessDao.findByUser(user);
 
         model.addAttribute("listing", listing);
