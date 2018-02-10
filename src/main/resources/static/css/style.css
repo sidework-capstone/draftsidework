@@ -1,5 +1,6 @@
 /* Sticky footer styles
 -------------------------------------------------- */
+
 html {
     position: relative;
     min-height: 100%;
@@ -14,4 +15,345 @@ body {
     height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
     background-color: #f5f5f5;
+}
+
+
+/*============================================*/
+/*REGISTER WORKER*/
+/*============================================*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+#showcase {
+    background-image: url('../img/coffeeCup.jpg');
+    height: 200vh;
+    background-size: cover;
+    background-position: center;
+}
+.container {
+    /*padding-left: 100px;*/
+    /*padding-right: 100px;*/
+}
+.register {
+    color: white;
+    text-align: left;
+    font-size: 55px;
+}
+label {
+    color: white;
+}
+.availability {
+    color: white;
+    text-align: left;
+}
+div.panel-heading {
+}
+div.panel.panel-default {
+    text-align: center;
+}
+
+
+/*============================================*/
+/*REGISTER - MGMT*/
+/*============================================*/
+
+
+
+/* Small devices (tablets, 768px and up) */
+/*@media screen and (min-width:768px)*/
+
+/* Medium devices (desktops, 992px and up) */
+/*@media screen and (min-width:992px)*/
+
+/* Large devices (large desktops, 1200px and up) */
+/*@media screen and (min-width:1200px)*/
+
+
+.navbar.navbar-default {
+    background-color: white;
+}
+
+a.navbar-brand {
+    font-size: 40px;
+
+}
+
+a {
+    margin-left: 45px;
+}
+
+/*.row {*/
+/*border: 1px solid black;*/
+/*height: 500px;*/
+/*width: 75%;*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
+
+/*}*/
+
+/*div.col-lg-3.col-md-6 {*/
+/*font-size: 35px;*/
+/*border: 1px solid black;*/
+/*}*/
+
+h1 {
+    text-align: right;
+    /*text-decoration: ;*/
+    font-size: 40px;
+    /*text-justify: inter-cluster;*/
+    margin-right: auto;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+
+/*label {*/
+/*font-size: 20px;*/
+/*}*/
+div.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/*============================================*/
+/*WORKER PROFILE*/
+/*============================================*/
+
+.title {
+    text-align: center;
+}
+.floor {
+    text-decoration: underline;
+}
+.kitchen {
+    text-decoration: underline;
+}
+.bar {
+    text-decoration: underline;
+}
+.r {
+    text-align: center;
+}
+.footerr {
+    text-align: center;
+}
+.footerrr {
+    text-align: center;
+}
+a.navbar-brand {
+    font-size: 40px;
+
+}
+/*#showcase {*/
+/*background-image: url('../img/profileBackground.jpg');*/
+/*height: 100vh;*/
+/*background-size: cover;*/
+/*background-position: center;*/
+/*}*/
+
+
+
+
+/*============================================*/
+/*NAVBAR*/
+/*============================================*/
+
+/*strong {*/
+/*font-size: 10px;*/
+/*}*/
+a.navbar-brand {
+    font-size: 15px;
+}
+
+
+
+/*============================================*/
+/*LOGIN*/
+/*============================================*/
+
+#showcase {
+    background: url('../img/wine.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.title {
+    color: white;
+}
+.username {
+    color: white;
+}
+.password {
+    color: white;
+}
+
+
+
+/*============================================*/
+/*LISTINGS - INDEX*/
+/*============================================*/
+
+
+
+/*============================================*/
+/*INDEX*/
+/*============================================*/
+
+/*body {*/
+/*background: url('../img/guacamole.jpg') no-repeat center center fixed;*/
+/*-webkit-background-size: cover;*/
+/*-moz-background-size: cover;*/
+/*-o-background-size: cover;*/
+/*background-size: cover;*/
+/*z-index:-100;*/
+/*}*/
+
+/*.container {*/
+/*z-index:2;*/
+/*}*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin-top:12%;
+    color:#fff;
+}
+
+.header h1 {
+    color:#fff;
+}
+#showcase {
+    background: url('../img/guacamole.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+h1.title {
+    font-size: 60px;
+}
+a.button3 {
+    font-size: 13px;
+    text-decoration: none;
+    color: #147f89;
+    border: 1px solid white;
+    padding: 1px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: white;
+}
+a.button3:hover {
+    background: #147f89;
+    color: white;
+}
+/*div.jumbotron-jumbotron-fluid {*/
+/*background: rgba(200, 54, 54, 0.5);*/
+/*}*/
+
+#landingPageJumbo {
+    background: rgba(0, 0, 0, 0.5);
+}
+a.button3 {
+    margin-bottom: 70px;
+}
+.h1.title {
+
+}
+
+
+
+
+
+
+
+/*============================================*/
+/*HOW IT WORKS*/
+/*============================================*/
+
+h1 {
+    text-align: center;
+}
+
+
+/*============================================*/
+/*BUSINESSES - INDEX*/
+/*============================================*/
+
+h1 {
+    text-align: center;
+}
+
+
+/*============================================*/
+/*BUSINESSES - CREATE*/
+/*============================================*/
+
+.cate {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+.cate2 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+}
+.cate3 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: green;
+}
+.cate4 {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+/*#showcase {*/
+/*background-image: url('../img/wine.jpeg');*/
+/*height: 200vh;*/
+/*background-size: cover;*/
+/*background-position: center;*/
+/*}
+
+/*============================================*/
+/*ABOUT US*/
+/*============================================*/
+
+h1 {
+    text-align: center;
+}
+.name {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+div.col-xs-12.col-md-3 {
+    text-align: center;
 }
