@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/head :: mainHead('Register Your Business')"></head>
+<head th:include="fragments/head :: mainHead('Register Your Business')">
+    <link rel="stylesheet" href="../../css/businesses-create.css"/>
+</head>
 <body>
+<header id="showcase">
 <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
 <div class="container">
@@ -70,5 +73,6 @@
         <input type="submit" class="btn btn-success btn-block"/>
     </form>
 </div>
+</header>
 </body>
 </html>
