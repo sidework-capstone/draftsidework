@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 //1. Controller-->
@@ -66,6 +67,15 @@ public class ListingsController {
         return "listings/index";
     }
 
+//  Display a single listing
+    @GetMapping("/listings/single/{id}")
+    public String viewSingleListing(@PathVariable long id, Model model) {
+        Listing listing = listingsRepository.findOne(id);
+
+        model.addAttribute("listing", listing);
+
+        return "listings/single";
+    }
 //    //5. Create Listings------------------->
 //    @GetMapping("/listings/new")
 //    public String showCreateNewListing(Model viewModel) {
