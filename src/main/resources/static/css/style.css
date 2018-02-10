@@ -332,3 +332,9 @@ a.button3 {
 div.col-xs-12.col-md-3 {
     text-align: center;
 }
+
+
+/* General Helper Classes */
+.border-none {
+    border: none !important;
+}
