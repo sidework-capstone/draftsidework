@@ -29,6 +29,7 @@ public class Listing {
 
     // connected to the business table.
     // many job postings can be associated with a business by the id
+    @ManyToOne
     @JoinColumn (name = "business_id")
     private Business business;
 
