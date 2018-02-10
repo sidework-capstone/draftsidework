@@ -1,3 +1,16 @@
+/* Helper classes
+-------------------------------------------------- */
+.form-wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.normalize-page-margins {
+    /*top - right - bot - left*/
+    margin: 0 5% 10% 5%;
+}
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -42,9 +55,7 @@ body {
     text-align: left;
     font-size: 55px;
 }
-label {
-    color: white;
-}
+
 .availability {
     color: white;
     text-align: left;
@@ -228,14 +239,14 @@ a.navbar-brand {
     padding: 0;
 }
 
-.header {
-    margin-top:12%;
-    color:#fff;
-}
+/*.header {*/
+    /*margin-top:12%;*/
+    /*color:#fff;*/
+/*}*/
 
-.header h1 {
-    color:#fff;
-}
+/*.header h1 {*/
+    /*color:#fff;*/
+/*}*/
 #showcase {
     background: url('../img/guacamole.jpg');
     background-size: cover;
@@ -288,70 +299,31 @@ a.button3 {
 /*HOW IT WORKS*/
 /*============================================*/
 
-h1 {
-    text-align: center;
-}
+/*h1 {*/
+    /*text-align: center;*/
+/*}*/
 
 
 /*============================================*/
 /*BUSINESSES - INDEX*/
 /*============================================*/
 
-h1 {
-    text-align: center;
-}
+/*h1 {*/
+    /*text-align: center;*/
+/*}*/
 
 
 /*============================================*/
 /*BUSINESSES - CREATE*/
 /*============================================*/
 
-.cate {
-    border: 2px solid black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: red;
-}
-.cate2 {
-    border: 2px solid black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: blue;
-}
-.cate3 {
-    border: 2px solid black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: green;
-}
-.cate4 {
-    border: 2px solid black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: yellow;
-}
-/*#showcase {*/
-/*background-image: url('../img/wine.jpeg');*/
-/*height: 200vh;*/
-/*background-size: cover;*/
-/*background-position: center;*/
-/*}
+
 
 /*============================================*/
 /*ABOUT US*/
 /*============================================*/
 
-h1 {
-    text-align: center;
-}
 .name {
-    text-align: center;
-}
-h3 {
     text-align: center;
 }
 div.col-xs-12.col-md-3 {
