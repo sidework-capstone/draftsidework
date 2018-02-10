@@ -1,6 +1,7 @@
 package com.codeup.sidework.controllers;
 
 import com.codeup.sidework.daos.BusinessesRepository;
+import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.services.ListingsService;
 import com.codeup.sidework.daos.ListingsRepository;
@@ -20,15 +21,18 @@ public class ListingsController {
     private ListingsService listingsService;
     private BusinessesRepository businessDao;
     private final ListingsRepository listingsRepository;
+    private final UserRepository userRepository;
 
 
     //2. Constructor-->
     public ListingsController(ListingsService listingsService,
                               BusinessesRepository businessDao,
-                              ListingsRepository listingsRepository) {
+                              ListingsRepository listingsRepository,
+                              UserRepository userRepository) {
         this.listingsService = listingsService;
         this.businessDao = businessDao;
         this.listingsRepository = listingsRepository;
+        this.userRepository = userRepository;
     }
 
 
@@ -71,8 +75,12 @@ public class ListingsController {
     @GetMapping("/listings/single/{id}")
     public String viewSingleListing(@PathVariable long id, Model model) {
         Listing listing = listingsRepository.findOne(id);
+        User user = userRepository.findOne(id);
+        Business business = businessDao.findByUser(user);
 
         model.addAttribute("listing", listing);
+        model.addAttribute("user", user);
+        model.addAttribute("business", business);
 
         return "listings/single";
     }
