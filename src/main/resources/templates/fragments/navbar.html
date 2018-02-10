@@ -8,9 +8,10 @@
         <ul class="nav navbar-nav">
             <li sec:authorize="isAnonymous()"><a href="/howitworks">How It Works</a></li>
             <li><a href="/">Español</a></li>
-            <!--<li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>-->
-            <li sec:authorize="isAuthenticated()"><a href="/listings/index">Listings</a></li>
-            <li sec:authorize="isAuthenticated()"><a href="/businesses/index">Businesses</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
+            <li><a href="/workers/index">Workers</a></li>
+            <li><a href="/businesses/index">Businesses</a></li>
+            <li><a href="/listings/index">Listings</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
