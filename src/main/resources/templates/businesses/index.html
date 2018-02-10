@@ -8,25 +8,28 @@
     <h1>all businesses</h1>
     <!--<th:block th:each="business, i : ${businesses}">-->
         <!--<th:block th:if="${i.index % 3 == 0}" th:utext="'&lt;div class=&quot;row&quot;&gt;'"/>-->
-    <ul class="list-group">
-        <li class="list-group-item">
-            <div class="media">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object" src="https://source.unsplash.com/64x64/?business" alt="..." />
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Media heading</h4>
-                    ...
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img class="fill-parent business-img" src="https://source.unsplash.com/300x275/?business" alt="..." />
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                 </div>
             </div>
-        </li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
+        </div>
+    </div>
+            <!--<div class="media">-->
+                <!--<div class="media-left">-->
+                    <!--<a href="#">-->
+                        <!--<img class="media-object" src="https://source.unsplash.com/64x64/?business" alt="..." />-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="media-body">-->
+                    <!--<h4 class="media-heading">Media heading</h4>-->
+                <!--</div>-->
+            <!--</div>-->
 
         <!--<div class="card col-sm-12 col-md-6 card-sizing">-->
             <!--<img class="card-img-top" src="https://source.unsplash.com/300x300/?business" alt="Card image cap" />-->
