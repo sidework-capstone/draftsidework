@@ -5,6 +5,11 @@
     margin: 0 auto;
 }
 
+.normalize-page-margins {
+    /*top - right - bot - left*/
+    margin: 0 5% 10% 5%;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
