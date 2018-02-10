@@ -10,6 +10,9 @@
     margin: 0 5% 10% 5%;
 }
 
+.card-sizing {
+    max-width: 300px;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
