@@ -19,6 +19,11 @@
     height: 100%;
 }
 
+.space-bottom {
+    /*use to put space between text headings and content*/
+    margin-bottom: 10vh;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
