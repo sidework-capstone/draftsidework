@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8" />
 <title>sidework</title>
 </head>
 <body>
-<header id="showcase">
+<div class="row">
+    <div class="col-xs-12">
+        <a th:href="@{/login}">login</a>
+    </div>
+</div>
+<header id="landingPageBg">
     <div class="jumbotron jumbotron-fluid" id="landingPageJumbo">
 <div class="container">
     <div class="row header text-center">
         <div class="col-xs-12">
             <!--<div class="jumbotron jumbotron-fluid">-->
-            <h1 class="title">SIDEWORK</h1>
+            <h1 class="title">sidework</h1>
             <p class="lead">connecting service industry professionals in San Antonio, Texas</p>
             <div class="col-xs-6">
                 <a class="btn btn-large btn-success float-right" th:href="@{/workers/create}" align="right">pick up shifts</a>
