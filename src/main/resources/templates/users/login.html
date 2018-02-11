@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-</head>
-<body>
-<nav class="navbar navbar" th:replace="fragments/navbar :: mainNavbar"></nav>
-<header id="showcase">
-<!--<nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>-->
-<!--<h1>Login</h1>-->
-<div class="container">
-<div class="row">
-    <div class="col-xs-12 login"></div>
-<div th:if="${param.error}">
-    Invalid Username and Password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<!--th:action must match GetMapping path-->
-    <h1 class="title">Login</h1>
-        <form th:action="@{/login}" method="post">
-            <h4 class="username">username</h4>
-                <label for="username"></label>
-                <input id="username" name="username" type="text"/>
-            <h4 class="password">password</h4>
-                <label for="password"></label>
-                <input id="password" name="password" type="password"/>
-                <input type="submit" value="login"/>
-        </form>
-    </div>
-</div>
-</header>
-</body>
+    <head th:include="fragments/head :: mainHead('Register Your Business')"></head>
+    <body>
+        <header>
+            <nav th:replace="fragments/navbar :: mainNavbar"></nav>
+        </header>
+        <div class="container">
+            <div class="normalize-page-margins">
+                <div class="form-wrapper">
+                    <div th:if="${param.error}">
+                        Invalid Username and Password.
+                    </div>
+                    <div th:if="${param.logout}">
+                        You have been logged out.
+                    </div>
+                    <!--th:action must match GetMapping path-->
+                    <h1 class="title">Login</h1>
+                    <form th:action="@{/login}" method="post">
+                        <h4 class="username">username</h4>
+                        <label for="username"></label>
+                        <input class="form-control" id="username" name="username" type="text"/>
+                        <h4 class="password">password</h4>
+                        <label for="password"></label>
+                        <input class="form-control" id="password" name="password" type="password"/>
+                        <input type="submit" value="login"/>
+                    </form>
+                </div> <!-- form wrapper -->
+            </div>
+        </div> <!-- container -->
+    </body>
 </html>
