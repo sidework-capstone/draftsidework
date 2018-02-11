@@ -7,7 +7,13 @@
     <div class="normalize-page-margins">
         <h1 class="text-center space-bottom">All Workers</h1>
 
-Search Bar
+        <form class="navbar-form navbar-right" action="/search">
+            <div class="form-group">
+                <input type="text" name="searchKeyword" class="form-control" placeholder="Search" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
         <div class="row">
         <th:block th:each="worker, i : ${workers}">
             <th:block th:if="${i.index % 3 == 0}" />
