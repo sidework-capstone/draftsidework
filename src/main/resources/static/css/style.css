@@ -14,6 +14,16 @@
     max-width: 300px;
 }
 
+.fill-parent {
+    width: 100%;
+    height: 100%;
+}
+
+.space-bottom {
+    /*use to put space between text headings and content*/
+    margin-bottom: 10vh;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -311,9 +321,10 @@ a.button3 {
 /*BUSINESSES - INDEX*/
 /*============================================*/
 
-/*h1 {*/
-    /*text-align: center;*/
-/*}*/
+.business-img {
+    /*use max height here to override*/
+    max-height: 200px;
+}
 
 
 /*============================================*/
@@ -331,4 +342,10 @@ a.button3 {
 }
 div.col-xs-12.col-md-3 {
     text-align: center;
+}
+
+
+/* General Helper Classes */
+.border-none {
+    border: none !important;
 }
