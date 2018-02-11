@@ -95,4 +95,20 @@ public class User {
     public void setBusiness(Business business) {
         this.business = business;
     }
+
+    public User(Worker worker) {
+        this.worker = worker;
+    }
+
+    public User(Business business) {
+
+        this.business = business;
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
 }
