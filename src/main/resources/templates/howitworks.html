@@ -1,40 +1,97 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <meta charset="UTF-8" />
-    <title>get your sidework done</title>
-</head>
+<head th:include="fragments/head:: mainHead('How It Works')"></head>
+
 <body>
 <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
+
 <div class="container">
-    <h1>how it works</h1>
     <div class="jumbotron">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <img src="" style="border: 1px solid black"/>
+        <h1 class="text-center">How it works</h1>
+        <p class="text-center">On an even larger scale, this could be a one of the keys to alleviating the escalating labor crisis in any service based industry across the nation. .
+            According to the 2015 economic impact study for tourism and hospitality showed record growth for San Antonio.
+            Hospitality and tourism is $13.6 billion for the city’s economy. As of 2015 these fields employ more than 120,000, quadrupling in size since 1990.</p>
+        <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Register</a></p>
+    </div><!--Jumbotron-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Features</h1>
+            <p class="text-center">Here are a list of current and future features</p>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="list-group">
+                <button type="button" class="list-group-item">Cras justo odio</button>
+                <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+                <button type="button" class="list-group-item">Morbi leo risus</button>
+                <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+                <button type="button" class="list-group-item">Vestibulum at eros</button>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <div>
-                    <h2>GET YOUR SIDEWORK DONE</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolor, dolore dolorem ea eius, eos ex laborum m quibusdam quos rerum ullam!</p>
-                    <button type="submit">Register</button>
-                </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="list-group">
+                <button type="button" class="list-group-item">Cras justo odio</button>
+                <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+                <button type="button" class="list-group-item">Morbi leo risus</button>
+                <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+                <button type="button" class="list-group-item">Vestibulum at eros</button>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Connect</h1>
+            <p class="text-center">Connect with workers!</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail border-none">
+                <img src="http://lorempixel.com/242/200" alt="Mary"/>
+                <div class="caption">
+                    <h3>Username</h3>
+                    <h4 class="text-center">position</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dignissimos distinctio dolores eum, facilis incidunt, inventore labore laboriosam odio officiis optio quaerat quia quidem sapiente sequi similique, temporibus unde?</p>
+                    <p><a href="https://linkedin.com/in/marykathrynsyms" class="btn btn-default" role="button">Github</a> <a href="https://github.com/tacobody" class="btn btn-default" role="button">Linkedin</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail border-none">
+                <img src="http://lorempixel.com/242/200" alt="greg"/>
+                <div class="caption">
+                    <h3>Username</h3>
+                    <h4 class="text-center">position</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dignissimos distinctio dolores eum, facilis incidunt, inventore labore laboriosam odio officiis optio quaerat quia quidem sapiente sequi similique, temporibus unde?</p>
+                    <p><a href="https://github.com/GregSchmitt" class="btn btn-default" role="button">Github</a> <a href="linkedin.com/in/gregschmitt" class="btn btn-default" role="button">Linkedin</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail border-none">
+                <img src="http://lorempixel.com/242/200" alt="michael"/>
+                <div class="caption">
+                    <h3>Username</h3>
+                    <h4 class="text-center">position</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dignissimos distinctio dolores eum, facilis incidunt, inventore labore laboriosam odio officiis optio quaerat quia quidem sapiente sequi similique, temporibus unde?</p>
+                    <p><a href="https://github.com/MicCabeza22" class="btn btn-default" role="button">Github</a> <a href="#" class="btn btn-default" role="button">Linkedin</a></p>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of picture row-->
+    <br/>
+    <br/>
+    <br/>
 </div>
+
+
 <div th:replace="fragments/scripts :: scripts"></div>
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!--<img class="img-responsive center-block" width="100%" src="/img/cropTempHowItWorks.jpg" />-->

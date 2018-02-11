@@ -1,145 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Register</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-</head>
+<head th:include="fragments/head :: mainHead('Register Your Business')"></head>
 <body>
-<header id="showcase">
-    <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
-
-    <form class="container-fluid" th:action="@{/users/register-worker}" method="post" th:object="${user}">
-        <h1 class="register">Register</h1>
-        <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label class="username" for="username">username</label>
-                    <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="first_name">first name</label>
-                    <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="last_name">last name</label>
-                    <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="email">email</label>
-                    <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="password">password</label>
-                    <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="confirm_password">confirm password</label>
-                    <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="phone">phone</label>
-                    <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="skills">skills</label>
-                    <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
-                    <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="form-group">
-                    <label for="bio">bio</label>
-                    <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
-                    <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
-                </div>
-            </div>
-        </div>
-
-
-            <input type="hidden" th:value="${worker.facebook}"/>
-            <input type="hidden" th:value="${worker.twitter}"/>
-            <input type="hidden" th:value="${worker.linkedIn}"/>
-            <input type="hidden" th:value="${worker.instagram}"/>
-
-        <!--<div class="row">-->
-            <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
-                <!--<div class="form-group">-->
-                    <!--<label for="bio">bio</label>-->
-                    <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <h2 class="availability">Availability</h2>
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">currently employed?</div>
-                        <input type="radio" name="currentEmployment" value="yes"/> yes
-                        <input type="radio" name="currentEmployment" value="no"/> no
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">are you free to pick up shifts?</div>
-                        <input type="radio" name="availability" value="yes"/> yes
-                        <input type="radio" name="availability" value="no"/> no
-                    </div>
-                </div>
-                <input type="submit" class="btn btn-danger btn-block"/>
-            </div>
-        </div>
-        </div>
-    </form>
+<header>
+    <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 </header>
+<div class="container">
+    <div class="normalize-page-margins">
+        <h1 class="text-center">register your business</h1>
+        <div class="form-wrapper">
+            <form th:action="@{/users/register-worker}" method="post" th:object="${user}">
+                <h1 class="register">Register</h1>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="username">username</label>
+                        <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="first_name">first name</label>
+                        <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="last_name">last name</label>
+                        <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="password">password</label>
+                        <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="confirm_password">confirm password</label>
+                        <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="phone">phone</label>
+                        <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="skills">skills</label>
+                        <!--<textarea id="bio" name="bio" th:text="${worker.bio}" class="form-control"></textarea>-->
+                        <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="bio">bio</label>
+                        <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+                        <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
+                    </div>
+                </div>
+                <input type="hidden" th:value="${worker.facebook}"/>
+                <input type="hidden" th:value="${worker.twitter}"/>
+                <input type="hidden" th:value="${worker.linkedIn}"/>
+                <input type="hidden" th:value="${worker.instagram}"/>
+            </form>
+
+            <!--<h2 class="availability">Availability</h2>-->
+                <!--<div class="col-xs-12 col-6-md">-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="panel panel-default">-->
+                            <!--<div class="panel-heading">currently employed?</div>-->
+                            <!--<input type="radio" name="currentEmployment" value="yes"/> yes-->
+                            <!--<input type="radio" name="currentEmployment" value="no"/> no-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="panel panel-default">-->
+                            <!--<div class="panel-heading">are you free to pick up shifts?</div>-->
+                            <!--<input type="radio" name="availability" value="yes"/> yes-->
+                            <!--<input type="radio" name="availability" value="no"/> no-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<input type="submit" class="btn btn-danger btn-block"/>-->
+                <!--</div>-->
+         </div>
+    </div>
+</div>
 </body>
 </html>
 
@@ -147,6 +101,57 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">-->
+<!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+<!--<div class="form-group">-->
+<!--<label for="bio">bio</label>-->
+<!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<h2 class="availability">Availability</h2>-->
+<!--<div class="row">-->
+<!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+<!--<div class="panel-body">-->
+<!--<div class="panel panel-default">-->
+<!--<div class="panel-heading">currently employed?</div>-->
+<!--<input type="radio" name="currentEmployment" value="yes"/> yes-->
+<!--<input type="radio" name="currentEmployment" value="no"/> no-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="panel-body">-->
+<!--<div class="panel panel-default">-->
+<!--<div class="panel-heading">are you free to pick up shifts?</div>-->
+<!--<input type="radio" name="availability" value="yes"/> yes-->
+<!--<input type="radio" name="availability" value="no"/> no-->
+<!--</div>-->
+<!--</div>-->
+<!--<input type="submit" class="btn btn-danger btn-block"/>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>-->
+
+<!--<meta charset="UTF-8"/>-->
+<!--<meta name="viewport"-->
+      <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
+<!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+<!--<title>Register</title>-->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
+      <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
 
 
 
