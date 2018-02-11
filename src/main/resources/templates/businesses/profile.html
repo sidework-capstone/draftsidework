@@ -61,7 +61,9 @@
 
                 <br/>
 
+                <div th:if="${user.business.id} != null">
                 <a class="btn btn-primary" href="/listings/create" role="button">New Listing</a>
+                </div>
             </div>
 
             <div class="container-fluid">

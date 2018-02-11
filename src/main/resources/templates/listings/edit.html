@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: mainHead('Edit a Listing')"></head>
+<body>
+<nav th:replace="fragments/navbar :: mainNavbar"></nav>
+
+<div class="container">
+    <form th:action="@{/listings/{id}/edit(id=${listing.id}})" method="post" th:object="${listing}">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input id="title" name="title" th:field="*{title}" class="form-control" type="text"/>
+        </div>
+
+        <div class="form-group">
+            <label for="description">description</label>
+            <input id="description" name="description" th:field="*{description}" class="form-control"
+                   type="text"/>
+        </div>
+
+        <br/>
+
+        <input type="submit" class="btn btn-success btn-block"/>
+    </form>
+</div>
+</body>
+</html>
