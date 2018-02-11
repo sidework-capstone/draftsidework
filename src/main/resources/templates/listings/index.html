@@ -9,7 +9,27 @@
 
     <div class="container">
         <div class="normalize-page-margins">
-            <h2 class="text-center space-bottom">all job listings</h2>
+            <h2 class="text-center space-bottom">All Job Listings</h2>
+            <form class="form-horizontal" action="/businesses/search">
+                 <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-4 col-xs-offset-4">
+                                    <input type="text" name="searchKeyword" class="form-control" placeholder="Search" />
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+            <!--<div class="row">-->
+            <!--<th:block th:each="listing, i : ${listings}">-->
+            <!--<th:block th:if="${i.index % 3 == 0}" th:utext="'&lt;div class=&quot;row&quot;&gt;'"/>-->
+            <!--<div class="col-xs-4">-->
+            <!--<h2 th:text="${listing.title}"></h2>-->
+            <!--<h2 th:text="${listing.description}"></h2>-->
+            <!--</div>-->
+            <!--<th:block th:if="${i.index % 3 == 2 || i.count == i.size}" />-->
+            <!--</th:block>-->
+            <!--</div>-->
             <div class="row">
                 <th:block th:each="i : ${#numbers.sequence(1, 20)}">
                     <div class="col-sm-6 col-md-4">
