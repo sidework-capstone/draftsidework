@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/head :: mainHead('create an account')"></head>
+<head th:include="fragments/head :: mainHead('Register Your Business')"></head>
 <body>
 <header>
     <nav th:replace="fragments/navbar :: mainNavbar"></nav>
@@ -8,48 +8,48 @@
 <div class="container">
     <div class="normalize-page-margins">
         <div class="form-wrapper">
-            <h1 class="text-center">register</h1>
+            <h1 class="text-center">register your business</h1>
             <div class="row">
-                <form th:action="@{/workers/create}" method="post" th:object="${worker}">
+                <form th:action="@{/workers/create}" method="post" th:object="${user}">
                     <h1 class="register">Register</h1>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="username">username</label>
-                        <input id="username" th:field="*{user.username}" name="username" class="form-control" type="text"/>
+                        <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="first_name">first name</label>
-                        <input id="first_name" th:value="*{firstName}" name="firstName" class="form-control" type="text"/>
+                        <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="last_name">last name</label>
-                        <input id="last_name" th:value="*{lastName}" name="lastName" class="form-control" type="text"/>
+                        <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="email">email</label>
-                        <input id="email" th:field="*{user.email}" name="email" class="form-control" type="email"/>
+                        <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="password">password</label>
-                        <input id="password" th:field="*{user.password}" name="password" class="form-control" type="password"/>
+                        <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="confirm_password">confirm password</label>
-                        <input id="confirm_password" name="password_confirm" class="form-control" type="password" placeholder="superSecretPassword123"/>
+                        <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="phone">phone</label>
-                        <input id="phone" th:value="*{phone}" class="form-control" type="tel"/>
+                        <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
-                        <label for="bio">bio</label>
-                        <textarea id="bio" name="bio" th:value="*{bio}" class="form-control"></textarea>
+                        <label for="skills">skills</label>
+                        <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
                     </div>
                     <div class="col-xs-12 form-group">
-                        <label for="skills">skills</label>
-                        <textarea id="skills" name="skills" th:value="*{skills}" class="form-control"></textarea>
+                        <label for="bio">bio</label>
+                        <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
                     </div>
 
-                    <h2 class="text-center space-top">availability</h2>
+                    <h2 class="text-center space-top">Availability</h2>
                     <div class="col-sm-12 col-md-6">
                         <div class="panel-body">
                             <div class="panel panel-default">
@@ -77,12 +77,12 @@
                         </div> <!-- employment panel -->
                     </div>
                     <div class="col-sm-12">
-                        <button class="btn btn-block btn-success">sign up</button>
+                        <button class="btn btn-block btn-success">submit</button>
                     </div>
-                    <!--<input type="hidden" th:value="${worker.facebook}"/>-->
-                    <!--<input type="hidden" th:value="${worker.twitter}"/>-->
-                    <!--<input type="hidden" th:value="${worker.linkedIn}"/>-->
-                    <!--<input type="hidden" th:value="${worker.instagram}"/>-->
+                    <input type="hidden" th:value="${worker.facebook}"/>
+                    <input type="hidden" th:value="${worker.twitter}"/>
+                    <input type="hidden" th:value="${worker.linkedIn}"/>
+                    <input type="hidden" th:value="${worker.instagram}"/>
 
                 </form>
             </div>
