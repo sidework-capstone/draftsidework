@@ -162,6 +162,13 @@ div.row {
     width: 100%;
 }
 
+.job-listing-link {
+    background: none;
+}
+
+.job-listing-link:hover {
+    text-decoration: none;
+}
 
 
 /*============================================*/

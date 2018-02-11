@@ -8,12 +8,12 @@
     <div class="normalize-page-margins">
         <h1 class="text-center space-bottom" th:text="${business.businessName}"></h1>
         <div class="row">
-<!--Business Profile IMG --> <!--Business Profile IMG --> <!--Business Profile IMG -->
+<!--Business Profile IMG -->
             <div class="col-sm-12 col-md-6 text-right">
                 <img src="https://source.unsplash.com/300x275/?business?" alt="a business" class="thumbnail img-full-width" />
             </div><!-- Business profile img row -->
             <div class="col-sm-12 col-md-6">
-<!-- Business Info Panel --> <!-- Business Info Panel --> <!-- Business Info Panel -->
+<!-- Business Info Panel -->
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">Business info</h3>
@@ -38,7 +38,51 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div><!-- info panel -->
+<!-- Job listing panel -->
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Your job listings</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group business-info-list">
+                            <!-- erase next line in production -->
+                            <th:block th:each="i : ${#numbers.sequence(1, 3)}">
+                            <!--<th:block th:each="listing : ${listings}">-->
+                                <li class="list-group-item">
+                                    <span>Lorem ipsum</span>
+                                </li>
+                            <!-- uncomment in production -->
+                                    <!--<a th:href="@{'/listings/single/' + ${listing.id}}" class="list-group-item">-->
+                                        <!--<span th:text="${listing.title}"></span>-->
+                                    <!--</a>-->
+                                    <!--<p th:text="${listing.description}"></p>-->
+                            <!--</th:block>-->
+                            </th:block>
+                            <li class="btn btn-warning btn-block">
+                                <a class="btn-warning job-listing-link panel-title" th:href="@{/listings/create}">Add new listing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- listings panel -->
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Update password</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="Update_Password">Update Password:</label>
+                            <input id="Update_Password" name="Update_Password" class="form-control" type="password"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="Confirm_password">Confirm Password:</label>
+                            <input id="Confirm_password" name="Confirm_password" class="form-control" type="password"/>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">submit</button>
+                        <button type="submit" class="btn btn-danger btn-block" value="Log In">deactivate account
+                        </button>
+                    </div>
+                </div><!-- password panel -->
             </div>
         </div> <!-- Business information row -->
 
