@@ -7,7 +7,7 @@
         </header>
         <div class="container">
             <div class="normalize-page-margins">
-                <div class="form-wrapper">
+                <div class="form-wrapper valign">
                     <div th:if="${param.error}">
                         Invalid Username and Password.
                     </div>
@@ -15,16 +15,22 @@
                         You have been logged out.
                     </div>
                     <!--th:action must match GetMapping path-->
-                    <h1 class="title">Login</h1>
-                    <form th:action="@{/login}" method="post">
-                        <label for="username">Username</label>
-                        <input class="form-control" id="username" name="username" type="text"/>
-                        <label for="password">Password</label>
-                        <input class="form-control" id="password" name="password" type="password"/>
-                        <input type="submit" value="login"/>
-                    </form>
+                    <h1 class="title spacer-bottom">Login</h1>
+                        <form th:action="@{/login}" method="post">
+                            <div class="col-sm-12 form-group">
+                                <label for="username">Username</label>
+                                <input class="form-control" id="username" name="username" type="text"/>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="password">Password</label>
+                                <input class="form-control" id="password" name="password" type="password"/>
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="submit" value="sign up" class="btn btn-success btn-block "/>
+                            </div>
+                        </form>
                 </div> <!-- form wrapper -->
-            </div>
+            </div> <!-- normalize page margins -->
         </div> <!-- container -->
     </body>
 </html>
