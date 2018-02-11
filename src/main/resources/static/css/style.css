@@ -349,3 +349,9 @@ div.col-xs-12.col-md-3 {
 .border-none {
     border: none !important;
 }
+.center-item {
+    margin: 0 auto;
+}
+.more-bottom {
+   padding-bottom: 50px;
+}
