@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<meta charset="UTF-8" />
-<title>sidework</title>
-</head>
-<body>
-<header id="showcase">
-    <div class="jumbotron jumbotron-fluid" id="landingPageJumbo">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: mainHead('Sidework')"></head>
+<body class="showcase">
+<nav th:replace="fragments/navbar :: mainNavbar"></nav>
+<div class="showcase-overlay"></div>
+
 <div class="container">
-    <div class="row header text-center">
-        <div class="col-xs-12">
-            <!--<div class="jumbotron jumbotron-fluid">-->
-            <h1 class="title">SIDEWORK</h1>
-            <p class="lead">connecting service industry professionals in San Antonio, Texas</p>
-            <div class="col-xs-6">
-                <a class="btn btn-large btn-success float-right" th:href="@{/workers/create}" align="right">pick up shifts</a>
-            </div>
-            <div class="col-xs-6">
-                <a class="btn btn-large btn-success float-left" th:href="@{/businesses/create}">get shifts covered</a>
-            </div>
+    <a href="/howitworks" class="sidework-link">Sidework</a>
+        <div class="center-splash-links">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="splash-box center-block">
+                        <span class="glyphicon glyphicon-user splash-icon" aria-hidden="true"></span>
+                        <a href="/workers/create" class="btn btn-lg btn-success btn-block splash-link">Pick up shifts</a>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="splash-box center-block">
+                        <span class="glyphicon glyphicon-globe splash-icon" aria-hidden="true"></span>
+                        <a href="/businesses/create" class="btn btn-lg btn-success btn-block splash-link">Get shifts covered</a>
+                    </div>
+
+                </div>
+            </div><!-- splash link boxes -->
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <a class="button3" th:href="@{/howitworks}">get your sidework done</a>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
-</header>
+</div> <!-- container -->
+
 </body>
 </html>
