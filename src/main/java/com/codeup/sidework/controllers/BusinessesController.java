@@ -66,11 +66,6 @@ public class BusinessesController {
         return "businesses/index";
     }
 
-    @GetMapping("/users/workspace-mgmt")
-    public String showManagementWorkspace() {
-        return "users/workspace-mgmt";
-    }
-
     @GetMapping("/businesses/profile/{id}")
     public String viewBusinessProfile(@PathVariable long id, Model model) {
         User user = userRepository.findOne(id);
