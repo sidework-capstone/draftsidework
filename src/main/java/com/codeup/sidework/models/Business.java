@@ -15,7 +15,7 @@ public class Business {
 
     //phone number
     @Column
-    private int businessPhone;
+    private String businessPhone;
     //website
     @Column
     private String website;
@@ -37,7 +37,7 @@ public class Business {
     private List<Listing> listings;
 
 
-    public Business(long id, String businessName, int businessPhone, String website, String address, String businessInfo, User user) {
+    public Business(long id, String businessName, String businessPhone, String website, String address, String businessInfo, User user) {
         this.id = id;
         this.businessName = businessName;
         this.businessPhone = businessPhone;
@@ -75,11 +75,11 @@ public class Business {
         this.businessName = businessName;
     }
 
-    public int getBusinessPhone() {
+    public String getBusinessPhone() {
         return businessPhone;
     }
 
-    public void setBusinessPhone(int businessPhone) {
+    public void setBusinessPhone(String businessPhone) {
         this.businessPhone = businessPhone;
     }
 
