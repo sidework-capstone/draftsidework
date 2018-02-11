@@ -17,11 +17,9 @@
                     <!--th:action must match GetMapping path-->
                     <h1 class="title">Login</h1>
                     <form th:action="@{/login}" method="post">
-                        <h4 class="username">username</h4>
-                        <label for="username"></label>
+                        <label for="username">Username</label>
                         <input class="form-control" id="username" name="username" type="text"/>
-                        <h4 class="password">password</h4>
-                        <label for="password"></label>
+                        <label for="password">Password</label>
                         <input class="form-control" id="password" name="password" type="password"/>
                         <input type="submit" value="login"/>
                     </form>
