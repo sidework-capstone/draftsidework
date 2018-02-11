@@ -12,14 +12,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><strong>SideWork</strong></a>
+            <a class="navbar-brand" href="/"><strong>sidework</strong></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li sec:authorize="isAnonymous()"><a href="/howitworks">How It Works</a></li>
                 <li sec:authorize="isAnonymous()"><a href="/">About Us</a></li>
                 <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
-                <li sec:authorize="isAuthenticated()"><a href="/">Profile</a></li>
+                <li sec:authorize="isAuthenticated()"><a href="/users/profile/{id}">Profile</a></li>
                 <li><a href="/workers/index">Workers</a></li>
                 <li><a href="/businesses/index">Businesses</a></li>
                 <li><a href="/listings/index">Listings</a></li>

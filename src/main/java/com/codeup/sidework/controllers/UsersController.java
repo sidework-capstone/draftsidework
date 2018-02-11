@@ -4,6 +4,7 @@ import com.codeup.sidework.daos.UserRepository;
 import com.codeup.sidework.daos.WorkerRepository;
 import com.codeup.sidework.models.User;
 import com.codeup.sidework.models.Worker;
+import com.codeup.sidework.services.WorkerService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,23 +13,25 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UsersController {
     private final WorkerRepository workerRepository;
+    private final WorkerService workerSrv;
     private final UserRepository usersDao;
     private PasswordEncoder passwordEncoder;
 
-    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder, WorkerRepository workerRepository) {
+    public UsersController(UserRepository usersDao, PasswordEncoder passwordEncoder, WorkerRepository workerRepository, WorkerService workSvc) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
         this.workerRepository = workerRepository;
+        this.workerSrv = workSvc;
     }
 
-    @GetMapping("/users/register-worker")
+    @GetMapping("/workers/create")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("worker", new Worker());
-        return "users/register-worker";
+        return "workers/create";
     }
 
-    @PostMapping("/users/register-worker")
+    @PostMapping("/workers/create")
     public String registerNewWorker(@ModelAttribute User user, @ModelAttribute Worker worker) {
 
         String hash = passwordEncoder.encode(user.getPassword());
@@ -40,25 +43,14 @@ public class UsersController {
         return "redirect:/login";
     }
 
-
-    @GetMapping("/users/workspace-worker")
-    public String showWorkerWorkspace() {
-        return "/users/workspace-worker";
-    }
-
-    @PostMapping("/users/workspace-worker")
-    public String viewIndividualUsersWorkplace(@ModelAttribute User user) {
-        return "/users/workspace-worker";
-    }
-
-    @GetMapping("/users/profile-worker")
+    @GetMapping("/workers/profile")
     public String viewWorkerProfile() {
-        return "users/profile-worker";
+        return "workers/profile";
     }
 
 
     //FINDING A USER BY ID-------------------->
-    @GetMapping("/users/profile-worker/{id}")
+    @GetMapping("/workers/profile/{id}")
     public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
         // use the repository to find a user by its ID
         // .findOne(id)
@@ -67,7 +59,7 @@ public class UsersController {
         // pass the user to the view, using a Model (viewmodel)
         viewAndModel.addAttribute("user", user);
         viewAndModel.addAttribute("worker", worker);
-        return "users/profile-worker";
+        return "workers/profile";
     }
 
 
@@ -78,6 +70,12 @@ public class UsersController {
 
         viewAndModel.addAttribute("workers", workers);
 
+        return "workers/index";
+    }
+
+    @GetMapping("/workers/search")
+    public String searchPost(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+        viewModel.addAttribute("workers", workerSrv.searchForWorker(searchKeyword));
         return "workers/index";
     }
 }
