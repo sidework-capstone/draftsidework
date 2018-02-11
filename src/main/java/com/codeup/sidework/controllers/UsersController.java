@@ -27,7 +27,11 @@ public class UsersController {
 
         viewAndModel.addAttribute("users", users);
 
-        return "users/index";
+
+    @GetMapping("/workers/search")
+    public String searchWorkers(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+        viewModel.addAttribute("workers", workerSrv.searchForWorker(searchKeyword));
+        return "workers/index";
     }
 }
 

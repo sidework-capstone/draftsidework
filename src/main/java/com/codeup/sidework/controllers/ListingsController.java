@@ -9,10 +9,7 @@ import com.codeup.sidework.models.Listing;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 //1. Controller-->
 @Controller
@@ -101,4 +98,10 @@ public class ListingsController {
 //        listingsService.save(listings);
 //        return "redirect:/listings/index";
 //    }
+
+    @GetMapping("/listings/search")
+    public String searchListing(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+        viewModel.addAttribute("listings", listingsService.searchForListing(searchKeyword));
+        return "listings/index";
+    }
 }

@@ -7,11 +7,15 @@
     <div class="normalize-page-margins">
         <h1 class="text-center space-bottom">All Workers</h1>
 
-        <form class="navbar-form navbar-right" action="/search">
+        <form class="form-horizontal" action="/workers/search">
             <div class="form-group">
-                <input type="text" name="searchKeyword" class="form-control" placeholder="Search" />
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <input type="text" name="searchKeyword" class="form-control" placeholder="Search"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <div class="row">

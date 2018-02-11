@@ -5,37 +5,57 @@
 <nav th:replace="fragments/navbar :: mainNavbar"></nav>
 
 <div class="container">
-    <div class="normalize-page-margins">
-        <h1 class="text-center space-bottom">all businesses</h1>
-
-        Search Bar
-        <!--<th:block th:each="business, i : ${businesses}">-->
-        <!--<th:block th:if="${i.index % 3 == 0}" th:utext="'&lt;div class=&quot;row&quot;&gt;'"/>-->
-        <div class="row">
-        <th:block th:each="i : ${#numbers.sequence(1, 20)}">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img class="fill-parent business-img"
-                         src="https://source.unsplash.com/300x275/?business?"
-                         alt="..." />
-                    <div class="caption">
-                        <h3>
-                            <!--<h2 th:text="${business.businessName}"></h2>-->
-                            Lorem Ipsum
-                        </h3>
-                        <p>
-                            <!--<p th:text="${business.businessInfo}"></p>-->
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh. Tristique et egestas quis ipsum suspendisse ultrices gravida. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Libero enim sed faucibus turpis in eu mi bibendum neque.
-                        </p>
-                        <button class="btn btn-primary btn-success" role="button">explore</button>
-                    </div>
-                </div>
-            </div>
-        </th:block>
-        </div>
-        <!--<th:block th:if="${i.index % 3 == 2 || i.count == i.size}" th:utext="'&lt;/div&gt;'"/>-->
-        <!--</th:block>-->
-    </div> <!-- normalize page margins -->
+	<div class="normalize-page-margins">
+		<h1 class="text-center space-bottom">All Businesses</h1>
+		<form class="form-horizontal" action="/businesses/search">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-4 col-xs-offset-4">
+						<input type="text" name="searchKeyword" class="form-control" placeholder="Search"/>
+					</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+				</div>
+			</div>
+		</form>
+		<!--<div class="row">-->
+		<!--<th:block th:each="business, i : ${businesses}">-->
+		<!--<th:block th:if="${i.index % 3 == 0}" th:utext="'&lt;div class=&quot;row&quot;&gt;'"/>-->
+		<!--<div class="col-xs-4">-->
+		<!--<h2 th:text="${business.name}"></h2>-->
+		<!--<h2 th:text="${business.info}"></h2>-->
+		<!--</div>-->
+		<!--<th:block th:if="${i.index % 3 == 2 || i.count == i.size}" />-->
+		<!--</th:block>-->
+		<!--</div>-->
+		<div class="row">
+			<th:block th:each="i : ${#numbers.sequence(1, 20)}">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img class="fill-parent business-img"
+							 src="https://source.unsplash.com/300x275/?business?"
+							 alt="..."/>
+						<div class="caption">
+							<h3>
+								<!--<h2 th:text="${business.businessName}"></h2>-->
+								Lorem Ipsum
+							</h3>
+							<p>
+								<!--<p th:text="${business.businessInfo}"></p>-->
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh.
+								Tristique et egestas quis ipsum suspendisse ultrices gravida. Lacus luctus accumsan
+								tortor posuere ac ut consequat semper viverra. Libero enim sed faucibus turpis in eu mi
+								bibendum neque.
+							</p>
+							<button class="btn btn-primary btn-success" role="button">explore</button>
+						</div>
+					</div>
+				</div>
+			</th:block>
+		</div>
+		<!--<th:block th:if="${i.index % 3 == 2 || i.count == i.size}" th:utext="'&lt;/div&gt;'"/>-->
+		<!--</th:block>-->
+	</div> <!-- normalize page margins -->
 </div> <!-- container -->
 </body>
 </html>
