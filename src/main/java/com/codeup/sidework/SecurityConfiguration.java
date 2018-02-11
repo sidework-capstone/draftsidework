@@ -50,6 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/",
                         "/users",
                         "/workers",
+                        "/aboutus",
                         "/login",
                         "/businesses",
                         "/index") // anyone can see the homepage, login & register pages, and view all users without being signed in
