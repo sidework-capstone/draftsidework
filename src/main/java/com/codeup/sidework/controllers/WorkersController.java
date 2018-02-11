@@ -15,13 +15,13 @@ import java.util.List;
 @Controller
 public class WorkersController {
     private final WorkerRepository workerRepository;
-    private final WorkerService workerService;
+    private final WorkerService workerSrv;
     private final UserRepository usersDao;
     private PasswordEncoder passwordEncoder;
 
-    public WorkersController(WorkerRepository workerRepository, WorkerService workerService, UserRepository usersDao, PasswordEncoder passwordEncoder) {
+    public WorkersController(WorkerRepository workerRepository, WorkerService workerSrv, UserRepository usersDao, PasswordEncoder passwordEncoder) {
         this.workerRepository = workerRepository;
-        this.workerService = workerService;
+        this.workerSrv = workerSrv;
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
     }
@@ -70,12 +70,12 @@ public class WorkersController {
 
         viewAndModel.addAttribute("workers", workers);
 
-        return "users/index";
+        return "workers/index";
     }
 
     @GetMapping("/workers/search")
-    public String searchPost(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
-        viewModel.addAttribute("workers", (searchKeyword));
+    public String searchWorkers(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+        viewModel.addAttribute("workers", workerSrv.searchForWorker(searchKeyword));
         return "workers/index";
     }
 }

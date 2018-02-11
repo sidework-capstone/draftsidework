@@ -26,15 +26,9 @@ public class UsersController {
         Iterable<User> users = usersDao.findAll();
 
         viewAndModel.addAttribute("users", users);
-
-
-    @GetMapping("/workers/search")
-    public String searchWorkers(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
-        viewModel.addAttribute("workers", workerSrv.searchForWorker(searchKeyword));
-        return "workers/index";
+        return "users/index";
     }
 }
-
 
 
 //----------------------------------------------------------------------------------------------------
