@@ -29,6 +29,25 @@ public class User {
     @OneToOne
     private Worker worker;
 
+    public User(User copy) {
+        this.id = copy.id;
+        this.username = copy.username;
+        this.email = copy.email;
+        this.password = copy.password;
+        this.business = copy.business;
+        this.worker = copy.worker;
+    }
+
+    public User() {}
+
+    public User(String username, String email, String password, Business business, Worker worker) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.business = business;
+        this.worker = worker;
+    }
+
     public long getId() {
         return id;
     }
@@ -61,20 +80,20 @@ public class User {
         this.password = password;
     }
 
-    public Business getBusiness() {
-        return business;
-    }
-
-    public void setBusiness(Business business) {
-        this.business = business;
-    }
-
     public Worker getWorker() {
         return worker;
     }
 
     public void setWorker(Worker worker) {
         this.worker = worker;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 
     public User(Worker worker) {
@@ -92,13 +111,4 @@ public class User {
         this.password = password;
     }
 
-    public User(User copy) {
-        this.id = copy.id;
-        this.username = copy.username;
-        this.email = copy.email;
-        this.password = copy.password;
-        this.business = copy.business;
-    }
-
-    public User() {}
 }
