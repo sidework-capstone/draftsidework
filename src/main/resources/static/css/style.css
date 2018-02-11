@@ -24,6 +24,10 @@
     margin-bottom: 10vh;
 }
 
+.space-top {
+    margin-top: 10vh;
+}
+
 .valign {
     margin-top: 15%;
 }
@@ -52,36 +56,36 @@ body {
 /*REGISTER WORKER*/
 /*============================================*/
 
+.radio-btn {
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-left: 5px;
+}
+/*#showcase {*/
+    /*background-image: url('../img/coffeeCup.jpg');*/
+    /*height: 200vh;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+/*}*/
+/*.container {*/
+    /*!*padding-left: 100px;*!*/
+    /*!*padding-right: 100px;*!*/
+/*}*/
+/*.register {*/
+    /*color: white;*/
+    /*text-align: left;*/
+    /*font-size: 55px;*/
+/*}*/
 
-* {
-    margin: 0;
-    padding: 0;
-}
-#showcase {
-    background-image: url('../img/coffeeCup.jpg');
-    height: 200vh;
-    background-size: cover;
-    background-position: center;
-}
-.container {
-    /*padding-left: 100px;*/
-    /*padding-right: 100px;*/
-}
-.register {
-    color: white;
-    text-align: left;
-    font-size: 55px;
-}
-
-.availability {
-    color: white;
-    text-align: left;
-}
-div.panel-heading {
-}
-div.panel.panel-default {
-    text-align: center;
-}
+/*.availability {*/
+    /*color: white;*/
+    /*text-align: left;*/
+/*}*/
+/*div.panel-heading {*/
+/*}*/
+/*div.panel.panel-default {*/
+    /*text-align: center;*/
+/*}*/
 
 
 /*============================================*/
