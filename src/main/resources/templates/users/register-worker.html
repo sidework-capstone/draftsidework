@@ -15,7 +15,7 @@
         <!--<div class="row">-->
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
-                    <label class="username" for="username">username</label>
+                    <label for="username">username</label>
                     <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
                 </div>
             </div>
@@ -98,11 +98,11 @@
             </div>
         <!--</div>-->
 
-
             <input type="hidden" th:value="${worker.facebook}"/>
             <input type="hidden" th:value="${worker.twitter}"/>
             <input type="hidden" th:value="${worker.linkedIn}"/>
             <input type="hidden" th:value="${worker.instagram}"/>
+        </form>
 
         <!--<div class="row">-->
             <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
@@ -110,6 +110,27 @@
                     <!--<label for="bio">bio</label>-->
                     <!--<textarea id="skills" name="skills" th:text="${worker.skills}" class="form-control"></textarea>-->
                 <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<h2 class="availability">Availability</h2>-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-12 col-sm-4 col-md-4">-->
+                <!--<div class="panel-body">-->
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">currently employed?</div>-->
+                        <!--<input type="radio" name="currentEmployment" value="yes"/> yes-->
+                        <!--<input type="radio" name="currentEmployment" value="no"/> no-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">are you free to pick up shifts?</div>-->
+                        <!--<input type="radio" name="availability" value="yes"/> yes-->
+                        <!--<input type="radio" name="availability" value="no"/> no-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<input type="submit" class="btn btn-danger btn-block"/>-->
             <!--</div>-->
         <!--</div>-->
 
@@ -133,9 +154,7 @@
                 <input type="submit" class="btn btn-danger btn-block"/>
             </div>
         </div>
-
-        </form>
-        </div>
+    </div>
     </div>
     </div>
 </body>
