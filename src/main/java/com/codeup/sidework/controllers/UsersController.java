@@ -74,7 +74,7 @@ public class UsersController {
     }
 
     @GetMapping("/workers/search")
-    public String searchPost(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+    public String searchWorkers(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
         viewModel.addAttribute("workers", workerSrv.searchForWorker(searchKeyword));
         return "workers/index";
     }

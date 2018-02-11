@@ -104,9 +104,7 @@ public class BusinessesController {
     }
 
     @PostMapping("/businesses/edit/{id}")
-    public String editBusiness(@ModelAttribute User user,
-                               @ModelAttribute Business business,
-                               @PathVariable long id) {
+    public String editBusiness(@ModelAttribute User user, @ModelAttribute Business business, @PathVariable long id) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         business.setUser(user);
@@ -114,5 +112,11 @@ public class BusinessesController {
         businessesRepository.save(business);
 
         return "redirect:/businesses/profile/" + id;
+    }
+
+    @GetMapping("/businesses/search")
+    public String searchBusinesses(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+        viewModel.addAttribute("businesses", businessesService.searchForBusiness(searchKeyword));
+        return "businesses/index";
     }
 }
