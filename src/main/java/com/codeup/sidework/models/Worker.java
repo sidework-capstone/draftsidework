@@ -57,8 +57,27 @@ public class Worker {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserPositions> userPositions;
 
+
     @OneToOne
     private User user;
+
+    public Worker() {}
+
+//    public Worker(String firstName, String lastName, String phone, String bio, String skills, boolean currentEmployment, boolean availability, String facebook, String twitter, String linkedIn, String instagram, List<UserPositions> userPositions, User user) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.phone = phone;
+//        this.bio = bio;
+//        this.skills = skills;
+//        this.currentEmployment = currentEmployment;
+//        this.availability = availability;
+//        this.facebook = facebook;
+//        this.twitter = twitter;
+//        this.linkedIn = linkedIn;
+//        this.instagram = instagram;
+//        this.userPositions = userPositions;
+//        this.user = user;
+//    }
 
     public long getId() {
         return id;
