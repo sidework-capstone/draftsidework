@@ -46,10 +46,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
                 .authorizeRequests()
                 .antMatchers(
-//                        "/listings",  // anyone can see the job listing pages
+                        "/listings",  // anyone can see the job listing pages
                         "/",
                         "/users",
-                        "/users/register-worker",
+                        "/workers/create",
                         "/login",
                         "/businesses",
                         "/index") // anyone can see the homepage, login & register pages, and view all users without being signed in

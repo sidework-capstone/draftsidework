@@ -76,7 +76,6 @@ public class BusinessesController {
         User user = userRepository.findOne(id);
         Business business = businessesRepository.findByUser(user);
         List<Listing> listings = listingsRepository.findAllByBusiness(business);
-
         model.addAttribute("user", user);
         model.addAttribute("business", business);
         model.addAttribute("listings", listings);

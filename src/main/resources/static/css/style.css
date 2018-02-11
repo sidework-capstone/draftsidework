@@ -150,7 +150,25 @@ div.row {
     margin-right: auto;
 }
 
+/*============================================*/
+/*BUSINESS PROFILE*/
+/*============================================*/
 
+.business-info-list {
+    margin: -16px;
+}
+
+.img-full-width {
+    width: 100%;
+}
+
+.job-listing-link {
+    background: none;
+}
+
+.job-listing-link:hover {
+    text-decoration: none;
+}
 
 
 /*============================================*/

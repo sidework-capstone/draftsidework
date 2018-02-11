@@ -24,14 +24,14 @@ public class UsersController {
         this.workerSrv = workSvc;
     }
 
-    @GetMapping("/users/register-worker")
+    @GetMapping("/workers/create")
     public String showWorkerRegisterForm(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("worker", new Worker());
-        return "users/register-worker";
+        return "workers/create";
     }
 
-    @PostMapping("/users/register-worker")
+    @PostMapping("/workers/create")
     public String registerNewWorker(@ModelAttribute User user, @ModelAttribute Worker worker) {
 
         String hash = passwordEncoder.encode(user.getPassword());
