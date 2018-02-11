@@ -227,17 +227,17 @@ a.navbar-brand {
 /*LOGIN*/
 /*============================================*/
 
-#showcase {
-    background: url('../img/wine.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
+/*#showcase {*/
+    /*background: url('../img/wine.jpeg');*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*height: 100vh;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*text-align: center;*/
+    /*padding: 0 20px;*/
+/*}*/
 
 
 
@@ -252,43 +252,29 @@ a.navbar-brand {
 /*INDEX*/
 /*============================================*/
 
-/*body {*/
-/*background: url('../img/guacamole.jpg') no-repeat center center fixed;*/
-/*-webkit-background-size: cover;*/
-/*-moz-background-size: cover;*/
-/*-o-background-size: cover;*/
-/*background-size: cover;*/
-/*z-index:-100;*/
-/*}*/
+body {
+background: url('../img/guacamole.jpg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+z-index:-100;
+}
 
-/*.container {*/
-/*z-index:2;*/
-/*}*/
+.container {
+z-index:2;
+}
 
 * {
     margin: 0;
     padding: 0;
 }
 
-/*.header {*/
-    /*margin-top:12%;*/
-    /*color:#fff;*/
-/*}*/
-
-/*.header h1 {*/
-    /*color:#fff;*/
-/*}*/
-#showcase {
-    background: url('../img/guacamole.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
+.header {
+    margin-top:12%;
+    color:#fff;
 }
+
 h1.title {
     font-size: 60px;
 }
