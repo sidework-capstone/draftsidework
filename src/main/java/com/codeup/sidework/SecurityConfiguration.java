@@ -49,7 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/listings",  // anyone can see the job listing pages
                         "/",
                         "/users",
-                        "/workers/create",
+                        "/workers",
                         "/login",
                         "/businesses",
                         "/index") // anyone can see the homepage, login & register pages, and view all users without being signed in
@@ -59,10 +59,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         "/businesses/edit/{id}",
-                        "/listings/create",
-//                        "/listings/create",  // only authenticated users can create ads
+                        "/listings/create",  // only authenticated users can create ads
 //                        "/listings/edit", // only authenticated users can create ads
-                        "/users/{id}/edit" // only authenticated users can edit their profile
+                        "/workers/{id}/edit" // only authenticated users can edit their profile
                 )
                 .authenticated()
         ;

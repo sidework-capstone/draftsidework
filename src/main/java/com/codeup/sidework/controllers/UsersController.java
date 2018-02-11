@@ -43,25 +43,14 @@ public class UsersController {
         return "redirect:/login";
     }
 
-
-    @GetMapping("/users/workspace-worker")
-    public String showWorkerWorkspace() {
-        return "/users/workspace-worker";
-    }
-
-    @PostMapping("/users/workspace-worker")
-    public String viewIndividualUsersWorkplace(@ModelAttribute User user) {
-        return "/users/workspace-worker";
-    }
-
-    @GetMapping("/users/profile-worker")
+    @GetMapping("/workers/profile")
     public String viewWorkerProfile() {
-        return "users/profile-worker";
+        return "workers/profile";
     }
 
 
     //FINDING A USER BY ID-------------------->
-    @GetMapping("/users/profile-worker/{id}")
+    @GetMapping("/workers/profile/{id}")
     public String showWorkerProfile(@PathVariable long id, Model viewAndModel) { // Add a long id parameter
         // use the repository to find a user by its ID
         // .findOne(id)
@@ -70,7 +59,7 @@ public class UsersController {
         // pass the user to the view, using a Model (viewmodel)
         viewAndModel.addAttribute("user", user);
         viewAndModel.addAttribute("worker", worker);
-        return "users/profile-worker";
+        return "workers/profile";
     }
 
 

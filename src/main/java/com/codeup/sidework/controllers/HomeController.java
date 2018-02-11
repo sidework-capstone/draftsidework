@@ -39,7 +39,7 @@ public class HomeController {
 
         Worker worker = workerRepository.findByUser(user);
         if (worker != null) {
-            return "redirect:/users/profile-worker/" + user.getId();
+            return "redirect:/workers/profile/" + user.getId();
         }
 
         return "redirect:/businesses/profile/" + user.getId();
