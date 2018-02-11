@@ -26,16 +26,8 @@ public class User {
     @OneToOne
     private Business business;
 
-
-    public User(User copy) {
-        this.id = copy.id;
-        this.username = copy.username;
-        this.email = copy.email;
-        this.password = copy.password;
-        this.business = copy.business;
-    }
-
-    public User() {}
+    @OneToOne
+    private Worker worker;
 
     public long getId() {
         return id;
@@ -76,4 +68,37 @@ public class User {
     public void setBusiness(Business business) {
         this.business = business;
     }
+
+    public Worker getWorker() {
+        return worker;
+    }
+
+    public void setWorker(Worker worker) {
+        this.worker = worker;
+    }
+
+    public User(Worker worker) {
+        this.worker = worker;
+    }
+
+    public User(Business business) {
+
+        this.business = business;
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(User copy) {
+        this.id = copy.id;
+        this.username = copy.username;
+        this.email = copy.email;
+        this.password = copy.password;
+        this.business = copy.business;
+    }
+
+    public User() {}
 }
