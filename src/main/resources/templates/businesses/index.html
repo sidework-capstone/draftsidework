@@ -17,6 +17,8 @@
 				</div>
 			</div>
 		</form>
+
+
 		<!--<div class="row">-->
 		<!--<th:block th:each="business, i : ${businesses}">-->
 		<!--<th:block th:if="${i.index % 3 == 0}" th:utext="'&lt;div class=&quot;row&quot;&gt;'"/>-->
@@ -28,7 +30,7 @@
 		<!--</th:block>-->
 		<!--</div>-->
 		<div class="row">
-			<th:block th:each="i : ${#numbers.sequence(1, 20)}">
+			<th:block th:each="business : ${businesses}">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
 						<img class="fill-parent business-img"
@@ -36,18 +38,18 @@
 							 alt="..."/>
 						<div class="caption">
 							<h3>
-								<!--<h2 th:text="${business.businessName}"></h2>-->
-								Lorem Ipsum
+								<h2 th:text="${business.businessName}"></h2>
+								<!--Lorem Ipsum-->
 							</h3>
 							<p>
-								<!--<p th:text="${business.businessInfo}"></p>-->
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh.
-								Tristique et egestas quis ipsum suspendisse ultrices gravida. Lacus luctus accumsan
-								tortor posuere ac ut consequat semper viverra. Libero enim sed faucibus turpis in eu mi
-								bibendum neque.
+								<p th:text="${business.businessInfo}"></p>
+								<!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor-->
+								<!--incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh.-->
+								<!--Tristique et egestas quis ipsum suspendisse ultrices gravida. Lacus luctus accumsan-->
+								<!--tortor posuere ac ut consequat semper viverra. Libero enim sed faucibus turpis in eu mi-->
+								<!--bibendum neque.-->
 							</p>
-							<button class="btn btn-primary btn-success" role="button">explore</button>
+							<a th:href="@{'/businesses/profile/' + ${business.id}}" class="btn btn-primary btn-success" role="button">explore</a>
 						</div>
 					</div>
 				</div>

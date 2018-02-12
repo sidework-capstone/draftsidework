@@ -108,9 +108,9 @@ body {
 /*@media screen and (min-width:1200px)*/
 
 
-.navbar.navbar-default {
-    background-color: white;
-}
+/*.navbar.navbar-default {*/
+    /*background-color: white;*/
+/*}*/
 
 a.navbar-brand {
     font-size: 40px;
@@ -173,8 +173,16 @@ div.row {
 .job-listing-link:hover {
     text-decoration: none;
 }
+/*ul.nav.navbar.nav {*/
+    /*float: right;*/
+/*}*/
 
-
+/*.navbar-inverse .navbar-nav>li>a {*/
+    /*float: right;*/
+/*}*/
+/*.nav>li {*/
+    /*float: right;*/
+/*}*/
 /*============================================*/
 /*WORKER PROFILE*/
 /*============================================*/
@@ -200,10 +208,21 @@ div.row {
 .footerrr {
     text-align: center;
 }
-a.navbar-brand {
-    font-size: 40px;
+/*a.navbar-brand {*/
+    /*font-size: 40px;*/
+/*}*/
 
-}
+/*ul.nav.navbar-nav {*/
+    /*float: right;*/
+/*}*/
+/*strong {*/
+    /*font-family: 'Lobster', cursive;*/
+    /*color: #5bb85b;*/
+/*}*/
+/*strong:hover {*/
+    /*font-size: 24px;*/
+    /*color: white;*/
+/*}*/
 /*#showcase {*/
 /*background-image: url('../img/profileBackground.jpg');*/
 /*height: 100vh;*/
@@ -222,8 +241,36 @@ a.navbar-brand {
 /*font-size: 10px;*/
 /*}*/
 a.navbar-brand {
-    font-size: 15px;
+    font-size: 22px;
 }
+span.glyphicon.glyphicon-glass {
+    color: #5bb85b;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    margin-left: 70px;
+}
+strong {
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #5bb85b;
+}
+strong:hover {
+    /*font-size: 24px;*/
+    color: white;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #5bb85b;
+}
+/*@media (min-width: 768px)*/
+/*.navbar-collapse {*/
+    /*position: absolute;*/
+/*}*/
+
+
+/*============================================*/
+/*FOOTER*/
+/*============================================*/
+
 
 
 
@@ -294,7 +341,7 @@ a.navbar-brand {
 
 .sidework-link {
     display: block;
-    font-family: 'courier';
+    font-family: 'Allerta Stencil', sans-serif;
     font-size: 7em;
     text-align: center;
     color: #41663a;
