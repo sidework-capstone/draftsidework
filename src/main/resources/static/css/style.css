@@ -258,6 +258,7 @@ a.navbar-brand {
 
 .showcase {
     background: url('../img/boxesblackwhitebackground.jpg');
+    /*background: url('../img/hackerysalleyedited.jpg');*/
     background-size: cover;
     background-position: center;
 }
