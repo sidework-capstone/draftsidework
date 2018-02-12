@@ -228,7 +228,7 @@ a.navbar-brand {
 /*============================================*/
 
 #showcase {
-    background: url('../img/wine.jpeg');
+    background: url('../img/');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -253,8 +253,9 @@ a.navbar-brand {
 /*============================================*/
 
 .showcase {
-    background: url('../img/guacamole.jpg');
+    background: url('../img/greenbackground');
     background-size: cover;
+    background-repeat: repeat;
     background-position: center;
 }
 
