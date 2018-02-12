@@ -313,6 +313,9 @@ a.navbar-brand {
     /*text-align: center;*/
 /*}*/
 
+.margin-none {
+    margin: 0;
+}
 
 /*============================================*/
 /*BUSINESSES - INDEX*/
