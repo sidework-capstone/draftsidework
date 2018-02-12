@@ -14,39 +14,39 @@
                     <h1 class="register">register</h1>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="username">username</label>
-                        <input id="username" th:field="*{username}" name="username" class="form-control" type="text" placeholder="myUsername123"/>
+                        <input id="username" th:field="*{username}" name="username" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="first_name">first name</label>
-                        <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text" placeholder="first name"/>
+                        <input id="first_name" th:value="${worker.firstName}" name="firstName" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="last_name">last name</label>
-                        <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text" placeholder="last name"/>
+                        <input id="last_name" th:value="${worker.lastName}" name="lastName" class="form-control" type="text"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="email">email</label>
-                        <input id="email" th:field="*{email}" name="email" class="form-control" type="email" placeholder="yourEmail@email.com"/>
+                        <input id="email" th:field="*{email}" name="email" class="form-control" type="email"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="password">password</label>
-                        <input id="password" th:field="*{password}" name="password" class="form-control" type="password" placeholder="mySuperSecretPassword"/>
+                        <input id="password" th:field="*{password}" name="password" class="form-control" type="password"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="confirm_password">confirm password</label>
-                        <input id="confirm_password" name="password_confirm" class="form-control" type="password" placeholder="mySuperSecretPassword"/>
+                        <input id="confirm_password" name="password_confirm" class="form-control" type="password"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="phone">phone</label>
-                        <input id="phone" th:value="${worker.phone}" class="form-control" type="tel" placeholder="123-123-1234"/>
+                        <input id="phone" th:value="${worker.phone}" class="form-control" type="tel"/>
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="skills">skills</label>
-                        <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control" placeholder="nunjuck skills"></textarea>
+                        <textarea id="bio" name="bio" th:value="${worker.bio}" class="form-control"></textarea>
                     </div>
                     <div class="col-xs-12 form-group">
                         <label for="bio">bio</label>
-                        <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control" placeholder="super cool bio"></textarea>
+                        <textarea id="skills" name="skills" th:value="${worker.skills}" class="form-control"></textarea>
                     </div>
 
                     <h2 class="text-center space-top">Availability</h2>
