@@ -47,17 +47,18 @@
                     <div class="panel-body">
                         <ul class="list-group business-info-list">
                             <!-- erase next line in production -->
-                            <th:block th:each="i : ${#numbers.sequence(1, 3)}">
+                            <th:block th:each="listing : ${business.listings}">
                             <!--<th:block th:each="listing : ${listings}">-->
                                 <li class="list-group-item">
-                                    <span>Lorem ipsum</span>
-                                </li>
+                                    <!--<span>Lorem ipsum</span>-->
                             <!-- uncomment in production -->
-                                    <!--<a th:href="@{'/listings/single/' + ${listing.id}}" class="list-group-item">-->
-                                        <!--<span th:text="${listing.title}"></span>-->
-                                    <!--</a>-->
-                                    <!--<p th:text="${listing.description}"></p>-->
-                            <!--</th:block>-->
+                                    <p>
+                                    <a th:href="@{'/listings/single/' + ${listing.id}}">
+                                        <span th:text="${listing.title}"></span>
+                                    </a>
+                                    </p>
+                                    <p th:text="${listing.description}"></p>
+                                </li>
                             </th:block>
                             <li class="btn btn-warning btn-block">
                                 <a class="btn-warning job-listing-link panel-title" th:href="@{/listings/create}">Add new listing</a>
