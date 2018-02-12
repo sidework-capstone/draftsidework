@@ -32,6 +32,10 @@
     margin-top: 15%;
 }
 
+/*#button-color {*/
+    /*color: #41663a;*/
+/*}*/
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -228,7 +232,7 @@ a.navbar-brand {
 /*============================================*/
 
 #showcase {
-    background: url('../img/wine.jpeg');
+    background: url('../img/');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -253,7 +257,8 @@ a.navbar-brand {
 /*============================================*/
 
 .showcase {
-    background: url('../img/guacamole.jpg');
+    background: url('../img/boxesblackwhitebackground.jpg');
+    /*background: url('../img/hackerysalleyedited.jpg');*/
     background-size: cover;
     background-position: center;
 }
@@ -269,10 +274,14 @@ a.navbar-brand {
 
 .splash-icon {
     font-size: 20em;
+    color: #2b2d2a;
+    /*padding: 6px;*/
 }
 
 .splash-box {
     width: 20em;
+    color: #41663a;
+
 }
 
 .splash-link {
@@ -285,10 +294,10 @@ a.navbar-brand {
 
 .sidework-link {
     display: block;
-    font-family: 'Lobster', cursive;
-    font-size: 10em;
+    font-family: 'courier';
+    font-size: 7em;
     text-align: center;
-    color: #5bb85b;
+    color: #41663a;
     text-shadow: 2px 2px #4c4641;
 }
 
