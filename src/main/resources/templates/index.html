@@ -2,29 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/head :: mainHead('Sidework')"></head>
 <body class="showcase">
-<nav th:replace="fragments/navbar :: mainNavbar"></nav>
+<!--<nav th:replace="fragments/navbar :: mainNavbar" type="hidden"></nav>-->
 <div class="showcase-overlay"></div>
-
+<br />
+<br />
+<br />
+<br />
+<br />
 <div class="container">
-    <a href="/howitworks" class="sidework-link">sidework</a>
-        <div class="center-splash-links container-fluid">
-            <div class="row">
-                <div class="index-link col-sm-6">
-                    <div class="splash-box center-block">
-                        <span class="glyphicon glyphicon-user splash-icon" aria-hidden="true"></span>
-                        <a href="/workers/create" class="btn btn-lg btn-success btn-block splash-link">pick up shifts</a>
-                    </div>
-
+    <a href="/howitworks" class="sidework-link"><span class="col-xs-12">sidework</span></a>
+    <div class="center-splash-links container-fluid">
+        <div class="row">
+            <div class="index-link col-sm-6">
+                <div class="splash-box center-block">
+                    <span class="glyphicon glyphicon-user splash-icon" aria-hidden="true"></span>
+                    <a href="/workers/create" class="btn btn-lg btn-success btn-block splash-link">pick up shifts</a>
                 </div>
-                <div class="index-link col-sm-6 container-fluid">
-                    <div class="splash-box center-block">
-                        <span class="button-color glyphicon glyphicon-globe splash-icon" aria-hidden="true"></span>
-                        <a href="/businesses/create" class="btn btn-lg btn-success btn-block splash-link">get shifts covered</a>
-                    </div>
 
+            </div>
+            <div class="index-link col-sm-6 container-fluid">
+                <div class="splash-box center-block">
+                    <span class="button-color glyphicon glyphicon-comment splash-icon" aria-hidden="true"></span>
+                    <a href="/businesses/create" class="btn btn-lg btn-success btn-block splash-link">get shifts covered</a>
                 </div>
-            </div><!-- splash link boxes -->
-        </div>
+
+            </div>
+        </div><!-- splash link boxes -->
+    </div>
 </div> <!-- container -->
 
 </body>
