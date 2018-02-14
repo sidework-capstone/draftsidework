@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/head:: mainHead('About Us')"></head>
+<head th:include="fragments/head:: mainHead('about us')">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
 <body>
 <nav class="navbar navbar-default" th:replace="fragments/navbar :: mainNavbar"></nav>
 
@@ -12,26 +14,39 @@
         </div><!-- jumbotron -->
 
         <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="thumbnail border-none">
-                    <img src="/img/sideworkLogoZoom" alt="sidework"/>
-                    <div class="caption">
-                        <h1>sidework</h1>
-                        <p>Sidework is an online local labor marketplace connecting hospitality and industry professionals with fluctuating restaurant staffing demands.</p>
+            <!--<div class="col-sm-6 col-md-6">-->
+                <!--<div class="thumbnail border-none">-->
+                    <!--<img class="profilePicture" src="/img/sideworkLogoZoom.png" alt="sidework"/>-->
+                    <!--<div class="caption">-->
+                        <!--<h1>sidework</h1>-->
+                        <!--<p>Sidework is an online local labor marketplace connecting hospitality and industry professionals with fluctuating restaurant staffing demands.</p>-->
                         <!--<a href="https://www.instagram.com/sideworksa/" class="fa fa-instagram"></a>-->
-                            <!--<a href="https://twitter.com/sideworksa" class="fa fa-twitter"></a>-->
-                            <!--<a href="https://www.facebook.com/sideworksa/" class="fa fa-facebook"></a>-->
+                        <!--<a href="https://twitter.com/sideworksa" class="fa fa-twitter"></a>-->
+                        <!--<a href="https://github.com/sidework-capstone/sidework" class="fa fa-github"></a>-->
+                        <!--<a href="https://www.facebook.com/sideworksa/" class="fa fa-facebook"></a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="col-sm-6 col-md-6">
+                <div class="thumbnail border-none profilePicture">
+                    <img class="profilePicture" src="/img/mary.png" alt="mary"/>
+                    <div class="caption">
+                        <h3>mary kathryn syms</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dignissimos distinctio dolores eum, facilis incidunt, inventore labore laboriosam odio officiis optio quaerat quia quidem sapiente sequi similique, temporibus unde?</p>
+                        <p><a href="https://linkedin.com/in/marykathrynsyms" class="btn btn-default" role="button">linkedin</a>
+                            <a href="https://github.com/tacobody" class="btn btn-default" role="button">github</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
-                <div class="thumbnail border-none">
-                    <img src="/img/mary.png" alt="Mary"/>
+                <div class="thumbnail border-none profilePicture">
+                    <img class="profilePicture" src="/img/sideworkLogoZoom.png" alt="sidework"/>
                     <div class="caption">
-                        <h3>Mary Kathryn Syms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dignissimos distinctio dolores eum, facilis incidunt, inventore labore laboriosam odio officiis optio quaerat quia quidem sapiente sequi similique, temporibus unde?</p>
-                        <p><a href="https://linkedin.com/in/marykathrynsyms" class="btn btn-default" role="button">linkedin</a>
-                            <a href="https://github.com/tacobody" class="btn btn-default" role="button">github</a></p>
+                        <h3>sidework</h3>
+                        <p>Sidework is an online local labor marketplace connecting hospitality and industry professionals with fluctuating restaurant staffing demands. Started right here in San Antonio, Texas. Feel free to email us at sideworksa@gmail.com and follow us on all your favorite social media platforms.</p>
+                        <p>
+                            <a href="https://www.instagram.com/sideworksa/" class="btn btn-default" role="button">@sidework (instagram/twitter)</a>
+                            <a href="https://github.com/sidework-capstone/sidework" class="btn btn-default" role="button">github (check pull request)</a></p>
                     </div>
                 </div>
             </div>
