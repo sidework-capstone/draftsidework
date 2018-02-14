@@ -1,8 +1,4 @@
 # sidework 
-**Codeup Sequoia Cohort<br> Capstone Project Feb 2018**
-<br>
-<br>
-<br>
 Sidework is an online labor marketplace that connects hospitality and industry professionals with fluctuating restaurant staffing demands.  
 <br>
 <br>
