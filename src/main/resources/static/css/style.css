@@ -32,6 +32,20 @@
     margin-top: 15%;
 }
 
+
+/*#side-tabs a.support {*/
+    /*background: url('http://sidework-sa.com/login');*/
+    /*left: 0px;*/
+    /*top: 250px;*/
+    /*!*height: 108px;*!*/
+    /*width: 100px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*position: fixed;*/
+    /*z-index: 9999;*/
+    /*display:block;*/
+/*}*/
+
 /*#button-color {*/
     /*color: #41663a;*/
 /*}*/
@@ -76,7 +90,7 @@ body {
     display: block;
     font-family: 'arial';
     font-size: 2em;
-    text-align: right;
+    /*text-align: left;*/
     color: #41663a;
     text-shadow: 2px 2px #4c4641;
 }
@@ -301,17 +315,25 @@ a.navbar-brand {
 .splash-icon {
     font-size: 20em;
     color: #2b2d2a;
-    /*padding: 6px;*/
+    padding: 6px;
+    vertical-align: middle;
+    text-align: center;
+
 }
 
 .splash-box {
-    width: 20em;
+    width: 22em;
     color: #41663a;
+    vertical-align: middle;
+    text-align: center;
 
 }
 
 .splash-link {
     margin-left: 0;
+    vertical-align: middle;
+    text-align: center;
+
 }
 
 .center-splash-links {
@@ -321,8 +343,9 @@ a.navbar-brand {
 .sidework-link {
     display: block;
     font-family: 'arial';
-    font-size: 5em;
-    /*text-align: left;*/
+    margin-left: -20px;
+    font-size: 6em;
+    text-align: center;
     color: #41663a;
     text-shadow: 2px 2px #4c4641;
 }
