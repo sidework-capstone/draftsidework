@@ -36,6 +36,23 @@
     /*color: #41663a;*/
 /*}*/
 
+
+/* Media Queries
+-------------------------------------------------- */
+@media screen and (max-width:500px) {
+    .index-link {
+        property: value;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .index-link {
+        property: value;
+    }
+}
+
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -294,9 +311,9 @@ a.navbar-brand {
 
 .sidework-link {
     display: block;
-    font-family: 'courier';
-    font-size: 7em;
-    text-align: center;
+    font-family: 'arial';
+    font-size: 5em;
+    /*text-align: left;*/
     color: #41663a;
     text-shadow: 2px 2px #4c4641;
 }
