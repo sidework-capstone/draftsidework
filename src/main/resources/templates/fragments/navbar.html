@@ -16,15 +16,29 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li sec:authorize="isAnonymous()"><a href="/howitworks">How It Works</a></li>
+                <li><a th:href="@{/howitworks}">How It Works</a></li>
                 <li><a href="/aboutus">About Us</a></li>
-                <li sec:authorize="isAuthenticated()"><a href="/users/profile/{id}">Profile</a></li>
+                <!--<li sec:authorize="isAuthenticated()"><a th:href="@{/profile/{id}">Profile</a></li>-->
+                <!--<li sec:authorize="isAuthenticated()"><a href="/workers/profile/"@{id}">Worker Profile</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/workers/index">Workers</a></li>
-                <li><a href="/businesses/index">Businesses</a></li>
-                <li><a href="/listings/index">Listings</a></li>
+                <li><a th:href="@{/workers/index}">Workers</a></li>
+                <li><a th:href="@{/businesses/index}">Businesses</a></li>
+                <li><a th:href="@{/listings/index}">Listings</a></li>
             </ul>
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li th:if="${#authorization.expression('!isAuthenticated()')}">-->
+                    <!--<a href="/login" th:href="@{/login}">-->
+                        <!--<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;Login-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li th:if="${#authorization.expression('isAuthenticated()')}">-->
+                    <!--<a href="/logout" th:href="@{#}" onclick="$('#form').submit();">-->
+                        <!--<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout-->
+                    <!--</a>-->
+                    <!--<form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>-->
+                <!--</li>-->
+            <!--</ul>-->
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/login">Login</a></li>
                 <li sec:authorize="isAuthenticated()">
